@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Roboto-Black";
+  src: url("/fonts/Roboto-Black.ttf") format("truetype");
+}
+html {
+  font-size: 12px;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+  font-family: "Roboto-Black";
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hide {
+  display: none !important;
+}
+
+.disable-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mobile {
+  display: flex;
+}
+@media (min-width: 992px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+}
+@media (min-width: 992px) {
+  .desktop {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
