@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 const uniqueValidator = require('mongoose-unique-validator');
+const path = require('path');
+const pathToUploads = path.join(__dirname, '..', '/public/uploads');
+const fs = require('fs');
 
 const EntrySchema = new Schema({
     name: {
@@ -32,6 +35,10 @@ const EntrySchema = new Schema({
         type: String,
         default: null,
     },
+    submitted: {
+        type: Boolean,
+        default: false
+    },
     status: {
         type: String,
         enum: ['UNAUTHORIZED', 'AUTHORIZED', 'WINNER'],
@@ -41,5 +48,15 @@ const EntrySchema = new Schema({
 }, { timestamps: true });
 
 EntrySchema.plugin(uniqueValidator);
+
+EntrySchema.pre('remove', function () {
+    if (this.picture) {
+        fs.unlinkSync(path.join(pathToUploads, this.picture));
+    }
+
+    if (this.video) {
+        fs.unlinkSync(path.join(pathToUploads, this.video));
+    }
+});
 
 module.exports = model('Entry', EntrySchema);

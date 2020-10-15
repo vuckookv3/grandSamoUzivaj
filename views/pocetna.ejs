@@ -1,7 +1,12 @@
 <%- include('partials/header') %>
 
 <main>
-    
+    <form action="/prijava/1" method="POST">
+        <input type="text" name="name" placeholder="Ime i prezime" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="biCode" placeholder="BI Broj" required />
+        <input type="submit" value="Submit" />
+    </form>
 </main>
 
 <%- include('partials/footer') %>

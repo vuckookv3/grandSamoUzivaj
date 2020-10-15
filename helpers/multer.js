@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
 
-    const fileTypes = /jpeg|jpg|png|mp4/;
+    const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mov|mpeg|avi/;
 
     if (fileTypes.test(file.mimetype)) {
         return cb(null, true)
@@ -27,15 +27,21 @@ const fileFilter = (req, file, cb) => {
 }
 
 const upload = (fieldName) => (req, res, next) => {
-    const a = multer({ storage, fileFilter }).fields([{ name: 'picture', maxCount: 1 }, { name: 'video', maxCount: 1 }]);
+    const a = multer({ storage, fileFilter, limits: { fileSize: 1024 * 1024 * 200 } }).fields([{ name: 'picture', maxCount: 1 }, { name: 'video', maxCount: 1 }]);
 
     a(req, res, (err) => {
         if (err instanceof multer.MulterError) {
-            return res.status(415).json({ status: 415, message: err, info: err });
+            let message = 'Doslo je do greske prilikom slanja. Pokusajte ponovo';
+            if (err.code === 'LIMIT_FILE_SIZE') {
+                message = 'Limit file-ova je 200MB. Molim vas posaljite manji file.';
+            }
+            req.flash('error', message);
+            return res.redirect('/profil');
         } else if (err) {
-            return res.status(415).json({ status: 415, message: err.message || 'File problem' });
+            req.flash('error', 'Nepodrzan format file-a');
+            return res.redirect('/profil');
         }
-        
+
         req.body = JSON.parse(JSON.stringify(req.body));
         return next();
     });

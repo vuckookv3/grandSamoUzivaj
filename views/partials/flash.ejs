@@ -1,0 +1,29 @@
+<div class='container' id='alerts' style='position: fixed; top: 100px; left: 0; right: 0; z-index: 50; font-size: 20px;'>
+    <% if(error && error.length > 0) { %>
+    <div class='alert alert-danger alert-dismissible fade show' role='alert' id='error-alert'>
+        <%= error %>
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+    </div>
+    <% } %>
+
+    <% if(success && success.length > 0) { %>
+    <div class='alert alert-success alert-dismissible fade show' role='alert' id='success-alert'>
+        <%= success %>
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+    </div>
+    <% } %>
+
+    <% if(info && info.length > 0) { %>
+    <div class='alert alert-info alert-dismissible fade show' role='alert' id='info-alert'>
+        <%= info %>
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+    </div>
+    <% } %>
+
+</div>
