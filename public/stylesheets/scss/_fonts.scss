@@ -1,8 +1,26 @@
 @font-face {
+    font-family: "Roboto-Regular";
+    src: url('/fonts/Roboto-Regular.ttf') format("truetype");
+}
+@font-face {
     font-family: "Roboto-Black";
     src: url('/fonts/Roboto-Black.ttf') format("truetype");
 }
+@font-face {
+    font-family: "AntennaComp-Bold";
+    src: url('/fonts/AntennaComp-Bold.otf') format("truetype");
+}
+@font-face {
+    font-family: "AntennaComp-BoldItalic";
+    src: url('/fonts/AntennaComp-BoldItalic.otf') format("truetype");
+}
+@font-face {
+    font-family: "AntennaComp-MediumItalic";
+    src: url('/fonts/AntennaComp-MediumItalic.otf') format("truetype");
+}
 
-
-
+$font-roboto-regular: "Roboto-Regular";
 $font-roboto-black: "Roboto-Black";
+$font-antenna-comp-bold: "AntennaComp-Bold";
+$font-antenna-comp-bold-italic: "AntennaComp-BoldItalic";
+$font-antenna-comp-medium-italic: "AntennaComp-MediumItalic";

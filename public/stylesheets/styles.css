@@ -1,6 +1,22 @@
 @font-face {
+  font-family: "Roboto-Regular";
+  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
   font-family: "Roboto-Black";
   src: url("/fonts/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AntennaComp-Bold";
+  src: url("/fonts/AntennaComp-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "AntennaComp-BoldItalic";
+  src: url("/fonts/AntennaComp-BoldItalic.otf") format("truetype");
+}
+@font-face {
+  font-family: "AntennaComp-MediumItalic";
+  src: url("/fonts/AntennaComp-MediumItalic.otf") format("truetype");
 }
 html {
   font-size: 12px;
@@ -80,6 +96,224 @@ a:hover {
 @media (min-width: 992px) {
   .desktop {
     display: flex;
+  }
+}
+
+body {
+  background-color: #ffcc00;
+}
+
+.uskoro {
+  background-color: #ffcc00;
+  font-family: "AntennaComp-Bold";
+  font-style: italic;
+  justify-content: flex-start;
+}
+
+.uskoro__header {
+  position: relative;
+  height: 135px;
+  flex-direction: row;
+}
+.uskoro__header img {
+  width: 80px;
+  position: relative;
+  bottom: 25px;
+}
+.uskoro__header div {
+  align-items: flex-start;
+  width: fit-content;
+}
+.uskoro__header p {
+  margin: 0;
+  margin-left: 15px;
+  font-size: 34pt;
+  line-height: 1;
+}
+
+.uskoro__main_div {
+  background: radial-gradient(600px at bottom, #674537, #000 55%);
+  display: inline-block;
+  height: 60vh;
+  position: relative;
+  width: 100vw;
+}
+
+.background_strelica {
+  border-top: 100px solid transparent;
+  border-left: 50vw solid #ffcc00;
+  border-right: 50vw solid #ffcc00;
+  content: "";
+  height: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  position: absolute;
+}
+
+.uskoro__nagrade {
+  align-items: flex-start;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.uskoro_iphone_traka {
+  position: relative;
+  align-items: flex-start;
+  width: fit-content;
+}
+.uskoro_iphone_traka .img__iphone {
+  width: 170px;
+  z-index: 1;
+}
+.uskoro_iphone_traka .img__traka_uskoro {
+  position: absolute;
+  top: 12px;
+  left: 150px;
+}
+.uskoro_iphone_traka .img__traka_uskoro img {
+  max-width: unset;
+  height: 60px;
+}
+.uskoro_iphone_traka .img__traka_uskoro p {
+  position: absolute;
+  font-size: 36pt;
+  font-family: "AntennaComp-Bold";
+  color: #000;
+  font-style: italic;
+}
+.uskoro_iphone_traka p {
+  color: #fff;
+  font-size: 12pt;
+  margin: 0;
+  margin-left: 35px;
+}
+
+.uskoro__sporedne_nagrade {
+  position: absolute;
+  width: auto;
+  top: 80px;
+  left: 65%;
+  transform: translateX(-50%);
+}
+.uskoro__sporedne_nagrade img {
+  width: 100px;
+}
+.uskoro__sporedne_nagrade p {
+  color: #fff;
+  margin-top: 0;
+  word-wrap: none;
+}
+.uskoro__sporedne_nagrade .slusalice {
+  width: 60px;
+}
+
+.uskoro__kafa_bottom_box {
+  position: absolute;
+  bottom: -35px;
+  z-index: 1;
+}
+.uskoro__kafa_bottom_box .kesice {
+  width: 130px;
+  right: 50%;
+  transform: translateX(-20px);
+  position: absolute;
+}
+.uskoro__kafa_bottom_box .solja {
+  width: 200px;
+  z-index: 1;
+}
+
+.uskoro__footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .uskoro__main_div {
+    background: radial-gradient(1000px at bottom, #674537, #000 58%);
+    height: 70vh;
+    position: relative;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  .background_strelica {
+    border-top: 250px solid transparent;
+    border-left: 50vw solid #ffcc00;
+    border-right: 50vw solid #ffcc00;
+  }
+
+  .uskoro__nagrade {
+    align-items: center;
+  }
+  .uskoro__nagrade .uskoro_iphone_traka {
+    transform: translateX(-50%);
+  }
+  .uskoro__nagrade .uskoro_iphone_traka .img__iphone {
+    width: 300px;
+  }
+  .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro {
+    top: 18px;
+    left: 240px;
+  }
+  .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro img {
+    height: 85px;
+  }
+  .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro p {
+    font-size: 50pt;
+  }
+
+  .uskoro__header {
+    height: 250px;
+    align-items: center;
+    flex-direction: row;
+  }
+  .uskoro__header img {
+    width: 150px;
+    position: relative;
+    bottom: 50px;
+  }
+  .uskoro__header p {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 50pt;
+    line-height: 1;
+  }
+
+  .uskoro__sporedne_nagrade {
+    width: 100%;
+    left: 85%;
+    top: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "zvucnik slusalice" "paket paket";
+  }
+  .uskoro__sporedne_nagrade .zvucnik_box {
+    grid-area: zvucnik;
+  }
+  .uskoro__sporedne_nagrade .slusalice_box {
+    grid-area: slusalice;
+  }
+  .uskoro__sporedne_nagrade .paket_box {
+    grid-area: paket;
+  }
+  .uskoro__sporedne_nagrade .zvucnik {
+    width: 200px;
+  }
+  .uskoro__sporedne_nagrade .slusalice {
+    width: 120px;
+  }
+  .uskoro__sporedne_nagrade .paket {
+    width: 220px;
+  }
+
+  .uskoro__footer {
+    bottom: -35px;
+    flex-direction: row;
   }
 }
 

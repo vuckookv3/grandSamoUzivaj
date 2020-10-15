@@ -2,3 +2,233 @@
 @import "layout";
 @import "colors";
 @import "base";
+
+body {
+    background-color: $color_yellow_back;
+}
+
+.uskoro {
+
+    background-color: $color-yellow-back;
+    font-family: $font-antenna-comp-bold;
+    font-style: italic;
+   
+    justify-content: flex-start;
+}
+
+.uskoro__header {
+    
+    position: relative;
+    height: 135px;
+    flex-direction: row;
+    img {
+        width: 80px;
+        position: relative;
+        // left: 40%;
+        bottom: 25px;
+    }
+    div {
+        align-items: flex-start;
+        width: fit-content;
+    }
+    p {
+        margin: 0;
+        margin-left: 15px;
+        font-size: 34pt;
+        line-height: 1;
+    }
+}
+
+.uskoro__main_div {
+    background: radial-gradient(600px at bottom, #674537, #000 55%);
+    display: inline-block;
+    height: 60vh;
+    position: relative;
+    width: 100vw;
+    // justify-content: flex-start;
+}
+
+.background_strelica {
+    border-top: 100px solid transparent;
+    border-left: 50vw solid $color-yellow-back;
+    border-right: 50vw solid $color-yellow-back;
+    content: "";
+    height: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    position: absolute;
+}
+.uskoro__nagrade {
+    align-items: flex-start;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.uskoro_iphone_traka {
+    position: relative;
+    align-items: flex-start;
+    width: fit-content;
+    // padding: 30px 20px;
+
+    .img__iphone {
+        width: 170px;
+        z-index: 1;
+    }
+
+    .img__traka_uskoro {
+        position: absolute;
+        top: 12px;
+        left: 150px;
+        img {
+            max-width: unset;
+            height: 60px;
+        }
+        p {
+            position: absolute;
+            font-size: 36pt;
+            font-family: $font-antenna-comp-bold;
+            color: #000;
+            font-style: italic;
+        }
+    }
+    p {
+        color: #fff;
+        font-size: 12pt;
+        margin: 0;
+        margin-left: 35px;
+    }
+}
+.uskoro__sporedne_nagrade {
+    position: absolute;
+    width: auto;
+    top: 80px;
+    left: 65%;
+    transform: translateX(-50%);
+
+    img {
+        width: 100px;
+    }
+    p {
+        color: #fff;
+        margin-top: 0;
+        word-wrap: none;
+    }
+    .slusalice {
+        width: 60px;
+    }
+}
+.uskoro__kafa_bottom_box {
+    position: absolute;
+    bottom: -35px;
+    z-index: 1;
+    img {
+    }
+    .kesice {
+        width: 130px;
+        right: 50%;
+        transform: translateX(-20px);
+        position: absolute;
+    }
+    .solja {
+        width: 200px;
+        z-index: 1;
+    }
+}
+.uskoro__footer {
+    position: absolute;
+    bottom: 0;
+}
+
+@include lg {
+    .uskoro__main_div {
+        background: radial-gradient(1000px at bottom, #674537, #000 58%);
+        height: 70vh;
+        position: relative;
+        width: 100vw;
+        justify-content: center;
+        
+    }
+
+    .background_strelica {
+        border-top: 250px solid transparent;
+        border-left: 50vw solid $color-yellow-back;
+        border-right: 50vw solid $color-yellow-back;
+
+    }
+    .uskoro__nagrade {
+        align-items: center;
+
+        .uskoro_iphone_traka {
+            transform: translateX(-50%);
+            .img__iphone {
+                width: 300px;
+            }
+            .img__traka_uskoro {
+                top: 18px;
+                left: 240px;
+                img {
+                    height: 85px;
+                }
+                p {
+                    font-size: 50pt;
+                }
+            }
+           
+        }
+    }
+    .uskoro__header {
+        height: 250px;
+        align-items: center;
+        flex-direction: row;
+
+        img {
+            width: 150px;
+            position: relative;
+            bottom: 50px;
+        }
+        p {
+            margin: 0;
+            margin-left: 20px;
+            font-size: 50pt;
+            line-height: 1;
+        }
+
+    }
+    .uskoro__sporedne_nagrade {
+        width: 100%;
+        left: 85%;
+        top: 100px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-template-areas: "zvucnik slusalice"
+                            "paket paket";
+    
+        .zvucnik_box {
+            grid-area: zvucnik;
+        }
+        .slusalice_box {
+            grid-area: slusalice;
+        }
+        .paket_box {
+            grid-area: paket;
+        }
+        .zvucnik {
+            width: 200px;
+        }
+        .slusalice {
+            width: 120px;
+            
+        }
+        .paket {
+            width: 220px;
+        }
+    } 
+    .uskoro__footer {
+        bottom: -35px;
+        flex-direction: row;
+
+    }
+}
