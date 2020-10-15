@@ -30,6 +30,7 @@ body {
   position: relative;
   min-height: 100%;
   font-family: "Roboto-Black";
+  background-color: #ffcc00;
 }
 
 img {
@@ -97,10 +98,6 @@ a:hover {
   .desktop {
     display: flex;
   }
-}
-
-body {
-  background-color: #ffcc00;
 }
 
 .uskoro {
