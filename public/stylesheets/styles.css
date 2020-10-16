@@ -112,15 +112,55 @@ a:hover {
 }
 
 .documentWrapper {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #leftSection {
-  flex: 1;
+  height: 135px;
+  flex-direction: row;
+  font-family: "AntennaComp-Bold";
+  color: #000;
+  font-style: italic;
+}
+#leftSection div {
+  align-items: flex-start;
+  width: fit-content;
+}
+#leftSection .header__prelomni_text {
+  flex-direction: row;
+}
+#leftSection p {
+  margin: 0;
+  margin-left: 15px;
+  font-size: 34pt;
+  line-height: 1;
+}
+
+.insta_grand_traka {
+  width: 80px;
+  position: relative;
+  left: 5px;
+  bottom: 25px;
 }
 
 #rightSection {
+  display: none;
   flex: 1;
+}
+
+.bottom_section {
+  flex: 1;
+  position: absolute;
+  bottom: -220px;
+  color: #000;
+}
+.bottom_section .footer__datumi {
+  font-size: 14pt;
+  flex-direction: row;
+  font-family: "AntennaComp-Bold";
+}
+.bottom_section .footer__network {
+  font-family: "Roboto-Regular";
 }
 
 .strelica {
@@ -135,6 +175,74 @@ a:hover {
   position: absolute;
 }
 
+@media (min-width: 992px) {
+  .documentWrapper {
+    flex-direction: row;
+  }
+
+  #leftSection {
+    flex: 1;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #leftSection .header__prelomni_text {
+    flex-direction: column;
+  }
+  #leftSection .header__prelomni_text .text_lg {
+    font-size: 44pt;
+  }
+
+  .insta_grand_traka {
+    width: 150px;
+    top: -60px;
+  }
+
+  #rightSection {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #rightSection .kesice_kafe {
+    height: 270px;
+    transform: translateY(-50px);
+  }
+  .strelica {
+    border-top: 100px solid transparent;
+    border-left: 33.4vw solid #ffcc00;
+    border-right: 33.4vw solid #ffcc00;
+  }
+
+  .bottom_section {
+    flex-direction: row;
+    padding-bottom: 20px;
+  }
+  .bottom_section .footer__datumi {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    font-size: 20pt;
+  }
+  .bottom_section .footer__datumi p {
+    margin: 0;
+  }
+  .bottom_section .footer__network {
+    margin-left: 50%;
+  }
+  .bottom_section .footer__network div {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .bottom_section .footer__network div img {
+    width: 15pt;
+  }
+  .bottom_section .footer__network div p {
+    margin: 5px 0 5px 5px;
+    font-size: 12pt;
+  }
+}
 .uskoro {
   background-color: #ffcc00;
   font-family: "AntennaComp-Bold";
