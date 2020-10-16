@@ -150,6 +150,7 @@ a:hover {
 .uskoro__header img {
   width: 80px;
   position: relative;
+  left: 5px;
   bottom: 25px;
 }
 .uskoro__header div {
@@ -166,7 +167,8 @@ a:hover {
 .uskoro__main_div {
   background: radial-gradient(600px at bottom, #674537, #000 55%);
   display: inline-block;
-  height: 60vh;
+  height: 80vh;
+  min-height: 500px;
   position: relative;
   width: 100vw;
 }
@@ -203,7 +205,7 @@ a:hover {
 .uskoro_iphone_traka .img__traka_uskoro {
   position: absolute;
   top: 12px;
-  left: 150px;
+  left: 95px;
 }
 .uskoro_iphone_traka .img__traka_uskoro img {
   max-width: unset;
@@ -215,20 +217,21 @@ a:hover {
   font-family: "AntennaComp-Bold";
   color: #000;
   font-style: italic;
+  margin-left: 80px;
 }
 .uskoro_iphone_traka p {
   color: #fff;
   font-size: 12pt;
   margin: 0;
-  margin-left: 35px;
+  width: 180px;
+  text-align: center;
 }
 
 .uskoro__sporedne_nagrade {
   position: absolute;
   width: auto;
   top: 80px;
-  left: 65%;
-  transform: translateX(-50%);
+  left: 180px;
 }
 .uskoro__sporedne_nagrade img {
   width: 100px;
@@ -248,54 +251,67 @@ a:hover {
   z-index: 1;
 }
 .uskoro__kafa_bottom_box .kesice {
-  width: 130px;
+  width: 120px;
   right: 50%;
-  transform: translateX(-20px);
+  transform: translateX(-10px);
   position: absolute;
 }
 .uskoro__kafa_bottom_box .solja {
-  width: 200px;
+  width: 170px;
   z-index: 1;
 }
 
 .uskoro__footer {
-  position: absolute;
-  bottom: 0;
+  margin-top: 35px;
+}
+.uskoro__footer .footer__datumi {
+  font-family: "AntennaComp-Bold";
+  font-size: 14pt;
+  flex-direction: row;
+}
+.uskoro__footer .footer__network {
+  font-family: "Roboto-Regular";
 }
 
 @media (min-width: 992px) {
   .uskoro__main_div {
     background: radial-gradient(1000px at bottom, #674537, #000 58%);
     height: 70vh;
+    min-height: 850px;
     position: relative;
     width: 100vw;
     justify-content: center;
   }
 
   .background_strelica {
-    border-top: 250px solid transparent;
+    border-top: 170px solid transparent;
     border-left: 50vw solid #ffcc00;
     border-right: 50vw solid #ffcc00;
   }
 
   .uskoro__nagrade {
     align-items: center;
+    max-width: 600px;
   }
   .uskoro__nagrade .uskoro_iphone_traka {
     transform: translateX(-50%);
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__iphone {
-    width: 300px;
+    width: 500px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro {
-    top: 18px;
-    left: 240px;
+    top: 35px;
+    left: 400px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro img {
-    height: 85px;
+    height: 150px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro p {
-    font-size: 50pt;
+    font-size: 100pt;
+    margin-left: 0;
+  }
+  .uskoro__nagrade .uskoro_iphone_traka .white_text {
+    margin-left: 180px;
   }
 
   .uskoro__header {
@@ -317,8 +333,8 @@ a:hover {
 
   .uskoro__sporedne_nagrade {
     width: 100%;
-    left: 85%;
-    top: 100px;
+    left: 200px;
+    top: 200px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
@@ -334,18 +350,50 @@ a:hover {
     grid-area: paket;
   }
   .uskoro__sporedne_nagrade .zvucnik {
-    width: 200px;
+    width: 270px;
   }
   .uskoro__sporedne_nagrade .slusalice {
-    width: 120px;
+    width: 150px;
   }
   .uskoro__sporedne_nagrade .paket {
-    width: 220px;
+    width: 250px;
+  }
+
+  .uskoro__kafa_bottom_box .kesice {
+    width: 170px;
+    transform: translateX(-30px);
+  }
+  .uskoro__kafa_bottom_box .solja {
+    width: 250px;
   }
 
   .uskoro__footer {
-    bottom: -35px;
     flex-direction: row;
+    margin-top: 0;
+    padding-bottom: 20px;
+  }
+  .uskoro__footer .footer__datumi {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    font-size: 20pt;
+  }
+  .uskoro__footer .footer__datumi p {
+    margin: 0;
+  }
+  .uskoro__footer .footer__network {
+    margin-left: 50%;
+  }
+  .uskoro__footer .footer__network div {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .uskoro__footer .footer__network img {
+    width: 15px;
+  }
+  .uskoro__footer .footer__network p {
+    margin: 5px 0 5px 5px;
+    font-size: 12pt;
   }
 }
 

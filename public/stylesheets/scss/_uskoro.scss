@@ -13,7 +13,7 @@
     img {
         width: 80px;
         position: relative;
-        // left: 40%;
+        left: 5px;
         bottom: 25px;
     }
     div {
@@ -31,7 +31,8 @@
 .uskoro__main_div {
     background: radial-gradient(600px at bottom, #674537, #000 55%);
     display: inline-block;
-    height: 60vh;
+    height: 80vh;
+    min-height: 500px;
     position: relative;
     width: 100vw;
     // justify-content: flex-start;
@@ -69,7 +70,7 @@
     .img__traka_uskoro {
         position: absolute;
         top: 12px;
-        left: 150px;
+        left: 95px;
         img {
             max-width: unset;
             height: 60px;
@@ -80,21 +81,22 @@
             font-family: $font-antenna-comp-bold;
             color: #000;
             font-style: italic;
+            margin-left: 80px;
         }
     }
     p {
         color: #fff;
         font-size: 12pt;
         margin: 0;
-        margin-left: 35px;
+        width: 180px;
+        text-align: center;
     }
 }
 .uskoro__sporedne_nagrade {
     position: absolute;
     width: auto;
     top: 80px;
-    left: 65%;
-    transform: translateX(-50%);
+    left: 180px;
 
     img {
         width: 100px;
@@ -114,52 +116,67 @@
     z-index: 1;
 
     .kesice {
-        width: 130px;
+        width: 120px;
         right: 50%;
-        transform: translateX(-20px);
+        transform: translateX(-10px);
         position: absolute;
     }
     .solja {
-        width: 200px;
+        width: 170px;
         z-index: 1;
     }
 }
 .uskoro__footer {
-    position: absolute;
-    bottom: 0;
+        margin-top: 35px;
+    
+    .footer__datumi {
+        font-family: $font-antenna-comp-bold;
+        font-size: 14pt;
+        flex-direction: row;
+    }
+    .footer__network {
+        font-family: $font-roboto-regular;
+    }
+
 }
 
 @include lg {
     .uskoro__main_div {
         background: radial-gradient(1000px at bottom, #674537, #000 58%);
         height: 70vh;
+        min-height: 850px;
         position: relative;
         width: 100vw;
         justify-content: center;
     }
 
     .background_strelica {
-        border-top: 250px solid transparent;
+        border-top: 170px solid transparent;
         border-left: 50vw solid $color-yellow-back;
         border-right: 50vw solid $color-yellow-back;
     }
     .uskoro__nagrade {
         align-items: center;
+        max-width: 600px;
 
         .uskoro_iphone_traka {
             transform: translateX(-50%);
             .img__iphone {
-                width: 300px;
+                width: 500px;
             }
             .img__traka_uskoro {
-                top: 18px;
-                left: 240px;
+                top: 35px;
+                left: 400px;
                 img {
-                    height: 85px;
+                    height: 150px;
                 }
                 p {
-                    font-size: 50pt;
+                    font-size: 100pt;
+                    margin-left: 0;
                 }
+            }
+            .white_text {
+                margin-left: 180px;
             }
         }
     }
@@ -182,8 +199,8 @@
     }
     .uskoro__sporedne_nagrade {
         width: 100%;
-        left: 85%;
-        top: 100px;
+        left: 200px;
+        top: 200px;
         display: grid;
         grid-template-columns: auto auto;
         grid-template-rows: auto;
@@ -201,17 +218,52 @@
             grid-area: paket;
         }
         .zvucnik {
-            width: 200px;
+            width: 270px;
         }
         .slusalice {
-            width: 120px;
+            width: 150px;
         }
         .paket {
-            width: 220px;
+            width: 250px;
+        }
+    }
+    .uskoro__kafa_bottom_box {
+        .kesice {
+            width: 170px;
+            transform: translateX(-30px);
+        }
+        .solja {
+            width: 250px;
         }
     }
     .uskoro__footer {
-        bottom: -35px;
         flex-direction: row;
+        margin-top: 0;
+        padding-bottom: 20px;
+
+        .footer__datumi {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 50px;
+            font-size: 20pt;
+            
+            p {
+                margin: 0;
+            }
+        }
+        .footer__network {
+            margin-left: 50%;
+            div {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            img {
+                width: 15px;
+            }
+            p {
+                margin: 5px 0 5px 5px;
+                font-size: 12pt;
+            }
+        }
     }
 }
