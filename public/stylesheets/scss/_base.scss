@@ -34,6 +34,17 @@ main {
     align-items: center;
     width: 100%;
     position: relative;
+    flex: 4;
+    background: radial-gradient(600px at bottom, #674537, #000 100%);
+    min-height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 a {
@@ -76,4 +87,28 @@ a:hover {
     @include lg {
         display: flex;
     }
+}
+
+.documentWrapper {
+    flex-direction: row;
+}
+
+#leftSection {
+    flex: 1;
+}
+
+#rightSection {
+    flex: 1;
+}
+
+.strelica {
+    border-top: 100px solid transparent;
+    border-left: 50vw solid $color-yellow-back;
+    border-right: 50vw solid $color-yellow-back;
+    content: "";
+    height: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    position: absolute;
 }
