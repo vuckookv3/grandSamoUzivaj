@@ -1,13 +1,19 @@
 <%- include('partials/header') %>
 
 <main>
-    <form action="/prijava/2" method="POST" enctype="multipart/form-data">
-        <input type="file" name="picture" accept=".jpg,.jpeg,.png" placeholder="Picture" />
-        <textarea name="pictureDescription" placeholder="Opis slike"></textarea>
-        <input type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi" placeholder="Video" />
-        <textarea name="videoDescription" placeholder="Opis videa"></textarea>
-        <input type="submit" value="Submit" />
-    </form>
+    <div class="background_box">
+        <form action="/prijava/2" method="POST" enctype="multipart/form-data">
+            <input type="file" name="picture" accept=".jpg,.jpeg,.png" placeholder="Picture" />
+            <textarea name="pictureDescription" placeholder="Opis slike"></textarea>
+            <input type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi" placeholder="Video" />
+            <textarea name="videoDescription" placeholder="Opis videa"></textarea>
+            <input type="submit" value="Submit" />
+        </form>
+        <div class="strelica">
+            
+        </div>
+    </div>
+   
 </main>
 
 <%- include('partials/footer') %>

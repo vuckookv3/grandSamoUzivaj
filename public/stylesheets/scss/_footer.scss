@@ -1,0 +1,74 @@
+#rightSection {
+    display: none;
+}
+.bottom_section {
+    flex: 1;
+    position: absolute;
+    bottom: -220px;
+    color: #000;
+    
+    .footer__datumi {
+        font-size: 14pt;
+        flex-direction: row;
+        font-family: $font-antenna-comp-bold;
+    }
+ 
+    .footer__network {
+        font-family: $font-roboto-regular;
+    }
+}
+@include lg {
+    #rightSection {
+        // min-width: 200px;
+        display: flex;
+        width: 200px;
+        height: 70vh;
+        flex-direction: column;
+        justify-content: space-between;
+        .kesice_kafe {
+            // height: 250px;
+            width: 60%;
+            transform: translateY(-50px);
+        }
+        .solja_kafe {
+            max-width: 250px;
+        }
+
+    }
+
+    .bottom_section {
+        flex-direction: row;
+        padding-bottom: 20px;
+        bottom: -30px;
+
+        .footer__datumi {
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 50px;
+            font-size: 26pt;
+            
+            p {
+                margin: 0;
+            }
+        }
+        .footer__network {
+            flex: 1;
+            align-items: flex-end;
+
+            div {
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 180px;
+                
+                img {
+                    width: 20px;
+                }
+                p {
+                    margin: 5px 0 5px 5px;
+                    font-size: 16pt;
+                }
+            }
+        }
+    }
+}
