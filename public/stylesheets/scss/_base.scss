@@ -89,6 +89,18 @@ a:hover {
     }
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 .documentWrapper {
     flex-direction: column;
 }
@@ -114,33 +126,35 @@ a:hover {
         line-height: 1;
     }
 }
-    .insta_grand_traka {
-        width: 80px;
-        position: relative;
-        left: 5px;
-        bottom: 25px;
-    }
+.insta_grand_traka {
+    width: 80px;
+    position: relative;
+    left: 5px;
+    bottom: 25px;
+}
 
 #rightSection {
     display: none;
     flex: 1;
 }
+
 .bottom_section {
     flex: 1;
     position: absolute;
     bottom: -220px;
     color: #000;
-    
+
     .footer__datumi {
         font-size: 14pt;
         flex-direction: row;
         font-family: $font-antenna-comp-bold;
     }
- 
+
     .footer__network {
         font-family: $font-roboto-regular;
     }
 }
+
 .strelica {
     border-top: 100px solid transparent;
     border-left: 50vw solid $color-yellow-back;
@@ -157,12 +171,13 @@ a:hover {
     .documentWrapper {
         flex-direction: row;
     }
+
     #leftSection {
         flex: 1;
         height: 100vh;
         flex-direction: column;
         justify-content: flex-start;
-    
+
         .header__prelomni_text {
             flex-direction: column;
             .text_lg {
@@ -170,10 +185,12 @@ a:hover {
             }
         }
     }
+
     .insta_grand_traka {
         width: 150px;
         top: -60px;
     }
+
     #rightSection {
         display: flex;
         flex: 1;
@@ -184,16 +201,14 @@ a:hover {
             height: 270px;
             transform: translateY(-50px);
         }
-        .solja_kafe {
-
-        }
     }
+
     .strelica {
         border-top: 100px solid transparent;
         border-left: 33.4vw solid $color-yellow-back;
         border-right: 33.4vw solid $color-yellow-back;
-        
     }
+
     .bottom_section {
         flex-direction: row;
         padding-bottom: 20px;
@@ -203,11 +218,12 @@ a:hover {
             align-items: flex-start;
             padding-left: 50px;
             font-size: 20pt;
-            
+
             p {
                 margin: 0;
             }
         }
+
         .footer__network {
             margin-left: 50%;
 
@@ -218,6 +234,7 @@ a:hover {
                 img {
                     width: 15pt;
                 }
+
                 p {
                     margin: 5px 0 5px 5px;
                     font-size: 12pt;
@@ -225,5 +242,4 @@ a:hover {
             }
         }
     }
-    
 }
