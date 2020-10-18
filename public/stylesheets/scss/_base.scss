@@ -87,6 +87,16 @@ a:hover {
     }
 }
 
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+.no-spin {
+    -moz-appearance: textfield !important;
+}
+
 .documentWrapper {
     flex-direction: column;
 }
@@ -100,6 +110,7 @@ a:hover {
     position: relative;
     width: 100%;
 }
+
 .strelica {
     border-top: 100px solid transparent;
     border-left: 50vw solid $color-yellow-back;

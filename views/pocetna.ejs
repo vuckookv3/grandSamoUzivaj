@@ -5,7 +5,7 @@
         <form action="/prijava/1" method="POST">
             <input type="text" name="name" placeholder="Ime i prezime" required />
             <input type="email" name="email" placeholder="Email" required />
-            <input type="text" name="biCode" placeholder="BI Broj" required />
+            <input class="no-spin" type="number" name="biCode" placeholder="BI Broj" minlength="2" maxlength="10" required />
             <input type="submit" value="Submit" />
         </form>
         <div class="strelica">
