@@ -47,8 +47,7 @@ h.DATE_END = DATE_END;
 h.isStarted = (req, res, next) => {
     const now = new Date();
 
-    if (req.headers.host === 'prelive.lasko.rs') return next();
-
+    if (req.headers.host === 'prelive.samouzivaj.rs') return next();
     if (now < DATE_START) return res.redirect('/uskoro');
     else if (now > DATE_END) return res.redirect('/kraj');
 

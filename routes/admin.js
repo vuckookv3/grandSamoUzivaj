@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const admins = require('../admins.json');
 const { redis } = require('../helpers');
+const { Entry } = require('../models');
 
 const isAdmin = (req, res, next) => {
     if (req.session && req.session.admin) {
@@ -59,7 +60,45 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-    res.render('admin/index');
+    const prijave = await Entry.find({ submitted: true }).sort('-_id').lean().exec();
+    res.render('admin/index', { prijave });
 });
+
+router.put('/api/prijave/:id/status', async (req, res) => {
+    const status = req.body.status;
+    if (!status) return res.status(400).json({});
+
+    if (!['UNAUTHORIZED', 'AUTHORIZED', 'WINNER'].includes(status)) return res.status(400).json({});
+
+    const entry = await Entry.findById(req.params.id).exec();
+    if (!entry) return res.status(404).json({});
+
+    entry.status = status;
+    await entry.save();
+
+    res.json('OK')
+});
+
+// router.post('/api/prijave', async (req, res) => {
+//     // const sort = req.body.order[0].dir === 'desc' ? '-_id' : '_id';
+//     const sort = '-_id';
+//     const skip = Number(req.body.start);
+//     const limit = Number(req.body.length);
+
+//     const query = { submitted: true };
+
+//     const [data, recordsTotal, recordsFiltered] = await Promise.all([
+//         Entry.find(query).sort(sort).skip(skip).limit(limit).lean().exec(),
+//         Entry.estimatedDocumentCount(),
+//         Entry.countDocuments(query),
+//     ]);
+
+//     res.json({
+//         draw: Number(req.body.draw),
+//         data,
+//         recordsTotal,
+//         recordsFiltered,
+//     });
+// });
 
 module.exports = router;
