@@ -180,7 +180,7 @@ a:hover {
 .uskoro__header img {
   width: 80px;
   position: relative;
-  left: 5px;
+  left: 10px;
   bottom: 25px;
 }
 .uskoro__header div {
@@ -210,7 +210,7 @@ a:hover {
   content: "";
   height: 0;
   left: 0;
-  bottom: 0;
+  bottom: -3px;
   width: 0;
   position: absolute;
 }
@@ -218,7 +218,7 @@ a:hover {
 .uskoro__nagrade {
   align-items: flex-start;
   position: relative;
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
   margin-top: 30px;
 }
@@ -235,7 +235,7 @@ a:hover {
 .uskoro_iphone_traka .img__traka_uskoro {
   position: absolute;
   top: 12px;
-  left: 65px;
+  left: 40px;
   width: auto;
   align-items: flex-end;
 }
@@ -301,10 +301,14 @@ a:hover {
   flex-direction: row;
 }
 .uskoro__footer .footer__datumi p {
-  margin: 0 2px;
+  margin: 10 2px;
 }
 .uskoro__footer .footer__network {
   font-family: "Roboto-Regular";
+}
+.uskoro__footer .footer__network a {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 992px) {
@@ -332,7 +336,8 @@ a:hover {
     transform: translateX(-50%);
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__iphone {
-    width: 500px;
+    width: 400px;
+    max-width: 400px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro {
     top: 35px;
@@ -347,7 +352,7 @@ a:hover {
     margin-left: 0;
   }
   .uskoro__nagrade .uskoro_iphone_traka .white_text {
-    margin-left: 180px;
+    margin-left: 110px;
   }
 
   .uskoro__header {
@@ -379,11 +384,20 @@ a:hover {
   .uskoro__sporedne_nagrade .zvucnik_box {
     grid-area: zvucnik;
   }
+  .uskoro__sporedne_nagrade .zvucnik_box p {
+    text-align: center;
+  }
   .uskoro__sporedne_nagrade .slusalice_box {
     grid-area: slusalice;
   }
+  .uskoro__sporedne_nagrade .slusalice_box p {
+    text-align: center;
+  }
   .uskoro__sporedne_nagrade .paket_box {
     grid-area: paket;
+  }
+  .uskoro__sporedne_nagrade .paket_box p {
+    text-align: center;
   }
   .uskoro__sporedne_nagrade .zvucnik {
     width: 270px;
@@ -392,7 +406,7 @@ a:hover {
     width: 150px;
   }
   .uskoro__sporedne_nagrade .paket {
-    width: 250px;
+    width: 200px;
   }
 
   .uskoro__kafa_bottom_box .kesice {
@@ -419,8 +433,9 @@ a:hover {
   }
   .uskoro__footer .footer__network {
     margin-left: 50%;
+    align-items: flex-start;
   }
-  .uskoro__footer .footer__network div {
+  .uskoro__footer .footer__network a {
     flex-direction: row;
     justify-content: flex-start;
   }
