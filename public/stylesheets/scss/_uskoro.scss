@@ -13,7 +13,7 @@
     img {
         width: 80px;
         position: relative;
-        left: 5px;
+        left: 10px;
         bottom: 25px;
     }
     div {
@@ -45,14 +45,14 @@
     content: "";
     height: 0;
     left: 0;
-    bottom: 0;
+    bottom: -3px;
     width: 0;
     position: absolute;
 }
 .uskoro__nagrade {
     align-items: flex-start;
     position: relative;
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -70,7 +70,7 @@
     .img__traka_uskoro {
         position: absolute;
         top: 12px;
-        left: 65px;
+        left: 40px;
         width: auto;
         align-items: flex-end;
         // max-width: 150px;
@@ -137,11 +137,15 @@
         font-size: 14pt;
         flex-direction: row;
         p {
-            margin: 0 2px;
+            margin: 10 2px;
         }
     }
     .footer__network {
         font-family: $font-roboto-regular;
+        a {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
 }
@@ -169,7 +173,8 @@
         .uskoro_iphone_traka {
             transform: translateX(-50%);
             .img__iphone {
-                width: 500px;
+                width: 400px;
+                max-width: 400px;
             }
             .img__traka_uskoro {
                 top: 35px;
@@ -184,7 +189,7 @@
                 }
             }
             .white_text {
-                margin-left: 180px;
+                margin-left: 110px;
             }
         }
     }
@@ -218,12 +223,21 @@
 
         .zvucnik_box {
             grid-area: zvucnik;
+            p {
+                text-align: center;
+            }
         }
         .slusalice_box {
             grid-area: slusalice;
+            p {
+                text-align: center;
+            }
         }
         .paket_box {
             grid-area: paket;
+            p {
+                text-align: center;
+            }
         }
         .zvucnik {
             width: 270px;
@@ -232,7 +246,7 @@
             width: 150px;
         }
         .paket {
-            width: 250px;
+            width: 200px;
         }
     }
     .uskoro__kafa_bottom_box {
@@ -261,7 +275,8 @@
         }
         .footer__network {
             margin-left: 50%;
-            div {
+            align-items: flex-start;
+            a {
                 flex-direction: row;
                 justify-content: flex-start;
             }
