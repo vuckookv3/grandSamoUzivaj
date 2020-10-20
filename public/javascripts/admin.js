@@ -1,5 +1,12 @@
 $(function () {
 
+    // close alerts
+    setTimeout(function () {
+        $('.alert').fadeTo(500, 0).slideUp(500, function () {
+            $(this).remove();
+        });
+    }, 1000);
+
     // $('#prijave thead tr:eq(1) th').each(function () {
     //     var title = $(this).text();
     //     if (title === 'Status') {
@@ -8,6 +15,7 @@ $(function () {
     //         $(this).html('')
     //     }
     // });
+
     // serverRender
     var table = $('#prijave').DataTable({
         dom: 'lrtip',
@@ -19,7 +27,7 @@ $(function () {
 
     $('#status_search').on('change', function () {
         console.log(this.value)
-        if(this.value === 'ALL') {
+        if (this.value === 'ALL') {
             table.columns().search('').draw();
         } else {
             table.column(6).search(this.value).draw();
