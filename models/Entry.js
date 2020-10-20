@@ -37,7 +37,8 @@ const EntrySchema = new Schema({
     },
     submitted: {
         type: Boolean,
-        default: false
+        default: false,
+        index: true,
     },
     status: {
         type: String,
@@ -48,6 +49,10 @@ const EntrySchema = new Schema({
 }, { timestamps: true });
 
 EntrySchema.plugin(uniqueValidator);
+
+EntrySchema.pre('save', async function () {
+
+});
 
 EntrySchema.pre('remove', function () {
     if (this.picture) {

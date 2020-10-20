@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Admin</title>
+
+    <link rel="icon" href="/favicon.ico">
+
+    <link href="/stylesheets/lib/bootstrap.css" rel="stylesheet" />
+    <link href="/stylesheets/lib/jquery-ui.css" rel="stylesheet" />
+    <link href="/stylesheets/lib/datatables.css" rel="stylesheet" />
+
+
+
+    <script src="/javascripts/lib/jquery.js"></script>
+    <script src="/javascripts/lib/popper.js"></script>
+    <script src="/javascripts/lib/bootstrap.js"></script>
+    <script src="/javascripts/lib/jquery-ui.js"></script>
+    <script src="/javascripts/lib/datatables.js"></script>
+    <script src="/javascripts/lib/moment.js"></script>
+
+    <style>
+        /* Tooltip container */
+        .tooltipp {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltipp .tooltiptext {
+            visibility: hidden;
+            width: 400px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            word-wrap: break-word;
+            padding: 10px;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -200px;
+            /* Use half of the width (120/2 = 60), to center the tooltip */
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltipp:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark" style="background-color:#ff3818;">
+        <a class="navbar-brand" href="#">
+            <!-- <img src="/images/logo.png" style="padding: 10px;" height="80px" class="d-inline-block align-top" alt=""> -->
+        </a>
+
+        <form class="form-inline" method="POST" action="/admin/logout">
+            <button class="btn btn-warning my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+    </nav>
+    <div class="container h-100 d-flex justify-content-center">
+        <div class="my-auto">
+
+            <table id="prijave" class="display wrap" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Slika</th>
+                        <th>Opis slike</th>
+                        <th>Video</th>
+                        <th>Opis videa</th>
+                        <th>Napravljen</th>
+                        <th>Status</th>
+                    </tr>
+                    <!-- <tr>
+                        <th>Email</th>
+                        <th>Slika</th>
+                        <th>Opis slike</th>
+                        <th>Video</th>
+                        <th>Opis videa</th>
+                        <th>Napravljen</th>
+                        <th>Status</th>
+                    </tr> -->
+                </thead>
+
+                <tbody>
+                    <% prijave.map(e => { %>
+                    <tr>
+                        <td><%= e.email %></td>
+                        <td>
+                            <% if(e.picture) { %>
+                            <a target="_blank" href="/uploads/<%= e.picture %>"><img height="50"
+                                    src="/uploads/<%= e.picture %>"></a>
+                            <% } else { %>
+                            <p></p>
+                            <% } %>
+                        </td>
+                        <td>
+                            <% if(e.pictureDescription) { %>
+                            <div class="tooltipp">HOVER
+                                <span class="tooltiptext"><%= e.pictureDescription %></span>
+                            </div>
+                            <% } %>
+                        </td>
+                        <td>
+                            <% if(e.video) { %>
+                            <a target="_blank" href="/uploads/<%= e.video %>">OTVORI</a>
+                            <% } else { %>
+                            <p></p>
+                            <% } %>
+                        </td>
+                        <td>
+                            <% if(e.videoDescription) { %>
+                            <div class="tooltipp">HOVER
+                                <span class="tooltiptext"><%= e.videoDescription %></span>
+                            </div>
+                            <% } %>
+                        </td>
+                        <td><%= new Date(e.createdAt).toLocaleString() %></td>
+                        <td data-search="<%= e.status %>">
+                            <form data-id="<%= e._id %>">
+                                <select>
+                                    <option value="UNAUTHORIZED" <%= e.status === 'UNAUTHORIZED' ? "selected" : "" %>>
+                                        PENDING</option>
+                                    <option value="AUTHORIZED" <%= e.status === 'AUTHORIZED' ? "selected" : "" %>>
+                                        ODOBRENO</option>
+                                    <option value="WINNER" <%= e.status === 'WINNER' ? "selected" : "" %>>POBEDNIK
+                                    </option>
+                                </select>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th>Email</th>
+                        <th>Slika</th>
+                        <th>Opis slike</th>
+                        <th>Video</th>
+                        <th>Opis videa</th>
+                        <th>Napravljen</th>
+                        <th>Status</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+
+        </div>
+    </div>
+
+
+    <script src="/javascripts/admin.js"></script>
+</body>
+
+</html>
