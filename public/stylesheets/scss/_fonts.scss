@@ -18,9 +18,14 @@
     font-family: "AntennaComp-MediumItalic";
     src: url('/fonts/AntennaComp-MediumItalic.otf') format("truetype");
 }
+@font-face {
+    font-family: "DejaVu-Sans";
+    src: url('/fonts/DejaVuSans.otf') format("truetype");
+}
 
 $font-roboto-regular: "Roboto-Regular";
 $font-roboto-black: "Roboto-Black";
 $font-antenna-comp-bold: "AntennaComp-Bold";
 $font-antenna-comp-bold-italic: "AntennaComp-BoldItalic";
 $font-antenna-comp-medium-italic: "AntennaComp-MediumItalic";
+$font-dejavu-sans: "DejaVu-Sans";

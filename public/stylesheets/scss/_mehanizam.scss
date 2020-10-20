@@ -1,0 +1,185 @@
+.content_title {
+    color: #fff;
+    font-family: $font-dejavu-sans;
+    font-size: 20pt;
+    font-weight: 600;
+    text-align: center;
+}
+.mehanizam__box {
+
+    margin-bottom: 40px;
+}
+.mehanizam__text_box {
+        color: #fff;
+        font-family: $font-roboto-regular;
+        width: auto;
+        align-items: center;
+        font-size: 18pt;
+        line-height: 1.2;
+        text-align: center;
+        p {
+            margin: 0;
+        }
+    }
+
+.mehanizam__num_and_img {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    max-width: 450px;
+
+    div {
+        flex-direction: row;
+        width: auto;
+    }
+    .number {
+        font-family: $font-antenna-comp-bold;
+        color: #fff;
+        font-size: 45pt;
+        margin-left: 20px;
+        display: flex;
+        align-items: baseline;
+        position: absolute;
+
+        &:after {
+            content: "";
+            background-image: url("/images/zrno_kafe.png");
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            // padding: 0 5px;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-left: 5px;
+        }
+    }
+    .number--relative {
+        position: relative;
+    }
+    img {
+        margin: 0 auto;
+    }
+}
+.mehanizam__num_and_img--nagrade {
+    div {
+        width: 100%;
+        justify-content: flex-start;
+
+        .text {
+            margin: 0 auto;
+        }
+    }
+}
+.mehanizam__box--prvi {
+    img {
+        width: 250px;
+    }
+}
+.mehanizam__box--drugi {
+    img {
+        width: 150px;
+    }
+    .mehanizam__text_box {
+        p {
+            &:last-child {
+                font-size: 10pt;
+                width: 150px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.mehanizam__box--treci {
+    div {
+        margin: 0 auto;
+    }
+    img {
+        height: 60px;
+    }
+}
+.mehanizam__iphone {
+    flex-direction: column !important;
+    p {
+        color: #fff;
+        font-family: $font-roboto-regular;
+        font-size: 18pt;
+    }
+    .iphone__num_and_text {
+        .text {
+            color: #fff;
+            font-family: $font-roboto-regular;
+            font-size: 18pt;
+        } 
+    }
+}
+.mehanizam__sporedne_nagrade {
+    p {
+        color: #fff;
+        font-family: $font-roboto-regular;
+        font-size: 14pt;
+        text-align: center;
+    }
+    img {
+        height: 100px;
+    }
+}
+.mehanizam__num_and_img--nagrade {
+    flex-direction: column;
+}
+@include lg {
+    .mehanizam {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-template-areas: "prvi treci" "drugi cetvrti";
+        padding: 0 10px;
+    }
+    .mehanizam__box--prvi {
+        grid-area: prvi;
+    }
+    .mehanizam__box--drugi {
+        grid-area: drugi;
+        
+    }
+    .mehanizam__box--treci {
+        grid-area: treci;
+        
+    }
+    .mehanizam__box--cetvrti {
+        grid-area: cetvrti;
+        flex-direction: row;
+        .mehanizam__sporedne_nagrade {
+            max-width: 200px;
+            img {
+                height: 70px;
+            }
+            p {
+                font-size: 10pt;
+            }
+        }
+        .mehanizam__num_and_img--nagrade {
+            flex-direction: column-reverse;
+
+            .mehanizam__text_box--nagrade {
+                .number {
+                    position: absolute;
+                    bottom: 50px;
+                    left: -50px;
+                }
+            }
+        }
+    }
+    .mehanizam__text_box {
+        align-items: flex-start;
+        font-size: 18pt;
+        
+    }
+    .mehanizam__num_and_img {
+        .number {
+            font-size: 60px;
+            bottom: -20px;
+        }
+    }
+}
