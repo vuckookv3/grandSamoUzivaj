@@ -70,7 +70,10 @@
     .img__traka_uskoro {
         position: absolute;
         top: 12px;
-        left: 95px;
+        left: 65px;
+        width: auto;
+        align-items: flex-end;
+        // max-width: 150px;
         img {
             max-width: unset;
             height: 60px;
@@ -81,7 +84,7 @@
             font-family: $font-antenna-comp-bold;
             color: #000;
             font-style: italic;
-            margin-left: 80px;
+            // margin-left: 80px;
         }
     }
     p {
@@ -127,12 +130,15 @@
     }
 }
 .uskoro__footer {
-        margin-top: 35px;
+        margin-top: 50px;
     
     .footer__datumi {
         font-family: $font-antenna-comp-bold;
         font-size: 14pt;
         flex-direction: row;
+        p {
+            margin: 0 2px;
+        }
     }
     .footer__network {
         font-family: $font-roboto-regular;
@@ -158,6 +164,7 @@
     .uskoro__nagrade {
         align-items: center;
         max-width: 600px;
+        width: 300px;
 
         .uskoro_iphone_traka {
             transform: translateX(-50%);
@@ -166,7 +173,8 @@
             }
             .img__traka_uskoro {
                 top: 35px;
-                left: 400px;
+                left: 170px;
+                align-items: center;
                 img {
                     height: 150px;
                 }

@@ -105,10 +105,12 @@ a:hover {
 
 .background_box {
     background: radial-gradient(600px at bottom, #674537, #000 55%);
-    height: 95vh;
+    // height: 95vh;
     min-height: 500px;
     position: relative;
     width: 100%;
+    padding-top: 52px;
+    padding-bottom: 100px;
 }
 
 .strelica {
@@ -132,6 +134,9 @@ a:hover {
     
     .background_box {
         background: radial-gradient(1000px at bottom, #674537, #000 90%);
+        padding-top: 115px;
+        padding-bottom: 150px;
+
     }
    
     .strelica {

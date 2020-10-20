@@ -18,6 +18,10 @@
   font-family: "AntennaComp-MediumItalic";
   src: url("/fonts/AntennaComp-MediumItalic.otf") format("truetype");
 }
+@font-face {
+  font-family: "DejaVu-Sans";
+  src: url("/fonts/DejaVuSans.otf") format("truetype");
+}
 html {
   font-size: 12px;
   height: 100%;
@@ -124,10 +128,11 @@ a:hover {
 
 .background_box {
   background: radial-gradient(600px at bottom, #674537, #000 55%);
-  height: 95vh;
   min-height: 500px;
   position: relative;
   width: 100%;
+  padding-top: 52px;
+  padding-bottom: 100px;
 }
 
 .strelica {
@@ -150,6 +155,8 @@ a:hover {
 
   .background_box {
     background: radial-gradient(1000px at bottom, #674537, #000 90%);
+    padding-top: 115px;
+    padding-bottom: 150px;
   }
 
   .strelica {
@@ -228,7 +235,9 @@ a:hover {
 .uskoro_iphone_traka .img__traka_uskoro {
   position: absolute;
   top: 12px;
-  left: 95px;
+  left: 65px;
+  width: auto;
+  align-items: flex-end;
 }
 .uskoro_iphone_traka .img__traka_uskoro img {
   max-width: unset;
@@ -240,7 +249,6 @@ a:hover {
   font-family: "AntennaComp-Bold";
   color: #000;
   font-style: italic;
-  margin-left: 80px;
 }
 .uskoro_iphone_traka p {
   color: #fff;
@@ -285,12 +293,15 @@ a:hover {
 }
 
 .uskoro__footer {
-  margin-top: 35px;
+  margin-top: 50px;
 }
 .uskoro__footer .footer__datumi {
   font-family: "AntennaComp-Bold";
   font-size: 14pt;
   flex-direction: row;
+}
+.uskoro__footer .footer__datumi p {
+  margin: 0 2px;
 }
 .uskoro__footer .footer__network {
   font-family: "Roboto-Regular";
@@ -315,6 +326,7 @@ a:hover {
   .uskoro__nagrade {
     align-items: center;
     max-width: 600px;
+    width: 300px;
   }
   .uskoro__nagrade .uskoro_iphone_traka {
     transform: translateX(-50%);
@@ -324,7 +336,8 @@ a:hover {
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro {
     top: 35px;
-    left: 400px;
+    left: 170px;
+    align-items: center;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro img {
     height: 150px;
@@ -433,6 +446,7 @@ a:hover {
   left: 0;
   padding: 15px;
   background-color: #000;
+  display: none;
 }
 .navbar_box li {
   list-style: none;
@@ -581,6 +595,177 @@ a:hover {
   .bottom_section .footer__network div p {
     margin: 5px 0 5px 5px;
     font-size: 16pt;
+  }
+}
+.content_title {
+  color: #fff;
+  font-family: "DejaVu-Sans";
+  font-size: 20pt;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mehanizam__box {
+  margin-bottom: 40px;
+}
+
+.mehanizam__text_box {
+  color: #fff;
+  font-family: "Roboto-Regular";
+  width: auto;
+  align-items: center;
+  font-size: 18pt;
+  line-height: 1.2;
+  text-align: center;
+}
+.mehanizam__text_box p {
+  margin: 0;
+}
+
+.mehanizam__num_and_img {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  max-width: 450px;
+}
+.mehanizam__num_and_img div {
+  flex-direction: row;
+  width: auto;
+}
+.mehanizam__num_and_img .number {
+  font-family: "AntennaComp-Bold";
+  color: #fff;
+  font-size: 45pt;
+  margin-left: 20px;
+  display: flex;
+  align-items: baseline;
+  position: absolute;
+}
+.mehanizam__num_and_img .number:after {
+  content: "";
+  background-image: url("/images/zrno_kafe.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+}
+.mehanizam__num_and_img .number--relative {
+  position: relative;
+}
+.mehanizam__num_and_img img {
+  margin: 0 auto;
+}
+
+.mehanizam__num_and_img--nagrade div {
+  width: 100%;
+  justify-content: flex-start;
+}
+.mehanizam__num_and_img--nagrade div .text {
+  margin: 0 auto;
+}
+
+.mehanizam__box--prvi img {
+  width: 250px;
+}
+
+.mehanizam__box--drugi img {
+  width: 150px;
+}
+.mehanizam__box--drugi .mehanizam__text_box p:last-child {
+  font-size: 10pt;
+  width: 150px;
+  text-align: center;
+}
+
+.mehanizam__box--treci div {
+  margin: 0 auto;
+}
+.mehanizam__box--treci img {
+  height: 60px;
+}
+
+.mehanizam__iphone {
+  flex-direction: column !important;
+}
+.mehanizam__iphone p {
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 18pt;
+}
+.mehanizam__iphone .iphone__num_and_text .text {
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 18pt;
+}
+
+.mehanizam__sporedne_nagrade p {
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 14pt;
+  text-align: center;
+}
+.mehanizam__sporedne_nagrade img {
+  height: 100px;
+}
+
+.mehanizam__num_and_img--nagrade {
+  flex-direction: column;
+}
+
+@media (min-width: 992px) {
+  .mehanizam {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+    grid-template-areas: "prvi treci" "drugi cetvrti";
+    padding: 0 10px;
+  }
+
+  .mehanizam__box--prvi {
+    grid-area: prvi;
+  }
+
+  .mehanizam__box--drugi {
+    grid-area: drugi;
+  }
+
+  .mehanizam__box--treci {
+    grid-area: treci;
+  }
+
+  .mehanizam__box--cetvrti {
+    grid-area: cetvrti;
+    flex-direction: row;
+  }
+  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade {
+    max-width: 200px;
+  }
+  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade img {
+    height: 70px;
+  }
+  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade p {
+    font-size: 10pt;
+  }
+  .mehanizam__box--cetvrti .mehanizam__num_and_img--nagrade {
+    flex-direction: column-reverse;
+  }
+  .mehanizam__box--cetvrti .mehanizam__num_and_img--nagrade .mehanizam__text_box--nagrade .number {
+    position: absolute;
+    bottom: 50px;
+    left: -50px;
+  }
+
+  .mehanizam__text_box {
+    align-items: flex-start;
+    font-size: 18pt;
+  }
+
+  .mehanizam__num_and_img .number {
+    font-size: 60px;
+    bottom: -20px;
   }
 }
 
