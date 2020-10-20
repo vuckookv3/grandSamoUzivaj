@@ -400,7 +400,8 @@ a:hover {
     text-align: center;
   }
   .uskoro__sporedne_nagrade .zvucnik {
-    width: 270px;
+    width: 180px;
+    max-width: unset;
   }
   .uskoro__sporedne_nagrade .slusalice {
     width: 150px;

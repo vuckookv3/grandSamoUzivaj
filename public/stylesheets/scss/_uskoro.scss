@@ -130,8 +130,8 @@
     }
 }
 .uskoro__footer {
-        margin-top: 50px;
-    
+    margin-top: 50px;
+
     .footer__datumi {
         font-family: $font-antenna-comp-bold;
         font-size: 14pt;
@@ -147,7 +147,6 @@
             flex-direction: column;
         }
     }
-
 }
 
 @include lg {
@@ -240,7 +239,8 @@
             }
         }
         .zvucnik {
-            width: 270px;
+            width: 180px;
+            max-width: unset;
         }
         .slusalice {
             width: 150px;
@@ -268,7 +268,7 @@
             align-items: flex-start;
             padding-left: 50px;
             font-size: 20pt;
-            
+
             p {
                 margin: 0;
             }
