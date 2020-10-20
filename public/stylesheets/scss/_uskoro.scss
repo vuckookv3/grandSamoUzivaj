@@ -108,6 +108,7 @@
         color: #fff;
         margin-top: 0;
         word-wrap: none;
+        width: 100%;
     }
     .slusalice {
         width: 60px;
@@ -137,7 +138,7 @@
         font-size: 14pt;
         flex-direction: row;
         p {
-            margin: 10 2px;
+            margin: 10px 2px;
         }
     }
     .footer__network {
@@ -240,7 +241,8 @@
             }
         }
         .zvucnik {
-            width: 270px;
+            width: 180px;
+            max-width: unset;
         }
         .slusalice {
             width: 150px;

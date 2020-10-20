@@ -1,0 +1,132 @@
+.prijava {
+    min-height: 500px;
+    h1 {
+        text-align: left;
+        font-family: $font-antenna-comp-bold;
+        color: #fff;
+        margin-bottom: 20px;
+        width: 80%;
+        max-width: 600px;
+        font-style: italic;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "iip iip" "email bi" "submit submit";
+        width: 80%;
+        max-width: 600px;
+    }
+    .input_text {
+        height: 50px;
+        font-family: $font-roboto-light;
+        padding-left: 8px;
+        padding-bottom: 15px;
+        font-size: 16pt;
+        background-color: #fff;
+        border: none;
+
+        &::placeholder {
+            color: #000;
+            font-size: 16pt;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .input_iip {
+        grid-area: iip;
+        margin-bottom: 10px;
+    }
+    .input_email {
+        grid-area: email;
+        margin-right: 10px;
+    }
+    .input_bi {
+        grid-area: bi;
+        margin-left: 10px;
+    }
+    .input_submit {
+        grid-area: submit;
+        width: auto;
+        margin: 0 auto;
+        margin-top: 30px;
+        background-color: transparent;
+        border: none;
+        font-family: $font-antenna-comp-bold;
+        color: #fff;
+        font-size: 40pt;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        &:after {
+            content: "";
+            background-image: url("/images/zrno_kafe.png");
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-left: 10px;
+            
+        }
+        &:before {
+            content: "";
+            background-image: url("/images/zrno_kafe.png");
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+    }
+}
+.strelica__floating_box {
+    position: absolute;
+    bottom: -50px;
+    z-index: 1;
+    img {
+
+    }
+    div {
+        width: auto;
+        align-items: flex-start;
+    }
+    p {
+         display: none;
+    }
+    .kesice {
+        display: none;
+    }
+}
+@include lg {
+    .prijava {
+        h1 {
+            font-size: 42pt;
+        }
+    }
+    .strelica__floating_box {
+        bottom: -180px;
+        padding-bottom: 30px;
+        img {
+            width: 300px;
+        }
+        .kesice {
+            display: flex;
+        }
+        .solja_kesice {
+            display: none;
+        }
+        p {
+            display: flex;
+            color: #000;
+            font-family: $font-antenna-comp-bold;
+            font-style: italic;
+            margin: 0;
+            line-height: 1;
+            font-size: 30pt;
+        }
+    }
+}
