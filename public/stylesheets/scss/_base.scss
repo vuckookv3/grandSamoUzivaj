@@ -30,13 +30,11 @@ div {
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    position: relative;
-    flex: 4;
-    background: radial-gradient(600px at bottom, #674537, #000 100%);
-    min-height: 100vh;
+    flex: 3;
+    // min-height: 100vh;
 }
 
 section {
@@ -103,54 +101,14 @@ a:hover {
     flex-direction: column;
 }
 
-#leftSection {
-    height: 135px;
-    flex-direction: row;
-    font-family: $font-antenna-comp-bold;
-    color: #000;
-    font-style: italic;
 
-    div {
-        align-items: flex-start;
-        width: fit-content;
-    }
-    .header__prelomni_text {
-        flex-direction: row;
-    }
-    p {
-        margin: 0;
-        margin-left: 15px;
-        font-size: 34pt;
-        line-height: 1;
-    }
-}
-.insta_grand_traka {
-    width: 80px;
+
+.background_box {
+    background: radial-gradient(600px at bottom, #674537, #000 55%);
+    height: 95vh;
+    min-height: 500px;
     position: relative;
-    left: 5px;
-    bottom: 25px;
-}
-
-#rightSection {
-    display: none;
-    flex: 1;
-}
-
-.bottom_section {
-    flex: 1;
-    position: absolute;
-    bottom: -220px;
-    color: #000;
-
-    .footer__datumi {
-        font-size: 14pt;
-        flex-direction: row;
-        font-family: $font-antenna-comp-bold;
-    }
-
-    .footer__network {
-        font-family: $font-roboto-regular;
-    }
+    width: 100%;
 }
 
 .strelica {
@@ -165,79 +123,23 @@ a:hover {
     position: absolute;
 }
 
+
 @include lg {
     .documentWrapper {
         flex-direction: row;
+        align-items: flex-start;
     }
-
-    #leftSection {
-        flex: 1;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: flex-start;
-
-        .header__prelomni_text {
-            flex-direction: column;
-            .text_lg {
-                font-size: 44pt;
-            }
-        }
+    
+    .background_box {
+        background: radial-gradient(1000px at bottom, #674537, #000 90%);
     }
-
-    .insta_grand_traka {
-        width: 150px;
-        top: -60px;
-    }
-
-    #rightSection {
-        display: flex;
-        flex: 1;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: flex-start;
-        .kesice_kafe {
-            height: 270px;
-            transform: translateY(-50px);
-        }
-    }
-
+   
     .strelica {
-        border-top: 100px solid transparent;
-        border-left: 33.4vw solid $color-yellow-back;
-        border-right: 33.4vw solid $color-yellow-back;
+        border-top: 150px solid transparent;
+        border-left: calc(50vw - 200px) solid $color-yellow-back;
+        border-right: calc(50vw - 200px) solid $color-yellow-back;
+        
     }
-
-    .bottom_section {
-        flex-direction: row;
-        padding-bottom: 20px;
-
-        .footer__datumi {
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 50px;
-            font-size: 20pt;
-
-            p {
-                margin: 0;
-            }
-        }
-
-        .footer__network {
-            margin-left: 50%;
-
-            div {
-                flex-direction: row;
-                justify-content: flex-start;
-
-                img {
-                    width: 15pt;
-                }
-
-                p {
-                    margin: 5px 0 5px 5px;
-                    font-size: 12pt;
-                }
-            }
-        }
-    }
+ 
+    
 }

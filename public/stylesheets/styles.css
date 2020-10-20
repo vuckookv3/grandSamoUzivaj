@@ -50,13 +50,10 @@ div {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  position: relative;
-  flex: 4;
-  background: radial-gradient(600px at bottom, #674537, #000 100%);
-  min-height: 100vh;
+  flex: 3;
 }
 
 section {
@@ -125,52 +122,12 @@ a:hover {
   flex-direction: column;
 }
 
-#leftSection {
-  height: 135px;
-  flex-direction: row;
-  font-family: "AntennaComp-Bold";
-  color: #000;
-  font-style: italic;
-}
-#leftSection div {
-  align-items: flex-start;
-  width: fit-content;
-}
-#leftSection .header__prelomni_text {
-  flex-direction: row;
-}
-#leftSection p {
-  margin: 0;
-  margin-left: 15px;
-  font-size: 34pt;
-  line-height: 1;
-}
-
-.insta_grand_traka {
-  width: 80px;
+.background_box {
+  background: radial-gradient(600px at bottom, #674537, #000 55%);
+  height: 95vh;
+  min-height: 500px;
   position: relative;
-  left: 5px;
-  bottom: 25px;
-}
-
-#rightSection {
-  display: none;
-  flex: 1;
-}
-
-.bottom_section {
-  flex: 1;
-  position: absolute;
-  bottom: -220px;
-  color: #000;
-}
-.bottom_section .footer__datumi {
-  font-size: 14pt;
-  flex-direction: row;
-  font-family: "AntennaComp-Bold";
-}
-.bottom_section .footer__network {
-  font-family: "Roboto-Regular";
+  width: 100%;
 }
 
 .strelica {
@@ -188,70 +145,17 @@ a:hover {
 @media (min-width: 992px) {
   .documentWrapper {
     flex-direction: row;
+    align-items: flex-start;
   }
 
-  #leftSection {
-    flex: 1;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  #leftSection .header__prelomni_text {
-    flex-direction: column;
-  }
-  #leftSection .header__prelomni_text .text_lg {
-    font-size: 44pt;
-  }
-
-  .insta_grand_traka {
-    width: 150px;
-    top: -60px;
-  }
-
-  #rightSection {
-    display: flex;
-    flex: 1;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  #rightSection .kesice_kafe {
-    height: 270px;
-    transform: translateY(-50px);
+  .background_box {
+    background: radial-gradient(1000px at bottom, #674537, #000 90%);
   }
 
   .strelica {
-    border-top: 100px solid transparent;
-    border-left: 33.4vw solid #ffcc00;
-    border-right: 33.4vw solid #ffcc00;
-  }
-
-  .bottom_section {
-    flex-direction: row;
-    padding-bottom: 20px;
-  }
-  .bottom_section .footer__datumi {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 50px;
-    font-size: 20pt;
-  }
-  .bottom_section .footer__datumi p {
-    margin: 0;
-  }
-  .bottom_section .footer__network {
-    margin-left: 50%;
-  }
-  .bottom_section .footer__network div {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  .bottom_section .footer__network div img {
-    width: 15pt;
-  }
-  .bottom_section .footer__network div p {
-    margin: 5px 0 5px 5px;
-    font-size: 12pt;
+    border-top: 150px solid transparent;
+    border-left: calc(50vw - 200px) solid #ffcc00;
+    border-right: calc(50vw - 200px) solid #ffcc00;
   }
 }
 .uskoro {
@@ -513,6 +417,170 @@ a:hover {
   .uskoro__footer .footer__network p {
     margin: 5px 0 5px 5px;
     font-size: 12pt;
+  }
+}
+.navbar_box {
+  position: absolute;
+  top: 135px;
+  z-index: 1;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  color: #ffcc00;
+}
+.navbar_box ul {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding: 15px;
+  background-color: #000;
+}
+.navbar_box li {
+  list-style: none;
+}
+.navbar_box .hamburger {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+#leftSection {
+  height: 135px;
+  flex-direction: row;
+  font-family: "AntennaComp-Bold";
+  color: #000;
+  font-style: italic;
+}
+#leftSection div {
+  align-items: flex-start;
+  width: fit-content;
+}
+#leftSection .header__prelomni_text {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#leftSection p {
+  margin: 0;
+  margin-left: 15px;
+  font-size: 34pt;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.insta_grand_traka {
+  width: 80px;
+  position: relative;
+  left: 5px;
+  bottom: 25px;
+}
+
+@media (min-width: 992px) {
+  .navbar_box {
+    top: 0;
+  }
+  .navbar_box .hamburger {
+    display: none;
+  }
+  .navbar_box ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: calc(100vw - 400px);
+    margin-top: 40px;
+    font-size: 12pt;
+    position: relative;
+    top: 0;
+    background-color: transparent;
+  }
+
+  #leftSection {
+    width: 200px;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #leftSection div {
+    margin: auto;
+  }
+  #leftSection P {
+    margin-left: 0;
+  }
+  #leftSection .header__prelomni_text {
+    flex-direction: column;
+  }
+  #leftSection .header__prelomni_text .text_lg {
+    font-size: 44pt;
+  }
+
+  .insta_grand_traka {
+    width: 150px;
+    top: -60px;
+  }
+}
+#rightSection {
+  display: none;
+}
+
+.bottom_section {
+  flex: 1;
+  position: absolute;
+  bottom: -220px;
+  color: #000;
+}
+.bottom_section .footer__datumi {
+  font-size: 14pt;
+  flex-direction: row;
+  font-family: "AntennaComp-Bold";
+}
+.bottom_section .footer__network {
+  font-family: "Roboto-Regular";
+}
+
+@media (min-width: 992px) {
+  #rightSection {
+    display: flex;
+    width: 200px;
+    height: 70vh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #rightSection .kesice_kafe {
+    width: 60%;
+    transform: translateY(-50px);
+  }
+  #rightSection .solja_kafe {
+    max-width: 250px;
+  }
+
+  .bottom_section {
+    flex-direction: row;
+    padding-bottom: 20px;
+    bottom: -30px;
+  }
+  .bottom_section .footer__datumi {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+    font-size: 26pt;
+  }
+  .bottom_section .footer__datumi p {
+    margin: 0;
+  }
+  .bottom_section .footer__network {
+    flex: 1;
+    align-items: flex-end;
+  }
+  .bottom_section .footer__network div {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 180px;
+  }
+  .bottom_section .footer__network div img {
+    width: 20px;
+  }
+  .bottom_section .footer__network div p {
+    margin: 5px 0 5px 5px;
+    font-size: 16pt;
   }
 }
 
