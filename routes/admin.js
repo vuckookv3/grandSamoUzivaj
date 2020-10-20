@@ -79,6 +79,18 @@ router.put('/api/prijave/:id/status', async (req, res) => {
     res.json('OK')
 });
 
+router.post('/prijave/:id/delete', async (req, res) => {
+    const entry = await Entry.findById(req.params.id).exec();
+    if (!entry) {
+        req.flash('error', 'Prijava nije pronadjena');
+        res.redirect('/admin');
+    }
+
+    await entry.remove();
+    req.flash('success', 'Prijava uspesno obrisana');
+    res.redirect('/admin');
+});
+
 // router.post('/api/prijave', async (req, res) => {
 //     // const sort = req.body.order[0].dir === 'desc' ? '-_id' : '_id';
 //     const sort = '-_id';

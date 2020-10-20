@@ -60,6 +60,7 @@
 </head>
 
 <body>
+    <%- include('../partials/flash.ejs') %>
     <nav class="navbar navbar-dark" style="background-color:#ff3818;">
         <a class="navbar-brand" href="#">
             <!-- <img src="/images/logo.png" style="padding: 10px;" height="80px" class="d-inline-block align-top" alt=""> -->
@@ -82,6 +83,7 @@
                         <th>Opis videa</th>
                         <th>Napravljen</th>
                         <th>Status</th>
+                        <th>Delete</th>
                     </tr>
                     <!-- <tr>
                         <th>Email</th>
@@ -140,6 +142,11 @@
                                 </select>
                             </form>
                         </td>
+                        <td>
+                            <form action="/admin/prijave/<%= e._id %>/delete" method="POST" data-id="<%= e._id %>">
+                                <input class="btn btn-danger" type="submit" value="Obrisi" />
+                            </form>
+                        </td>
                     </tr>
                     <% }) %>
                 </tbody>
@@ -153,6 +160,7 @@
                         <th>Opis videa</th>
                         <th>Napravljen</th>
                         <th>Status</th>
+                        <th>Delete</th>
                     </tr>
                 </tfoot>
             </table>

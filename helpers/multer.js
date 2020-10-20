@@ -18,7 +18,7 @@ const fileFilter = (req, file, cb) => {
 
     const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mov|mpeg|avi/;
 
-    if (fileTypes.test(file.mimetype)) {
+    if (fileTypes.test(mime.extension(file.mimetype))) {
         return cb(null, true)
     } else {
         return cb(new Error('Unsupported file extension.'), false);
