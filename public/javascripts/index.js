@@ -21,17 +21,17 @@ $(function () {
         e.preventDefault();
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
-        
+
         var totalMb = 0;
-        
+
         if (picture) {
             totalMb += picture.size;
         }
-        
+
         if (video) {
             totalMb += video.size;
         }
-        
+
         if (totalMb > 200 * 1024 * 1024) {
             alert('Veličina fajlova je veća od dozvoljenog limita (200MB). Postavite manji fajl.');
             return;
@@ -41,3 +41,61 @@ $(function () {
         return true;
     });
 });
+
+
+
+// $('#prijava2').on('submit', function (e) {
+//     e.preventDefault();
+//     var picture = $('#pictureInput')[0].files[0];
+//     var video = $('#videoInput')[0].files[0];
+
+//     var totalMb = 0;
+//     var formdata = new FormData();
+
+//     if (picture) {
+//         totalMb += picture.size;
+//         formdata.append('picture', picture);
+//         // formdata.append('pictureDescription', 'ee');
+//     }
+
+//     if (video) {
+//         totalMb += video.size;
+//         formdata.append('video', video);
+//         // formdata.append('videoDescription', 'ee');
+//     }
+
+//     if (totalMb > 200 * 1024 * 1024) {
+//         alert('Veličina fajlova je veća od dozvoljenog limita (200MB). Postavite manji fajl.');
+//         return;
+//     }
+
+//     console.log(formdata);
+//     $.ajax({
+//         xhr: function () {
+//             var xhr = new window.XMLHttpRequest();
+
+//             xhr.upload.addEventListener("progress", function (evt) {
+//                 if (evt.lengthComputable) {
+//                     var percentComplete = evt.loaded / evt.total;
+//                     percentComplete = parseInt(percentComplete * 100);
+//                     console.log(percentComplete);
+
+//                     if (percentComplete === 100) {
+
+//                     }
+
+//                 }
+//             }, false);
+
+//             return xhr;
+//         },
+//         url: '/prijava/2',
+//         type: "POST",
+//         data: formdata,
+//         processData: false,
+//         contentType: false,
+//         success: function (result) {
+//             console.log(result);
+//         }
+//     });
+// });

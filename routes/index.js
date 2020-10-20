@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 
 router.get('/profil', async (req, res) => {
     if (!req.session.entry) {
-        req.flash('error', 'Unesite vase podatke prvo');
+        // req.flash('error', 'Unesite vase podatke prvo');
         return res.redirect('/');
     }
 
@@ -107,7 +107,6 @@ router.post('/prijava/2', upload(), async (req, res) => {
         req.flash('error', 'Morate poslati file');
         return res.redirect('/profil');
     }
-
     if (!req.files.picture && !req.files.video) {
         req.flash('error', 'Morate poslati file');
         console.log('OVDE')
