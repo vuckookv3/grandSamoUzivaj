@@ -1,0 +1,34 @@
+.pravila {
+    min-height: 60vh;
+    padding: 0 20px;
+    h1 {
+        font-family: $font-dejavu-sans;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    div {
+        justify-content: flex-start;
+    }
+    .title {
+        color: $color-yellow-back;  
+        font-family: $font-roboto-black;
+        text-transform: uppercase;
+        width: 100%;
+        margin: 0;
+    }
+    .text {
+        font-family: $font-roboto-regular;
+        color: #fff;
+        text-align: justify;
+    }
+}
+@include lg {
+    .pravila {
+        padding: 0 20px;
+        h1 {
+            font-size: 20pt;
+        }
+    }
+}

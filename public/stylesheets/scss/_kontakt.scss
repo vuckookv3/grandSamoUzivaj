@@ -1,0 +1,38 @@
+.kontakt {
+    min-height: 60vh;
+    h1 {
+        font-family: $font-dejavu-sans;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    color: #fff;
+    img {
+        width: 60px;
+    }
+    p {
+        margin: 10px 0;
+        font-size: 14pt;
+        font-family: $font-roboto-medium;
+    }
+    .follow_us {
+        font-family: $font-roboto-medium;
+    }
+    div {
+        flex-direction: row;
+        padding-bottom: 30px;
+        a {
+            margin: 0 3px;
+            img {
+                height: 50px;
+                width: auto;
+            }
+        }
+    }
+}
+@include lg {
+    .kontakt {
+        h1 {
+            font-size: 20pt;
+        }
+    }
+}

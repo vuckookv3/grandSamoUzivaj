@@ -11,6 +11,10 @@
   src: url("/fonts/Roboto-Light.ttf") format("truetype");
 }
 @font-face {
+  font-family: "Roboto-Medium";
+  src: url("/fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
   font-family: "AntennaComp-Bold";
   src: url("/fonts/AntennaComp-Bold.otf") format("truetype");
 }
@@ -791,7 +795,7 @@ a:hover {
   }
 }
 .prijava {
-  min-height: 500px;
+  min-height: 60vh;
 }
 .prijava h1 {
   text-align: left;
@@ -915,6 +919,165 @@ a:hover {
     margin: 0;
     line-height: 1;
     font-size: 30pt;
+  }
+}
+.kontakt {
+  min-height: 60vh;
+  color: #fff;
+}
+.kontakt h1 {
+  font-family: "DejaVu-Sans";
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.kontakt img {
+  width: 60px;
+}
+.kontakt p {
+  margin: 10px 0;
+  font-size: 14pt;
+  font-family: "Roboto-Medium";
+}
+.kontakt .follow_us {
+  font-family: "Roboto-Medium";
+}
+.kontakt div {
+  flex-direction: row;
+  padding-bottom: 30px;
+}
+.kontakt div a {
+  margin: 0 3px;
+}
+.kontakt div a img {
+  height: 50px;
+  width: auto;
+}
+
+@media (min-width: 992px) {
+  .kontakt h1 {
+    font-size: 20pt;
+  }
+}
+.pravila {
+  min-height: 60vh;
+  padding: 0 20px;
+}
+.pravila h1 {
+  font-family: "DejaVu-Sans";
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.pravila div {
+  justify-content: flex-start;
+}
+.pravila .title {
+  color: #ffcc00;
+  font-family: "Roboto-Black";
+  text-transform: uppercase;
+  width: 100%;
+  margin: 0;
+}
+.pravila .text {
+  font-family: "Roboto-Regular";
+  color: #fff;
+  text-align: justify;
+}
+
+@media (min-width: 992px) {
+  .pravila {
+    padding: 0 20px;
+  }
+  .pravila h1 {
+    font-size: 20pt;
+  }
+}
+.galerija {
+  color: #fff;
+  min-height: 60vh;
+}
+.galerija h1 {
+  font-family: "DejaVu-Sans";
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.galerija .grid_holder .grid_box {
+  margin: 5px 0;
+  align-items: flex-start;
+  width: fit-content;
+}
+.galerija .grid_holder .grid_box .img_holder {
+  position: relative;
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  overflow: hidden;
+}
+.galerija .grid_holder .grid_box .img_holder img {
+  width: 100%;
+  max-width: unset;
+}
+.galerija .grid_holder .grid_box .text_holder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  justify-content: flex-end;
+}
+.galerija .grid_holder .grid_box .text_holder .text_no_hover {
+  font-family: "Roboto-Medium";
+  font-size: 18pt;
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 1;
+}
+.galerija .grid_holder .grid_box .text_holder .text_on_hover {
+  display: none;
+  font-size: 8pt;
+  text-align: center;
+  line-height: 1;
+}
+.galerija .grid_holder .grid_box .text_holder .text_on_hover .name {
+  font-family: "Roboto-Medium";
+  margin-top: 3px;
+}
+.galerija .grid_holder .grid_box .text_holder .text_on_hover .text {
+  font-family: "Roboto-Regular";
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-bottom: 5px;
+}
+.galerija .grid_holder .grid_box .text_holder:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.galerija .grid_holder .grid_box .text_holder:hover .text_no_hover {
+  display: none;
+}
+.galerija .grid_holder .grid_box .text_holder:hover .text_on_hover {
+  display: flex;
+}
+.galerija .grid_holder .grid_box .share_on_facebook {
+  width: 50px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .galerija h1 {
+    font-size: 20pt;
+  }
+  .galerija .grid_holder {
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    column-gap: 12px;
+    row-gap: 5px;
+  }
+  .galerija .grid_holder .grid_box .share_on_facebook {
+    margin-bottom: 0;
   }
 }
 

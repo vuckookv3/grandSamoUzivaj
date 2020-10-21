@@ -11,6 +11,10 @@
     src: url('/fonts/Roboto-Light.ttf') format("truetype");
 }
 @font-face {
+    font-family: "Roboto-Medium";
+    src: url('/fonts/Roboto-Medium.ttf') format("truetype");
+}
+@font-face {
     font-family: "AntennaComp-Bold";
     src: url('/fonts/AntennaComp-Bold.otf') format("truetype");
 }
@@ -30,6 +34,7 @@
 $font-roboto-regular: "Roboto-Regular";
 $font-roboto-black: "Roboto-Black";
 $font-roboto-light: "Roboto-Light";
+$font-roboto-medium: "Roboto-Medium";
 $font-antenna-comp-bold: "AntennaComp-Bold";
 $font-antenna-comp-bold-italic: "AntennaComp-BoldItalic";
 $font-antenna-comp-medium-italic: "AntennaComp-MediumItalic";
