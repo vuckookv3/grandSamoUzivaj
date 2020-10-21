@@ -194,6 +194,7 @@ a:hover {
 .uskoro__header div {
   align-items: flex-start;
   width: fit-content;
+  width: auto;
 }
 .uskoro__header p {
   margin: 0;
@@ -205,7 +206,6 @@ a:hover {
 .uskoro__main_div {
   background: radial-gradient(600px at bottom, #674537, #000 55%);
   display: inline-block;
-  height: 80vh;
   min-height: 500px;
   position: relative;
   width: 100vw;
@@ -323,8 +323,7 @@ a:hover {
 @media (min-width: 992px) {
   .uskoro__main_div {
     background: radial-gradient(1000px at bottom, #674537, #000 58%);
-    height: 70vh;
-    min-height: 850px;
+    height: 65vh;
     position: relative;
     width: 100vw;
     justify-content: center;
@@ -340,37 +339,41 @@ a:hover {
     align-items: center;
     max-width: 600px;
     width: 300px;
+    margin-top: 0;
   }
   .uskoro__nagrade .uskoro_iphone_traka {
     transform: translateX(-50%);
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__iphone {
-    width: 400px;
+    width: 280px;
     max-width: 400px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro {
-    top: 35px;
-    left: 170px;
+    top: 20px;
+    left: 70px;
+    height: 100px;
     align-items: center;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro img {
-    height: 150px;
+    height: 110px;
   }
   .uskoro__nagrade .uskoro_iphone_traka .img__traka_uskoro p {
-    font-size: 100pt;
+    font-size: 75pt;
     margin-left: 0;
+    width: 75%;
+    text-align: right;
   }
   .uskoro__nagrade .uskoro_iphone_traka .white_text {
-    margin-left: 110px;
+    margin-left: 60px;
   }
 
   .uskoro__header {
-    height: 250px;
+    height: 180px;
     align-items: center;
     flex-direction: row;
   }
   .uskoro__header img {
-    width: 150px;
+    width: 120px;
     position: relative;
     bottom: 50px;
   }
@@ -383,8 +386,8 @@ a:hover {
 
   .uskoro__sporedne_nagrade {
     width: 100%;
-    left: 200px;
-    top: 200px;
+    left: 160px;
+    top: 155px;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
@@ -409,28 +412,30 @@ a:hover {
     text-align: center;
   }
   .uskoro__sporedne_nagrade .zvucnik {
-    width: 180px;
+    width: 160px;
     max-width: unset;
   }
   .uskoro__sporedne_nagrade .slusalice {
-    width: 150px;
+    width: 100px;
   }
   .uskoro__sporedne_nagrade .paket {
-    width: 200px;
+    width: 140px;
   }
 
   .uskoro__kafa_bottom_box .kesice {
-    width: 170px;
-    transform: translateX(-30px);
+    width: 150px;
+    transform: translateX(-12px);
   }
   .uskoro__kafa_bottom_box .solja {
-    width: 250px;
+    width: 200px;
   }
 
   .uskoro__footer {
     flex-direction: row;
     margin-top: 0;
     padding-bottom: 20px;
+    z-index: 2;
+    position: relative;
   }
   .uskoro__footer .footer__datumi {
     flex-direction: column;
