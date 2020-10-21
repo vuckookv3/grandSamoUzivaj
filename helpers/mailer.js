@@ -5,14 +5,14 @@ const mailer = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'kontakt@lasko.rs',
-        pass: 'COaPgBuTqG',
+        user: 'no-reply@samouzivaj.rs',
+        pass: 'V0cO6K3Qnm',
     }
 });
 
 const sendMail = async (to, subject, html) => {
     const info = await mailer.sendMail({
-        from: 'Laško Kontakt <kontakt@lasko.rs>',
+        from: 'NoReply Grand Kafa <no-reply@samouzivaj.rs>',
         to,
         subject,
         html,

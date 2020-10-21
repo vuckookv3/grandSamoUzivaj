@@ -3,11 +3,13 @@
 <main>
     <div class="background_box">
         <div class="prijava">
-            <h1>Postavi fotografiju ili video i POKAŽI ŠTA JE ZA TEBE UŽIVANJE</h1>       
+            <h1>Postavi fotografiju ili video i POKAŽI ŠTA JE ZA TEBE UŽIVANJE</h1>
             <form action="/prijava/1" method="POST">
-                <input class="input_text input_iip" type="text" name="name" placeholder="ime i prezime" required />
+                <input class="input_text input_iip" type="text" name="name" placeholder="ime i prezime" required
+                    maxlength="30" />
                 <input class="input_text input_email" type="email" name="email" placeholder="e-mail" required />
-                <input class="input_text input_bi" class="no-spin" type="number" name="biCode" placeholder="БИ broj" minlength="2" maxlength="10" required />
+                <input class="input_text input_bi no-spin" type="number" name="biCode" placeholder="БИ broj"
+                    minlength="2" maxlength="10" required />
                 <button class="input_submit" type="submit">DALJE</button>
             </form>
         </div>

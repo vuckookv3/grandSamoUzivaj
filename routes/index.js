@@ -17,6 +17,9 @@ router.get('/kraj', (req, res) => {
 router.use(isStarted);
 
 router.get('/', (req, res) => {
+    if (req.session.entry) {
+        return res.redirect('/profil');
+    }
     res.render('pocetna');
 });
 
