@@ -53,6 +53,10 @@ router.get('/prijave/:id', async (req, res) => {
     const entry = await Entry.findById(req.params.id).exec();
     if (!entry) return res.redirect('/');
 
+    if (req.session.admin) {
+        return res.render('prijava', { entry });
+    }
+
     if (entry.status === 'UNAUTHORIZED' || entry.status === 'DENIED') return res.redirect('/');
 
     res.render('prijava', { entry });

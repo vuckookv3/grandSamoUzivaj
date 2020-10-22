@@ -110,7 +110,7 @@
                 <tbody>
                     <% prijave.map(e => { %>
                     <tr>
-                        <td><%= e.name %></td>
+                        <td><a target="_blank" href="/prijave/<%= e._id %>"><%= e.name %></a></td>
                         <td><%= e.email %></td>
                         <td><%= e.biCode %></td>
                         <td><%= e.submitted ? 'DA' : 'NE' %></td>
