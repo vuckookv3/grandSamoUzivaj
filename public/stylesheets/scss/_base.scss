@@ -140,12 +140,19 @@ a:hover {
         width: calc(100vw - 400px);
 
     }
-   
+   .background_box_with_no_bottom {
+    //    height: 100vh;
+    //    padding-bottom: 120px;
+       justify-content: flex-start;
+   }
     .strelica {
         border-top: 150px solid transparent;
         border-left: calc(50vw - 198px) solid $color-yellow-back;
         border-right: calc(50vw - 198px) solid $color-yellow-back;
         
+    }
+    .strelica__mobile_only {
+        display: none;
     }
  
     

@@ -9,19 +9,28 @@
         position: absolute;
         top: 50px;
         left: 0;
-        padding: 15px;
+        padding: 15px 20px;
+        margin-left: 10px;
         background-color: #000;
-        display: none;
+        border: 2px solid $color-yellow-back;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
 
     }
     li {
         list-style: none;
+        font-size: 20pt;
     }
     .hamburger {
         position: absolute;
         top: 15px;
         left: 15px;
     }
+    .closed {
+        display: none;
+    }
+ 
 }
 
 #leftSection {
@@ -63,15 +72,24 @@
          .hamburger {
              display: none;
          }
+         .closed {
+             display: flex;
+         }
+         
          ul {
-            display: flex;
+            flex-direction: row;
             justify-content: space-evenly;
             width: calc(100vw - 400px);
             margin-top: 40px;
-            font-size: 12pt;
             position: relative;
             top: 0;
+            padding: 0 5px;
             background-color: transparent;
+            border: none;
+            border-radius: 0;
+            li {
+                font-size: 12pt;
+            }
         }
     }
     #leftSection {

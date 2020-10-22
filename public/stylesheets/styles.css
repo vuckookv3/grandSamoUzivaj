@@ -169,10 +169,18 @@ a:hover {
     width: calc(100vw - 400px);
   }
 
+  .background_box_with_no_bottom {
+    justify-content: flex-start;
+  }
+
   .strelica {
     border-top: 150px solid transparent;
     border-left: calc(50vw - 198px) solid #ffcc00;
     border-right: calc(50vw - 198px) solid #ffcc00;
+  }
+
+  .strelica__mobile_only {
+    display: none;
   }
 }
 .uskoro {
@@ -476,17 +484,25 @@ a:hover {
   position: absolute;
   top: 50px;
   left: 0;
-  padding: 15px;
+  padding: 15px 20px;
+  margin-left: 10px;
   background-color: #000;
-  display: none;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .navbar_box li {
   list-style: none;
+  font-size: 20pt;
 }
 .navbar_box .hamburger {
   position: absolute;
   top: 15px;
   left: 15px;
+}
+.navbar_box .closed {
+  display: none;
 }
 
 #leftSection {
@@ -530,15 +546,23 @@ a:hover {
   .navbar_box .hamburger {
     display: none;
   }
-  .navbar_box ul {
+  .navbar_box .closed {
     display: flex;
+  }
+  .navbar_box ul {
+    flex-direction: row;
     justify-content: space-evenly;
     width: calc(100vw - 400px);
     margin-top: 40px;
-    font-size: 12pt;
     position: relative;
     top: 0;
+    padding: 0 5px;
     background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+  .navbar_box ul li {
+    font-size: 12pt;
   }
 
   #leftSection {
@@ -917,6 +941,10 @@ a:hover {
     margin: 0;
     line-height: 1;
     font-size: 30pt;
+  }
+
+  .strelica__floating_box--only_mobile {
+    display: none;
   }
 }
 .kontakt {

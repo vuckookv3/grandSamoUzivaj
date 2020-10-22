@@ -58,6 +58,9 @@ router.get('/prijave/:id', async (req, res) => {
     res.render('prijava', { entry });
 });
 
+// router.get('/prijave/:id', (req, res) => {
+//     res.render('prijava');
+// });
 router.get('/pravila', (req, res) => {
     res.render('pravila');
 });
