@@ -29,7 +29,7 @@ router.get('/profil', async (req, res) => {
         return res.redirect('/');
     }
 
-    const entry = await Entry.findById(req.session.entry);
+    const entry = await Entry.findById(req.session.entry).exec();
     if (!entry) {
         req.flash('error', 'Prijava nije pronadjena. Pokusajte ponovo');
         return res.redirect('/');
@@ -53,7 +53,7 @@ router.get('/prijave/:id', async (req, res) => {
     const entry = await Entry.findById(req.params.id).exec();
     if (!entry) return res.redirect('/');
 
-    if (entry.status === 'UNAUTHORIZED') return res.redirect('/');
+    if (entry.status === 'UNAUTHORIZED' || entry.status === 'DENIED') return res.redirect('/');
 
     res.render('prijava', { entry });
 });

@@ -62,40 +62,57 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-    const prijave = await Entry.find({ submitted: true }).sort('-_id').lean().exec();
+    const prijave = await Entry.find().sort('-_id').lean().exec();
     res.render('admin/index', { prijave });
 });
 
-const emailWinner = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailWinner.ejs'), 'utf-8');
-const emailUnauthorized = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailUnauthorized.ejs'), 'utf-8');
+const emailAuthorized = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailWinner.ejs'), 'utf-8');
+const emailDenied = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailUnauthorized.ejs'), 'utf-8');
+
+router.post('/api/prijave/:id/status/winner', async (req, res) => {
+    const entry = await Entry.findById(req.params.id).exec();
+    if (!entry) {
+        req.flash('error', 'Prijava nije pronadjena');
+        return res.redirect('/admin');
+    }
+
+    entry.status = 'WINNER';
+    entry.winnerPhase = Number(req.body.winnerPhase);
+    entry.winnerPrize = Number(req.body.winnerPrize);
+    await entry.save();
+
+    req.flash('success', 'Uspesno ste izabrali pobednika');
+    res.redirect('/admin');
+});
 
 router.put('/api/prijave/:id/status', async (req, res) => {
     const status = req.body.status;
+    console.log(status)
     if (!status) return res.status(400).json({});
 
-    if (!['UNAUTHORIZED', 'AUTHORIZED', 'WINNER'].includes(status)) return res.status(400).json({});
+    if (!['UNAUTHORIZED', 'DENIED', 'AUTHORIZED', 'WINNER'].includes(status)) return res.status(400).json({});
 
     const entry = await Entry.findById(req.params.id).exec();
     if (!entry) return res.status(404).json({});
 
     entry.status = status;
+    const isModified = entry.isModified('status');
     await entry.save();
 
     let html = null;
 
-    if (entry.status === 'UNAUTHORIZED') {
-        html = emailUnauthorized;
+    if (entry.status === 'DENIED') {
+        html = emailDenied;
     }
     else if (entry.status === 'AUTHORIZED') {
-        html = emailWinner;
+        html = emailAuthorized;
     }
     else {
 
     }
 
-
     try {
-        if (entry.isModified('status') && entry.status !== 'WINNER') {
+        if (isModified && ['DENIED', 'AUTHORIZED'].includes(entry.status) && !!html) {
             const mail = await mailer(entry.email, 'Status vase prijave', html);
         }
     } catch (err) {

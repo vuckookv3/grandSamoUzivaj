@@ -40,6 +40,13 @@ $(function () {
         var value = this.value;
         var id = this.form.dataset.id;
 
+        if (value === 'WINNER') {
+            $('#winnerModal form').attr('action', '/admin/api/prijave/' + id + '/status/winner');
+            $('#winnerModal').modal();
+            return null;
+        }
+
+
         $.ajax({
             url: '/admin/api/prijave/' + id + '/status',
             method: 'PUT',
@@ -48,7 +55,7 @@ $(function () {
             complete: function (xhr, textStatus) {
                 var res = xhr.responseJSON;
             }
-        })
+        });
     });
 
 });
