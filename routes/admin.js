@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const admins = require('../admins.json');
-const { redis } = require('../helpers');
+const { redis, mailer } = require('../helpers');
 const { Entry } = require('../models');
+const path = require('path');
+const fs = require('fs');
 
 const isAdmin = (req, res, next) => {
     if (req.session && req.session.admin) {
@@ -64,6 +66,9 @@ router.get('/', async (req, res) => {
     res.render('admin/index', { prijave });
 });
 
+const emailWinner = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailWinner.ejs'), 'utf-8');
+const emailUnauthorized = fs.readFileSync(path.join(__dirname, '..', './views/partials/emailUnauthorized.ejs'), 'utf-8');
+
 router.put('/api/prijave/:id/status', async (req, res) => {
     const status = req.body.status;
     if (!status) return res.status(400).json({});
@@ -75,6 +80,29 @@ router.put('/api/prijave/:id/status', async (req, res) => {
 
     entry.status = status;
     await entry.save();
+
+    let html = null;
+
+    if (entry.status === 'UNAUTHORIZED') {
+        html = emailUnauthorized;
+    }
+    else if (entry.status === 'AUTHORIZED') {
+        html = emailWinner;
+    }
+    else {
+
+    }
+
+
+    try {
+        if (entry.isModified('status') && entry.status !== 'WINNER') {
+            const mail = await mailer(entry.email, 'Status vase prijave', html);
+        }
+    } catch (err) {
+        console.error('MAIL NOT SENT:')
+        console.error(err);
+        console.error('=====================');
+    }
 
     res.json('OK')
 });

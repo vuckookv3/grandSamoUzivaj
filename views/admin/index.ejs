@@ -76,7 +76,9 @@
             <table id="prijave" class="display wrap" style="width:100%;">
                 <thead>
                     <tr>
+                        <th>Ime i Prezime</th>
                         <th>Email</th>
+                        <th>Kod</th>
                         <th>Slika</th>
                         <th>Opis slike</th>
                         <th>Video</th>
@@ -99,7 +101,9 @@
                 <tbody>
                     <% prijave.map(e => { %>
                     <tr>
+                        <td><%= e.name %></td>
                         <td><%= e.email %></td>
+                        <td><%= e.biCode %></td>
                         <td>
                             <% if(e.picture) { %>
                             <a target="_blank" href="/uploads/<%= e.picture %>"><img height="50"
@@ -153,7 +157,9 @@
 
                 <tfoot>
                     <tr>
+                        <th>Ime i Prezime</th>
                         <th>Email</th>
+                        <th>Kod</th>
                         <th>Slika</th>
                         <th>Opis slike</th>
                         <th>Video</th>
