@@ -78,23 +78,68 @@
             }
         }
     }
+    .checkbox__pravila_privatnosti {
+            display: block;
+            width: 200px;
+            margin: 20px auto 0 auto;
+            position: relative;
+            padding-left: 25px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-family: $font-roboto-regular;
+            color: #fff;
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            &:checked ~ span {
+                &::after {
+                    content: "X";
+                    color: $color-yellow-back;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 16px;
+                }
+
+            }
+        }
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: #000;
+            border: 2px solid $color-yellow-back;
+        }
+    }
 }
 @include lg {
+    .background_box_with_no_bottom--profil {
+        max-height: 100vh;
+    }
     .profil {
         h1 {
             font-size: 20pt;
         }
         form {
-            width: 90%;
+            width: 80%;
             max-width: 650px;
+            padding-top: 0;
         }
         div {
             flex-direction: row;
             justify-content: flex-start;
             .upload__box {
                 label {
-                    width: 200px;
-                    height: 200px;
+                    width: 150px;
+                    height: 150px;
                     border: 2px solid $color-yellow-back;
                     background-color: #000;
                     display: flex;
@@ -108,7 +153,7 @@
                 p {
                     height: 30px;
                     font-size: 18pt;
-                    width: 200px;
+                    width: 150px;
                     top: -15px;
                    
     
@@ -116,15 +161,18 @@
             }
           
             textarea {
-                height: 200px;
+                height: 150px;
                 transform: translateY(-2px); 
-                height: 200px;
                 width: 100%;
                 margin-left: 15px;
     
                 // margin-bottom: auto;
             }
+            .textarea_video {
+                transform: translateY(7px);
+            }
             .upload__box--video {
+                margin-bottom: 0;
                 p {
                     width: 250px;
                 }
@@ -134,10 +182,15 @@
                 }
             }
         }
-        
+        .input_submit--profil {
+            margin-top: 0;
+        }
       
         .upload_holder {
             margin-top: 0;
         }
+        .checkbox__pravila_privatnosti {
+            margin-top: 0;
+         }
     }
 }

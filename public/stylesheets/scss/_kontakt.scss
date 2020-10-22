@@ -33,5 +33,17 @@
         h1 {
             font-size: 20pt;
         }
+        img {
+            width: 55px;
+        }
+        div {
+            padding-bottom: 20px;
+            a {
+                img {
+                    height: 40px;
+                    width: auto;
+                }
+            }
+        }
     }
 }

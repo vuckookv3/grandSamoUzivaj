@@ -135,6 +135,10 @@ a:hover {
   position: relative;
 }
 
+.lock-scroll {
+  overflow: hidden;
+}
+
 .background_box {
   background: radial-gradient(800px at bottom, #674537, #000 70%);
   min-height: 500px;
@@ -154,6 +158,14 @@ a:hover {
   left: -2px;
   bottom: -2px;
   position: absolute;
+}
+
+.alert_custom_design {
+  background-color: #ffcc00;
+  border: 2px solid #000;
+  font-family: "AntennaComp-Bold";
+  border-radius: 10px;
+  color: #000;
 }
 
 @media (min-width: 992px) {
@@ -475,26 +487,42 @@ a:hover {
 .navbar_box {
   position: absolute;
   top: 135px;
-  z-index: 1;
+  bottom: -70px;
+  z-index: 2;
   color: #fff;
   font-family: "Roboto-Regular";
   color: #ffcc00;
 }
 .navbar_box ul {
   position: absolute;
-  top: 50px;
+  top: -2px;
+  bottom: 0;
   left: 0;
   padding: 15px 20px;
-  margin-left: 10px;
-  background-color: #000;
-  border: 2px solid #ffcc00;
-  border-radius: 10px;
+  background-color: #ffcc00;
+  color: #000;
   display: flex;
   flex-direction: column;
+}
+.navbar_box .navbar_mobile_background {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  background-color: #00000078;
 }
 .navbar_box li {
   list-style: none;
   font-size: 20pt;
+  border: 2px solid #000;
+  padding: 5px 10px;
+  margin: 10px 0;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 .navbar_box .hamburger {
   position: absolute;
@@ -503,6 +531,13 @@ a:hover {
 }
 .navbar_box .closed {
   display: none;
+}
+.navbar_box .closed-nav_back {
+  display: none;
+}
+
+.navbar_box_open_mobile {
+  bottom: unset;
 }
 
 #leftSection {
@@ -542,12 +577,19 @@ a:hover {
 @media (min-width: 992px) {
   .navbar_box {
     top: 0;
+    bottom: unset;
+  }
+  .navbar_box .navbar_mobile_background {
+    display: none;
   }
   .navbar_box .hamburger {
     display: none;
   }
   .navbar_box .closed {
     display: flex;
+  }
+  .navbar_box .closed-nav_back {
+    display: none;
   }
   .navbar_box ul {
     flex-direction: row;
@@ -560,9 +602,17 @@ a:hover {
     background-color: transparent;
     border: none;
     border-radius: 0;
+    margin-left: 10px;
+    color: #ffcc00;
   }
   .navbar_box ul li {
     font-size: 12pt;
+    margin: 0;
+    border: none;
+    padding: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
   }
 
   #leftSection {
@@ -618,6 +668,9 @@ a:hover {
   font-size: 14pt;
   flex-direction: row;
   font-family: "AntennaComp-Bold";
+}
+.bottom_section .footer__datumi p:last-child {
+  padding-left: 3px;
 }
 .bottom_section .footer__network {
   font-family: "Roboto-Regular";
@@ -982,6 +1035,16 @@ a:hover {
   .kontakt h1 {
     font-size: 20pt;
   }
+  .kontakt img {
+    width: 55px;
+  }
+  .kontakt div {
+    padding-bottom: 20px;
+  }
+  .kontakt div a img {
+    height: 40px;
+    width: auto;
+  }
 }
 .pravila {
   min-height: 60vh;
@@ -1081,6 +1144,7 @@ a:hover {
   padding-left: 3px;
   padding-right: 3px;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
 }
 .galerija .grid_holder .grid_box .text_holder:hover {
   background-color: rgba(0, 0, 0, 0.5);
@@ -1099,6 +1163,13 @@ a:hover {
   max-width: 100px;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+.pagination_arrows {
+  flex-direction: row;
+  color: #ffcc00;
+  font-size: 18pt;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -1198,22 +1269,65 @@ a:hover {
 .profil div textarea:focus {
   outline: none;
 }
+.profil .checkbox__pravila_privatnosti {
+  display: block;
+  width: 200px;
+  margin: 20px auto 0 auto;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Roboto-Regular";
+  color: #fff;
+}
+.profil .checkbox__pravila_privatnosti input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.profil .checkbox__pravila_privatnosti input:checked ~ span::after {
+  content: "X";
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+}
+.profil .checkbox__pravila_privatnosti span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #000;
+  border: 2px solid #ffcc00;
+}
 
 @media (min-width: 992px) {
+  .background_box_with_no_bottom--profil {
+    max-height: 100vh;
+  }
+
   .profil h1 {
     font-size: 20pt;
   }
   .profil form {
-    width: 90%;
+    width: 80%;
     max-width: 650px;
+    padding-top: 0;
   }
   .profil div {
     flex-direction: row;
     justify-content: flex-start;
   }
   .profil div .upload__box label {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border: 2px solid #ffcc00;
     background-color: #000;
     display: flex;
@@ -1226,15 +1340,20 @@ a:hover {
   .profil div .upload__box p {
     height: 30px;
     font-size: 18pt;
-    width: 200px;
+    width: 150px;
     top: -15px;
   }
   .profil div textarea {
-    height: 200px;
+    height: 150px;
     transform: translateY(-2px);
-    height: 200px;
     width: 100%;
     margin-left: 15px;
+  }
+  .profil div .textarea_video {
+    transform: translateY(7px);
+  }
+  .profil div .upload__box--video {
+    margin-bottom: 0;
   }
   .profil div .upload__box--video p {
     width: 250px;
@@ -1242,8 +1361,218 @@ a:hover {
   .profil div .upload__box--video label {
     width: 250px;
   }
+  .profil .input_submit--profil {
+    margin-top: 0;
+  }
   .profil .upload_holder {
     margin-top: 0;
+  }
+  .profil .checkbox__pravila_privatnosti {
+    margin-top: 0;
+  }
+}
+.profil h1 {
+  font-family: "DejaVu-Sans";
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.profil .profil__foto_holder {
+  width: 80%;
+  max-width: 350px;
+  margin-top: 40px;
+  position: relative;
+}
+.profil .profil__foto_holder .img_holder {
+  border: 1px solid #ffcc00;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-top: 100%;
+}
+.profil .profil__foto_holder .img_holder img {
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+}
+.profil .profil__video_holder {
+  width: 80%;
+  max-width: 350px;
+  margin-top: 80px;
+  position: relative;
+}
+.profil .profil__video_holder .video_holder {
+  border: 1px solid #ffcc00;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-top: 100%;
+}
+.profil .floating_traka {
+  position: absolute;
+  background-color: #ffcc00;
+  font-family: "AntennaComp-Bold";
+  top: -45px;
+  width: 100%;
+  height: 40px;
+  font-size: 20pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-style: italic;
+}
+.profil .floating_traka p {
+  margin: 0;
+}
+.profil .text_box {
+  width: 100%;
+  background-color: #000;
+  border: 2px solid #ffcc00;
+  text-align: center;
+  color: #fff;
+  font-family: "Roboto-Regular";
+  line-height: 1;
+  margin-top: 10px;
+  padding: 10px;
+}
+.profil .share_div {
+  margin-top: 10px;
+  width: 80%;
+  max-width: 350px;
+  align-items: flex-start;
+}
+.profil .share_div p {
+  margin-top: 5px;
+  font-family: "Roboto-Regular";
+  color: #ffcc00;
+}
+
+@media (min-width: 992px) {
+  .profil h1 {
+    font-size: 20pt;
+  }
+  .profil .profil__foto_holder {
+    margin-top: 0;
+    width: 70%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "slika tekst tekst";
+    transform: translateX(20px);
+  }
+  .profil .profil__foto_holder .img_holder {
+    grid-area: slika;
+  }
+  .profil .profil__foto_holder .text_box {
+    height: 100%;
+    grid-area: tekst;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .profil .profil__video_holder {
+    margin-top: 20px;
+    width: 70%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "slika tekst tekst";
+    transform: translateX(20px);
+  }
+  .profil .profil__video_holder .img_holder {
+    grid-area: slika;
+  }
+  .profil .profil__video_holder .text_box {
+    height: 100%;
+    grid-area: tekst;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .profil .share_div {
+    width: 70%;
+    max-width: 600px;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  .profil .share_div img {
+    max-width: 70px;
+  }
+  .profil .floating_traka {
+    left: -45px;
+    width: 40px;
+    height: 100%;
+    top: 0;
+  }
+  .profil .floating_traka p {
+    transform: rotate(-90deg);
+  }
+}
+.nagrade h1 {
+  font-family: "DejaVu-Sans";
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.nagrade p {
+  font-family: "Roboto-Regular";
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 60%;
+}
+.nagrade .nagrade__mob {
+  margin-bottom: 40px;
+}
+.nagrade .nagrade_desktop {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .nagrade {
+    max-width: 600px;
+  }
+  .nagrade h1 {
+    font-size: 20pt;
+  }
+  .nagrade p {
+    margin-bottom: 5px;
+  }
+  .nagrade .nagrade__mob {
+    display: none;
+  }
+  .nagrade .nagrade_desktop {
+    display: flex;
+  }
+  .nagrade .nagrade_desktop .nagrade__desk_iphone {
+    transform: translate(20px, -20px);
+    width: 250px;
+  }
+  .nagrade .nagrade_desktop .sporedne_nagradne {
+    flex-direction: row;
+    position: relative;
+  }
+  .nagrade .nagrade_desktop .sporedne_nagradne img {
+    position: absolute;
+  }
+  .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_zvucnik {
+    width: 230px;
+    left: -20px;
+    top: -140px;
+  }
+  .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_slusalice {
+    height: 145px;
+    bottom: -105px;
+    transform: translateX(65px);
+  }
+  .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_paket {
+    width: 270px;
+    right: 5px;
+    top: -108px;
   }
 }
 

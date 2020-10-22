@@ -102,7 +102,9 @@ a:hover {
     position: relative;
 }
 
-
+.lock-scroll {
+    overflow: hidden;
+}
 
 .background_box {
     background: radial-gradient(800px at bottom, #674537, #000 70%);
@@ -125,7 +127,24 @@ a:hover {
     bottom: -2px;
     position: absolute;
 }
-
+// .alert_custom_background {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     background-color: rgba(0, 0, 0, 0.277);
+// }
+.alert_custom_design {
+    background-color: $color-yellow-back;
+    border: 2px solid #000;
+    font-family: $font-antenna-comp-bold;
+    border-radius: 10px;
+    color: #000;
+ 
+    
+}
 
 @include lg {
     .documentWrapper {

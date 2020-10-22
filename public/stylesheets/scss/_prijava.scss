@@ -1,0 +1,150 @@
+.profil {
+    h1 {
+        font-family: $font-dejavu-sans;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+    .profil__foto_holder {
+        width: 80%;
+        max-width: 350px;
+        margin-top: 40px;
+        position: relative;
+        .img_holder {
+            border: 1px solid $color-yellow-back;
+            position: relative;
+            overflow: hidden;
+            height: 0;
+            padding-top: 100%;
+            img {
+                object-fit: cover;
+                display: block;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                max-width: unset;
+            }
+            }
+        }
+        .profil__video_holder {
+            width: 80%;
+            max-width: 350px;
+            margin-top: 80px;
+            position: relative;
+            .video_holder {
+                border: 1px solid $color-yellow-back;
+                position: relative;
+                overflow: hidden;
+                height: 0;
+                padding-top: 100%;
+                video {
+                    
+                }
+                }
+            }
+    .floating_traka {
+        position: absolute;
+        background-color: $color-yellow-back;
+        font-family: $font-antenna-comp-bold;
+        top: -45px;
+        width: 100%;
+        height: 40px;
+        font-size: 20pt;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-style: italic;
+        p {
+            margin: 0;
+        }
+    }
+    .text_box {
+        width: 100%;
+        background-color: #000;
+        border: 2px solid $color-yellow-back;
+        text-align: center;
+        color: #fff;
+        font-family: $font-roboto-regular;
+        line-height: 1;
+        margin-top: 10px;
+        padding: 10px;
+        // min-height: 150px;
+    }
+    .share_div {
+        margin-top: 10px;
+        width: 80%;
+        max-width: 350px;
+        align-items: flex-start;
+        p {
+            margin-top: 5px;
+            font-family: $font-roboto-regular;
+            color: $color-yellow-back
+        }
+    }
+}
+@include lg {
+    .profil {
+        h1 {
+            font-size: 20pt;
+        }
+        .profil__foto_holder {
+            margin-top: 0;
+            width: 70%;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "slika tekst tekst";
+            transform: translateX(20px);
+            .img_holder {
+                // padding-top: 48%;
+                // margin-left: 45px;
+                grid-area: slika;
+            }
+            .text_box {
+                height: 100%;
+                grid-area: tekst;
+                margin-top: 0;
+                margin-left: 10px;
+            }
+        }
+        .profil__video_holder {
+            margin-top: 20px;
+            width: 70%;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "slika tekst tekst";
+            transform: translateX(20px);
+            .img_holder {
+                // padding-top: 48%;
+                // margin-left: 45px;
+                grid-area: slika;
+            }
+            .text_box {
+                height: 100%;
+                grid-area: tekst;
+                margin-top: 0;
+                margin-left: 10px;
+            }
+        }
+        .share_div {
+            width: 70%;
+            max-width: 600px;
+            flex-direction: column;
+            margin-left: 40px;
+            img {
+                max-width: 70px;
+            }
+        }
+        .floating_traka {
+            left: -45px;
+            width: 40px;
+            height: 100%;
+            top: 0;
+            p {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

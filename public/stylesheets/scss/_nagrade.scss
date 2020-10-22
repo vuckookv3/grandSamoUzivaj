@@ -1,0 +1,69 @@
+.nagrade {
+    h1 {
+        font-family: $font-dejavu-sans;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+    p {
+        font-family: $font-roboto-regular;
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 600;
+        text-align: center;
+        max-width: 60%;
+    }
+    .nagrade__mob {
+        margin-bottom: 40px;
+    }
+    .nagrade_desktop {
+        display: none;
+    }
+
+}
+
+@include lg {
+    .nagrade {
+        max-width: 600px;
+        h1 {
+            font-size: 20pt;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .nagrade__mob {
+            display: none;
+        }
+        .nagrade_desktop {
+            display: flex;
+            .nagrade__desk_iphone {
+                transform: translate(20px, -20px);
+                width: 250px;
+            }
+            .sporedne_nagradne {
+                flex-direction: row;
+                position: relative;
+                img {
+                    position: absolute;
+
+                }
+                .nagrade__desk_zvucnik {
+                    width: 230px;
+                    left: -20px;
+                    top: -140px;
+                }
+                .nagrade__desk_slusalice {
+                    height: 145px;
+                    bottom: -105px;
+                    transform: translateX(65px);
+                }
+                .nagrade__desk_paket {
+                    width: 270px;
+                    right: 5px;
+                    top: -108px;
+                }
+            }
+        }
+    }
+}

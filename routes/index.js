@@ -47,20 +47,20 @@ router.get('/prijave', (req, res) => {
     res.render('prijave');
 });
 
-router.get('/prijave/:id', async (req, res) => {
-    if (!isMongoId(req.params.id)) return res.redirect('/');
+// router.get('/prijave/:id', async (req, res) => {
+//     if (!isMongoId(req.params.id)) return res.redirect('/');
 
-    const entry = await Entry.findById(req.params.id).exec();
-    if (!entry) return res.redirect('/');
+//     const entry = await Entry.findById(req.params.id).exec();
+//     if (!entry) return res.redirect('/');
 
-    if (entry.status === 'UNAUTHORIZED') return res.redirect('/');
+//     if (entry.status === 'UNAUTHORIZED') return res.redirect('/');
 
-    res.render('prijava', { entry });
-});
-
-// router.get('/prijave/:id', (req, res) => {
-//     res.render('prijava');
+//     res.render('prijava', { entry });
 // });
+
+router.get('/prijave/:id', (req, res) => {
+    res.render('prijava');
+});
 router.get('/pravila', (req, res) => {
     res.render('pravila');
 });
