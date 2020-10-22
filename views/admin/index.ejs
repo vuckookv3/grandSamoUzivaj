@@ -79,31 +79,41 @@
                         <th>Ime i Prezime</th>
                         <th>Email</th>
                         <th>Kod</th>
+                        <th>Zavrsena prijava</th>
                         <th>Slika</th>
                         <th>Opis slike</th>
                         <th>Video</th>
                         <th>Opis videa</th>
                         <th>Napravljen</th>
                         <th>Status</th>
+                        <th>Faza</th>
+                        <th>Nagrada</th>
                         <th>Delete</th>
                     </tr>
-                    <!-- <tr>
+                    <tr>
+                        <th>Ime i Prezime</th>
                         <th>Email</th>
+                        <th>Kod</th>
+                        <th>Zavrsena prijava</th>
                         <th>Slika</th>
                         <th>Opis slike</th>
                         <th>Video</th>
                         <th>Opis videa</th>
                         <th>Napravljen</th>
                         <th>Status</th>
-                    </tr> -->
+                        <th>Faza</th>
+                        <th>Nagrada</th>
+                        <th>Delete</th>
+                    </tr>
                 </thead>
 
                 <tbody>
                     <% prijave.map(e => { %>
                     <tr>
-                        <td><%= e.name %></td>
+                        <td><a target="_blank" href="/prijave/<%= e._id %>"><%= e.name %></a></td>
                         <td><%= e.email %></td>
                         <td><%= e.biCode %></td>
+                        <td><%= e.submitted ? 'DA' : 'NE' %></td>
                         <td>
                             <% if(e.picture) { %>
                             <a target="_blank" href="/uploads/<%= e.picture %>"><img height="50"
@@ -136,9 +146,11 @@
                         <td><%= new Date(e.createdAt).toLocaleString() %></td>
                         <td data-search="<%= e.status %>">
                             <form data-id="<%= e._id %>">
-                                <select>
+                                <select <%= e.submitted ? '' : 'disabled' %>>
                                     <option value="UNAUTHORIZED" <%= e.status === 'UNAUTHORIZED' ? "selected" : "" %>>
                                         PENDING</option>
+                                    <option value="DENIED" <%= e.status === 'DENIED' ? "selected" : "" %>>
+                                        ODBIJENO</option>
                                     <option value="AUTHORIZED" <%= e.status === 'AUTHORIZED' ? "selected" : "" %>>
                                         ODOBRENO</option>
                                     <option value="WINNER" <%= e.status === 'WINNER' ? "selected" : "" %>>POBEDNIK
@@ -146,8 +158,11 @@
                                 </select>
                             </form>
                         </td>
+                        <td><%= e.winnerPhase %></td>
+                        <td><%= e.winnerPrize %></td>
                         <td>
-                            <form action="/admin/prijave/<%= e._id %>/delete" method="POST" data-id="<%= e._id %>">
+                            <form class="deleteForm" action="/admin/prijave/<%= e._id %>/delete" method="POST"
+                                data-id="<%= e._id %>">
                                 <input class="btn btn-danger" type="submit" value="Obrisi" />
                             </form>
                         </td>
@@ -160,12 +175,15 @@
                         <th>Ime i Prezime</th>
                         <th>Email</th>
                         <th>Kod</th>
+                        <th>Zavrsena prijava</th>
                         <th>Slika</th>
                         <th>Opis slike</th>
                         <th>Video</th>
                         <th>Opis videa</th>
                         <th>Napravljen</th>
                         <th>Status</th>
+                        <th>Faza</th>
+                        <th>Nagrada</th>
                         <th>Delete</th>
                     </tr>
                 </tfoot>
@@ -176,6 +194,48 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div id="winnerModal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Izaberite fazu i nagradu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="winnerForm" method="POST">
+                        <input type="text" value="WINNER" hidden />
+                        <label>Faza:</label>
+                        <select name="winnerPhase">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                        <br>
+                        <label>Nagrada:</label>
+                        <select name="winnerPrize">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                        <br>
+                        <input class="btn btn-primary" type="submit" value="Sacuvaj" />
+                    </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
 
     <script src="/javascripts/admin.js"></script>
 </body>

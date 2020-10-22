@@ -42,9 +42,19 @@ const EntrySchema = new Schema({
     },
     status: {
         type: String,
-        enum: ['UNAUTHORIZED', 'AUTHORIZED', 'WINNER'],
+        enum: ['UNAUTHORIZED', 'DENIED', 'AUTHORIZED', 'WINNER'],
         default: 'UNAUTHORIZED',
         index: true,
+    },
+    winnerPhase: {
+        type: Number,
+        enum: [0, 1, 2, 3, 4],
+        default: 0,
+    },
+    winnerPrize: {
+        type: Number,
+        enum: [0, 1, 2, 3, 4, 5, 6],
+        default: 0,
     },
 }, { timestamps: true });
 

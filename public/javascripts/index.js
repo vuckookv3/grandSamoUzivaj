@@ -22,6 +22,11 @@ $(function () {
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
 
+        if (!picture && !video) {
+            alert('Morate izabrati file');
+            return;
+        }
+
         var totalMb = 0;
 
         if (picture) {
@@ -42,7 +47,7 @@ $(function () {
     });
 });
 
-$('.hamburger').on('click', function()  {
+$('.hamburger').on('click', function () {
     $("#navbarBox").toggleClass("closed");
     $("#navbarBackground").toggleClass("closed-nav_back");
     $("#navbarWrapper").toggleClass("navbar_box_open_mobile");

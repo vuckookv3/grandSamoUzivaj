@@ -29,7 +29,7 @@ router.get('/profil', async (req, res) => {
         return res.redirect('/');
     }
 
-    const entry = await Entry.findById(req.session.entry);
+    const entry = await Entry.findById(req.session.entry).exec();
     if (!entry) {
         req.flash('error', 'Prijava nije pronadjena. Pokusajte ponovo');
         return res.redirect('/');
@@ -47,20 +47,24 @@ router.get('/prijave', (req, res) => {
     res.render('prijave');
 });
 
-// router.get('/prijave/:id', async (req, res) => {
-//     if (!isMongoId(req.params.id)) return res.redirect('/');
+router.get('/prijave/:id', async (req, res) => {
+    if (!isMongoId(req.params.id)) return res.redirect('/');
 
-//     const entry = await Entry.findById(req.params.id).exec();
-//     if (!entry) return res.redirect('/');
+    const entry = await Entry.findById(req.params.id).exec();
+    if (!entry) return res.redirect('/');
 
-//     if (entry.status === 'UNAUTHORIZED') return res.redirect('/');
+    if (req.session.admin) {
+        return res.render('prijava', { entry });
+    }
 
-//     res.render('prijava', { entry });
-// });
+    if (entry.status === 'UNAUTHORIZED' || entry.status === 'DENIED') return res.redirect('/');
 
-router.get('/prijave/:id', (req, res) => {
-    res.render('prijava');
+    res.render('prijava', { entry });
 });
+
+// router.get('/prijave/:id', (req, res) => {
+//     res.render('prijava');
+// });
 router.get('/pravila', (req, res) => {
     res.render('pravila');
 });
