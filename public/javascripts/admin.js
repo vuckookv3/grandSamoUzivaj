@@ -13,6 +13,8 @@ $(function () {
             $(this).html('<select id="status_search"><option value="ALL">Sve</option><option value="UNAUTHORIZED">PENDING</option><option value="DENIED">ODBIJENO</option><option value="AUTHORIZED">ODOBRENO</option><option value="WINNER">POBEDNIK</option></select>');
         } else if (title === 'Email') {
             $(this).html('<input id="email_search" placeholder="Email" />');
+        } else if (title === 'Kod') {
+            $(this).html('<input id="kod_search" placeholder="Kod" />');
         } else {
             $(this).html('');
         }
@@ -36,6 +38,10 @@ $(function () {
 
     $('#email_search').on('keyup', function () {
         table.column(1).search(this.value).draw();
+    });
+
+    $('#kod_search').on('keyup', function () {
+        table.column(2).search(this.value).draw();
     });
 
 

@@ -3,39 +3,43 @@
 <main>
     <div class="background_box background_box_with_no_bottom">
         <div class="profil">
-        <h1>Prijava</h1>
-        <form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
-            <div class="upload_holder">
-                <div class="upload__box upload__box--photo">
-                    <p>UBACI FOTOGRAFIJU</p>
-                    <label for="pictureInput" class="upload_picture_label">
-                        <img src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat"/>
-                    </label>
+            <h1>Prijava</h1>
+            <form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
+                <div class="upload_holder">
+                    <div class="upload__box upload__box--photo">
+                        <p>UBACI FOTOGRAFIJU</p>
+                        <label for="pictureInput" class="upload_picture_label">
+                            <img src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat" />
+                        </label>
+                    </div>
+                    <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png"
+                        placeholder="Picture" />
+                    <textarea maxlength="500" name="pictureDescription"
+                        placeholder="Ako želiš možeš i rečima da pojasniš svoju fotografiju"></textarea>
                 </div>
-                <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png" placeholder="Picture" />
-                <textarea name="pictureDescription" placeholder="Ako želiš možeš i rečima da pojasniš svoju fotografiju"></textarea>
-            </div>
-            <div class="upload_holder">
-                <div class="upload__box upload__box--video">
-                    <p>UBACI VIDEO</p>
-                    <label for="videoInput" class="upload_video_label">
-                        <img src="/images/mehanizam_kamera.png" alt="Kamera"/>
+                <div class="upload_holder">
+                    <div class="upload__box upload__box--video">
+                        <p>UBACI VIDEO</p>
+                        <label for="videoInput" class="upload_video_label">
+                            <img src="/images/mehanizam_kamera.png" alt="Kamera" />
 
-                    </label>
+                        </label>
+                    </div>
+                    <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi"
+                        placeholder="Video" />
+                    <textarea maxlength="500" name="videoDescription"
+                        placeholder="Ako želiš možeš i rečima da pojasniš svoj video"></textarea>
                 </div>
-                <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi" placeholder="Video" />
-                <textarea name="videoDescription" placeholder="Ako želiš možeš i rečima da pojasniš svoj video"></textarea>
-            </div>
-            <!-- <div class="checkbox__pravila_privatnosti"> -->
+                <!-- <div class="checkbox__pravila_privatnosti"> -->
                 <input type="checkbox" /> Prihvatam pravila privatnosti
-            <!-- </div> -->
-            <button class="input_submit" type="submit">PRIJAVI SE</button>
-        </form>
-        <div class="strelica strelica__mobile_only">
-            
+                <!-- </div> -->
+                <button class="input_submit" type="submit">PRIJAVI SE</button>
+            </form>
+            <div class="strelica strelica__mobile_only">
+
+            </div>
         </div>
     </div>
-</div>
 </main>
 
 <%- include('partials/footer') %>
