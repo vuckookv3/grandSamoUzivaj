@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const fs = require('fs');
 const mime = require('mime-types');
-const { isEmail } = require('validator');
+const { isEmail, isMongoId } = require('validator');
 const { Entry } = require('../models');
 const { isStarted, DATE_START, upload, imageExtensions, videoExtensions } = require('../helpers');
 
@@ -45,6 +45,17 @@ router.get('/profil', async (req, res) => {
 
 router.get('/prijave', (req, res) => {
     res.render('prijave');
+});
+
+router.get('/prijave/:id', async (req, res) => {
+    if (!isMongoId(req.params.id)) return res.redirect('/');
+
+    const entry = await Entry.findById(req.params.id).exec();
+    if (!entry) return res.redirect('/');
+
+    if (entry.status === 'UNAUTHORIZED') return res.redirect('/');
+
+    res.render('prijava', { entry });
 });
 
 router.get('/pravila', (req, res) => {

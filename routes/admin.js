@@ -83,11 +83,21 @@ router.put('/api/prijave/:id/status', async (req, res) => {
 
     let html = null;
 
-    if (entry.status === 'UNAUTHORIZED') html = emailUnauthorized;
-    else html = emailWinner;
+    if (entry.status === 'UNAUTHORIZED') {
+        html = emailUnauthorized;
+    }
+    else if (entry.status === 'AUTHORIZED') {
+        html = emailWinner;
+    }
+    else {
+
+    }
+
 
     try {
-        const mail = await mailer(entry.email, 'Status vase prijave', html);
+        if (entry.isModified('status') && entry.status !== 'WINNER') {
+            const mail = await mailer(entry.email, 'Status vase prijave', html);
+        }
     } catch (err) {
         console.error('MAIL NOT SENT:')
         console.error(err);
