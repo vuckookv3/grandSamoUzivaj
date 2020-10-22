@@ -132,10 +132,11 @@ a:hover {
 
 .documentWrapper {
   flex-direction: column;
+  position: relative;
 }
 
 .background_box {
-  background: radial-gradient(600px at bottom, #674537, #000 55%);
+  background: radial-gradient(800px at bottom, #674537, #000 70%);
   min-height: 500px;
   position: relative;
   width: 100%;
@@ -145,13 +146,13 @@ a:hover {
 
 .strelica {
   border-top: 100px solid transparent;
-  border-left: 50vw solid #ffcc00;
-  border-right: 50vw solid #ffcc00;
+  border-left: calc(50vw + 2px) solid #ffcc00;
+  border-right: calc(50vw + 2px) solid #ffcc00;
   content: "";
-  height: 0;
-  left: 0;
-  bottom: 0;
   width: 0;
+  height: 0;
+  left: -2px;
+  bottom: -2px;
   position: absolute;
 }
 
@@ -165,12 +166,13 @@ a:hover {
     background: radial-gradient(1000px at bottom, #674537, #000 70%);
     padding-top: 115px;
     padding-bottom: 150px;
+    width: calc(100vw - 400px);
   }
 
   .strelica {
     border-top: 150px solid transparent;
-    border-left: calc(50vw - 200px) solid #ffcc00;
-    border-right: calc(50vw - 200px) solid #ffcc00;
+    border-left: calc(50vw - 198px) solid #ffcc00;
+    border-right: calc(50vw - 198px) solid #ffcc00;
   }
 }
 .uskoro {
@@ -496,7 +498,7 @@ a:hover {
 }
 #leftSection div {
   align-items: flex-start;
-  width: fit-content;
+  width: auto;
 }
 #leftSection .header__prelomni_text {
   flex-direction: row;
@@ -509,6 +511,9 @@ a:hover {
   font-size: 34pt;
   line-height: 1;
   white-space: nowrap;
+}
+#leftSection .footer__datumi {
+  display: none;
 }
 
 .insta_grand_traka {
@@ -538,12 +543,15 @@ a:hover {
 
   #leftSection {
     width: 200px;
-    height: 70vh;
+    height: 100vh;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
   }
   #leftSection div {
-    margin: auto;
+    height: 100%;
+    justify-content: flex-start;
   }
   #leftSection P {
     margin-left: 0;
@@ -554,10 +562,22 @@ a:hover {
   #leftSection .header__prelomni_text .text_lg {
     font-size: 44pt;
   }
+  #leftSection .footer__datumi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    justify-content: flex-end;
+  }
+  #leftSection .footer__datumi p {
+    font-size: 18pt;
+    margin: 0;
+  }
 
   .insta_grand_traka {
     width: 150px;
     top: -60px;
+    left: unset;
   }
 }
 #rightSection {
@@ -567,7 +587,7 @@ a:hover {
 .bottom_section {
   flex: 1;
   position: absolute;
-  bottom: -220px;
+  bottom: -240px;
   color: #000;
 }
 .bottom_section .footer__datumi {
@@ -578,66 +598,73 @@ a:hover {
 .bottom_section .footer__network {
   font-family: "Roboto-Regular";
 }
+.bottom_section .footer__network a {
+  display: flex;
+  flex-direction: column;
+}
 
 @media (min-width: 992px) {
   #rightSection {
     display: flex;
     width: 200px;
-    height: 70vh;
+    height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    right: 0;
   }
   #rightSection .kesice_kafe {
-    width: 60%;
+    width: 70%;
     transform: translateY(-50px);
   }
   #rightSection .solja_kafe {
-    max-width: 250px;
+    width: 250px;
+    max-width: 100%;
     z-index: 1;
+  }
+  #rightSection .footer__network {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Roboto-Regular";
+    color: #000;
+    margin-bottom: 30px;
+  }
+  #rightSection .footer__network a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 180px;
+  }
+  #rightSection .footer__network a img {
+    width: 15px;
+  }
+  #rightSection .footer__network a p {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 12pt;
   }
 
   .bottom_section {
-    flex-direction: row;
-    padding-bottom: 20px;
-    bottom: -30px;
-  }
-  .bottom_section .footer__datumi {
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 50px;
-    font-size: 26pt;
-  }
-  .bottom_section .footer__datumi p {
-    margin: 0;
-  }
-  .bottom_section .footer__network {
-    flex: 1;
-    align-items: flex-end;
-  }
-  .bottom_section .footer__network div {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 180px;
-  }
-  .bottom_section .footer__network div img {
-    width: 20px;
-  }
-  .bottom_section .footer__network div p {
-    margin: 5px 0 5px 5px;
-    font-size: 16pt;
+    display: none;
   }
 }
 .content_title {
   color: #fff;
   font-family: "DejaVu-Sans";
-  font-size: 20pt;
+  margin-bottom: 20px;
   font-weight: 600;
   text-align: center;
 }
 
 .mehanizam__box {
+  max-width: 500px;
   margin-bottom: 40px;
+}
+
+.mehanizam__desktop {
+  display: none;
 }
 
 .mehanizam__text_box {
@@ -723,7 +750,7 @@ a:hover {
 }
 .mehanizam__iphone p {
   color: #fff;
-  font-family: "Roboto-Regular";
+  font-family: "Roboto-Medium";
   font-size: 18pt;
 }
 .mehanizam__iphone .iphone__num_and_text .text {
@@ -734,7 +761,7 @@ a:hover {
 
 .mehanizam__sporedne_nagrade p {
   color: #fff;
-  font-family: "Roboto-Regular";
+  font-family: "Roboto-Medium";
   font-size: 14pt;
   text-align: center;
 }
@@ -747,61 +774,62 @@ a:hover {
 }
 
 @media (min-width: 992px) {
+  .content_title {
+    font-size: 20pt;
+  }
+
+  .mehanizam__box {
+    display: none;
+  }
+
   .mehanizam {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto auto;
-    grid-template-areas: "prvi treci" "drugi cetvrti";
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
-  .mehanizam__box--prvi {
-    grid-area: prvi;
-  }
-
-  .mehanizam__box--drugi {
-    grid-area: drugi;
-  }
-
-  .mehanizam__box--treci {
-    grid-area: treci;
-  }
-
-  .mehanizam__box--cetvrti {
-    grid-area: cetvrti;
-    flex-direction: row;
-  }
-  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade {
-    max-width: 200px;
-  }
-  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade img {
-    height: 70px;
-  }
-  .mehanizam__box--cetvrti .mehanizam__sporedne_nagrade p {
-    font-size: 10pt;
-  }
-  .mehanizam__box--cetvrti .mehanizam__num_and_img--nagrade {
-    flex-direction: column-reverse;
-  }
-  .mehanizam__box--cetvrti .mehanizam__num_and_img--nagrade .mehanizam__text_box--nagrade .number {
-    position: absolute;
-    bottom: 50px;
-    left: -50px;
-  }
-
-  .mehanizam__text_box {
-    align-items: flex-start;
-    font-size: 18pt;
-  }
-
-  .mehanizam__num_and_img .number {
-    font-size: 60px;
-    bottom: -20px;
+  .mehanizam__desktop {
+    display: block;
+    width: 100%;
+    max-width: 660px;
   }
 }
-.prijava {
-  min-height: 60vh;
+.input_submit {
+  grid-area: submit;
+  width: auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: transparent;
+  border: none;
+  font-family: "AntennaComp-Bold";
+  color: #fff;
+  font-size: 40pt;
+  font-style: italic;
+  display: flex;
+  align-items: center;
 }
+.input_submit:after {
+  content: "";
+  background-image: url("/images/zrno_kafe.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-left: 14px;
+}
+.input_submit:before {
+  content: "";
+  background-image: url("/images/zrno_kafe.png");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.input_submit:focus {
+  outline: none;
+}
+
 .prijava h1 {
   text-align: left;
   font-family: "AntennaComp-Bold";
@@ -847,40 +875,6 @@ a:hover {
   grid-area: bi;
   margin-left: 10px;
 }
-.prijava .input_submit {
-  grid-area: submit;
-  width: auto;
-  margin: 0 auto;
-  margin-top: 30px;
-  background-color: transparent;
-  border: none;
-  font-family: "AntennaComp-Bold";
-  color: #fff;
-  font-size: 40pt;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-}
-.prijava .input_submit:after {
-  content: "";
-  background-image: url("/images/zrno_kafe.png");
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-left: 10px;
-}
-.prijava .input_submit:before {
-  content: "";
-  background-image: url("/images/zrno_kafe.png");
-  background-size: 18px 18px;
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-}
 
 .strelica__floating_box {
   position: absolute;
@@ -904,8 +898,7 @@ a:hover {
   }
 
   .strelica__floating_box {
-    bottom: -180px;
-    padding-bottom: 30px;
+    bottom: -140px;
   }
   .strelica__floating_box img {
     width: 300px;
@@ -927,7 +920,6 @@ a:hover {
   }
 }
 .kontakt {
-  min-height: 60vh;
   color: #fff;
 }
 .kontakt h1 {
@@ -1007,20 +999,28 @@ a:hover {
   font-weight: 600;
   margin-bottom: 20px;
 }
+.galerija .grid_holder {
+  width: 80%;
+  max-width: 350px;
+}
 .galerija .grid_holder .grid_box {
   margin: 5px 0;
   align-items: flex-start;
-  width: fit-content;
+  width: 100%;
 }
 .galerija .grid_holder .grid_box .img_holder {
   position: relative;
-  width: 135px;
-  height: 135px;
-  object-fit: cover;
   overflow: hidden;
+  height: 0;
+  padding-top: 100%;
 }
 .galerija .grid_holder .grid_box .img_holder img {
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
   width: 100%;
+  height: 100%;
   max-width: unset;
 }
 .galerija .grid_holder .grid_box .text_holder {
@@ -1040,7 +1040,7 @@ a:hover {
 }
 .galerija .grid_holder .grid_box .text_holder .text_on_hover {
   display: none;
-  font-size: 8pt;
+  font-size: 12pt;
   text-align: center;
   line-height: 1;
 }
@@ -1062,27 +1062,160 @@ a:hover {
 }
 .galerija .grid_holder .grid_box .text_holder:hover .text_on_hover {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 .galerija .grid_holder .grid_box .share_on_facebook {
-  width: 50px;
+  width: 33%;
+  max-width: 100px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
+@media (min-width: 768px) {
+  .galerija .grid_holder {
+    width: 100%;
+    max-width: unset;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 0 150px;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+}
 @media (min-width: 992px) {
   .galerija h1 {
     font-size: 20pt;
   }
   .galerija .grid_holder {
-    max-width: 600px;
-    display: grid;
+    max-width: 800px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    column-gap: 12px;
-    row-gap: 5px;
+    padding: 0 15px;
+  }
+  .galerija .grid_holder .grid_box .text_holder .text_on_hover {
+    font-size: 9.5pt;
   }
   .galerija .grid_holder .grid_box .share_on_facebook {
     margin-bottom: 0;
+  }
+}
+.profil h1 {
+  font-family: "DejaVu-Sans";
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.profil form {
+  padding: 30px 0;
+  width: 100%;
+}
+.profil .upload_holder {
+  margin-top: 50px;
+  position: relative;
+}
+.profil div input {
+  display: none;
+}
+.profil div .upload__box {
+  margin: 20px 0;
+  width: auto;
+}
+.profil div .upload__box p {
+  position: absolute;
+  background-color: #ffcc00;
+  font-family: "AntennaComp-Bold";
+  color: #000;
+  width: 100%;
+  height: 40px;
+  top: -35px;
+  font-size: 20pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profil div .upload__box label {
+  width: 250px;
+  height: 250px;
+  border: 2px solid #ffcc00;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profil div .upload__box label img {
+  height: 70px;
+}
+.profil div .upload__box--video p {
+  width: 100%;
+}
+.profil div .upload__box--video label {
+  height: 200px;
+}
+.profil div textarea {
+  height: 250px;
+  width: 250px;
+  background-color: #000;
+  border: 2px solid #ffcc00;
+  padding: 10px;
+  color: #fff;
+  font-family: "Roboto-Regular";
+}
+.profil div textarea::placeholder {
+  color: #fff;
+  font-family: "Roboto-Regular";
+  font-size: 14pt;
+}
+.profil div textarea:focus {
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .profil h1 {
+    font-size: 20pt;
+  }
+  .profil form {
+    width: 90%;
+    max-width: 650px;
+  }
+  .profil div {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .profil div .upload__box label {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ffcc00;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profil div .upload__box label img {
+    height: 70px;
+  }
+  .profil div .upload__box p {
+    height: 30px;
+    font-size: 18pt;
+    width: 200px;
+    top: -15px;
+  }
+  .profil div textarea {
+    height: 200px;
+    transform: translateY(-2px);
+    height: 200px;
+    width: 100%;
+    margin-left: 15px;
+  }
+  .profil div .upload__box--video p {
+    width: 250px;
+  }
+  .profil div .upload__box--video label {
+    width: 250px;
+  }
+  .profil .upload_holder {
+    margin-top: 0;
   }
 }
 

@@ -2,18 +2,40 @@
 
 <main>
     <div class="background_box">
+        <div class="profil">
+        <h1>Prijava</h1>
         <form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
-            <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png" placeholder="Picture" />
-            <textarea name="pictureDescription" placeholder="Opis slike"></textarea>
-            <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi" placeholder="Video" />
-            <textarea name="videoDescription" placeholder="Opis videa"></textarea>
-            <input type="submit" value="Submit" />
+            <div class="upload_holder">
+                <div class="upload__box upload__box--photo">
+                    <p>UBACI FOTOGRAFIJU</p>
+                    <label for="pictureInput" class="upload_picture_label">
+                        <img src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat"/>
+                    </label>
+                </div>
+                <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png" placeholder="Picture" />
+                <textarea name="pictureDescription" placeholder="Ako želiš možeš i rečima da pojasniš svoju fotografiju"></textarea>
+            </div>
+            <div class="upload_holder">
+                <div class="upload__box upload__box--video">
+                    <p>UBACI VIDEO</p>
+                    <label for="videoInput" class="upload_video_label">
+                        <img src="/images/mehanizam_kamera.png" alt="Kamera"/>
+
+                    </label>
+                </div>
+                <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi" placeholder="Video" />
+                <textarea name="videoDescription" placeholder="Ako želiš možeš i rečima da pojasniš svoj video"></textarea>
+            </div>
+            <!-- <div class="checkbox__pravila_privatnosti"> -->
+                <input type="checkbox" /> Prihvatam oravila privatnosti
+            <!-- </div> -->
+            <button class="input_submit" type="submit">PRIJAVI SE</button>
         </form>
-        <div class="strelica">
+        <!-- <div class="strelica">
             
-        </div>
+        </div> -->
     </div>
-   
+</div>
 </main>
 
 <%- include('partials/footer') %>

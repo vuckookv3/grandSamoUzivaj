@@ -33,7 +33,7 @@
 
     div {
         align-items: flex-start;
-        width: fit-content;
+        width: auto;
     }
     .header__prelomni_text {
         flex-direction: row;
@@ -46,6 +46,9 @@
         font-size: 34pt;
         line-height: 1;
         white-space: nowrap;
+    }
+    .footer__datumi {
+        display: none;
     }
 }
     .insta_grand_traka {
@@ -73,11 +76,14 @@
     }
     #leftSection {
         width: 200px;
-        height: 70vh;
+        height: 100vh;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
+        position: fixed;
+        left: 0;
         div {
-            margin: auto;
+            height: 100%;
+            justify-content: flex-start;
         }
         P {
             margin-left: 0;
@@ -88,9 +94,21 @@
                 font-size: 44pt;
             }
         }
+        .footer__datumi {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            justify-content: flex-end;
+            p {
+                font-size: 18pt;
+                margin: 0;
+            }
+        }
     }
     .insta_grand_traka {
         width: 150px;
         top: -60px;
+        left: unset;
     }
  }
