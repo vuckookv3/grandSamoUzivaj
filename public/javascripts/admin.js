@@ -58,4 +58,7 @@ $(function () {
         });
     });
 
+    $('.deleteForm').on('submit', function () {
+        return confirm('Jeste li sigurni da zelite da obrisete ovu prijavu?');
+    });
 });

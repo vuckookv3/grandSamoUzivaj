@@ -155,7 +155,8 @@
                         <td><%= e.winnerPhase %></td>
                         <td><%= e.winnerPrize %></td>
                         <td>
-                            <form action="/admin/prijave/<%= e._id %>/delete" method="POST" data-id="<%= e._id %>">
+                            <form class="deleteForm" action="/admin/prijave/<%= e._id %>/delete" method="POST"
+                                data-id="<%= e._id %>">
                                 <input class="btn btn-danger" type="submit" value="Obrisi" />
                             </form>
                         </td>
