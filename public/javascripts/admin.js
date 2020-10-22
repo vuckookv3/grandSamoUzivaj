@@ -14,7 +14,7 @@ $(function () {
         } else if (title === 'Email') {
             $(this).html('<input id="email_search" placeholder="Email" />');
         } else {
-            $(this).html('')
+            $(this).html('');
         }
     });
 

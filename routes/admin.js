@@ -113,7 +113,7 @@ router.put('/api/prijave/:id/status', async (req, res) => {
 
     try {
         if (isModified && ['DENIED', 'AUTHORIZED'].includes(entry.status) && !!html) {
-            // const mail = await mailer(entry.email, 'Status vase prijave', html);
+            const mail = await mailer(entry.email, 'Status vase prijave', html);
         }
     } catch (err) {
         console.error('MAIL NOT SENT:')
