@@ -1,13 +1,16 @@
 .content_title {
     color: #fff;
     font-family: $font-dejavu-sans;
-    font-size: 20pt;
+    margin-bottom: 20px;
     font-weight: 600;
     text-align: center;
 }
 .mehanizam__box {
-
+    max-width: 500px;
     margin-bottom: 40px;
+}
+.mehanizam__desktop {
+    display: none;
 }
 .mehanizam__text_box {
         color: #fff;
@@ -103,7 +106,7 @@
     flex-direction: column !important;
     p {
         color: #fff;
-        font-family: $font-roboto-regular;
+        font-family: $font-roboto-medium;
         font-size: 18pt;
     }
     .iphone__num_and_text {
@@ -117,7 +120,7 @@
 .mehanizam__sporedne_nagrade {
     p {
         color: #fff;
-        font-family: $font-roboto-regular;
+        font-family: $font-roboto-medium;
         font-size: 14pt;
         text-align: center;
     }
@@ -129,57 +132,106 @@
     flex-direction: column;
 }
 @include lg {
-    .mehanizam {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: auto auto;
-        grid-template-areas: "prvi treci" "drugi cetvrti";
-        padding: 0 10px;
+    .content_title {
+        font-size: 20pt;
     }
-    .mehanizam__box--prvi {
-        grid-area: prvi;
-    }
-    .mehanizam__box--drugi {
-        grid-area: drugi;
-        
-    }
-    .mehanizam__box--treci {
-        grid-area: treci;
-        
-    }
-    .mehanizam__box--cetvrti {
-        grid-area: cetvrti;
-        flex-direction: row;
-        .mehanizam__sporedne_nagrade {
-            max-width: 200px;
-            img {
-                height: 70px;
-            }
-            p {
-                font-size: 10pt;
-            }
-        }
-        .mehanizam__num_and_img--nagrade {
-            flex-direction: column-reverse;
 
-            .mehanizam__text_box--nagrade {
-                .number {
-                    position: absolute;
-                    bottom: 50px;
-                    left: -50px;
-                }
-            }
-        }
+    .mehanizam__box {
+        display: none;
     }
-    .mehanizam__text_box {
-        align-items: flex-start;
-        font-size: 18pt;
+    .mehanizam{
+        padding: 0 20px;
+    }
+    .mehanizam__desktop {
+        display: block;
+        width: 100%;
+        max-width: 660px;
+    }
+    // .mehanizam {
+    //     display: grid;
+    //     grid-template-columns: 50% 50%;
+    //     grid-template-rows: auto auto;
+    //     grid-template-areas: "prvi treci" "drugi cetvrti";
+    //     padding: 0 10px;
+    // }
+    // .mehanizam__box {
+    //     margin-bottom: 0;
+    // }
+    // .mehanizam__box--prvi {
+    //     grid-area: prvi;
+    //     img {
+    //         width: 180px;
+    //     }
+    // }
+    // .mehanizam__box--drugi {
+    //     grid-area: drugi;
+    //     img {
+    //         width: 130px;
+    //     }
+    //     .mehanizam__text_box {
+
+    //         p {
+    //             &:last-child {
+    //                 text-align: left;
+    //             }
+    //         }
+            
+    //     }
+    // }
+    // .mehanizam__box--treci {
+    //     grid-area: treci;
+  
+    //     p {
+    //         text-align: left;
+    //     }
         
-    }
-    .mehanizam__num_and_img {
-        .number {
-            font-size: 60px;
-            bottom: -20px;
-        }
-    }
+    // }
+    // .mehanizam__box--cetvrti {
+    //     grid-area: cetvrti;
+    //     flex-direction: row;
+    //     align-items: flex-start;
+    //     .mehanizam__sporedne_nagrade {
+    //         max-width: 200px;
+    //         img {
+    //             height: 50px;
+    //         }
+    //         p {
+    //             font-size: 10pt;
+    //         }
+    //     }
+    //     .mehanizam__num_and_img--nagrade {
+        
+    //         flex-direction: column-reverse;
+    //         div {
+    //             .text {
+    //                 position: absolute;
+    //                 white-space: nowrap;
+    //                 bottom: -45px;
+    //             }
+    //         }
+    //         .mehanizam__text_box--nagrade {
+    //             .number {
+    //                 position: absolute;
+    //                 bottom: 50px;
+    //                 left: -50px;
+    //             }
+    //         }
+    //     }
+    // }
+    // .mehanizam__text_box {
+    //     align-items: flex-start;
+    //     font-size: 14pt;
+        
+    // }
+    // .mehanizam__num_and_img {
+    //     .number {
+    //         font-size: 60px;
+    //         bottom: -20px;
+    //     }
+    // }
+    // .mehanizam__iphone {
+    //     p {
+    //        font-size: 14pt; 
+    //     }
+    // }
 }

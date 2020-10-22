@@ -1,5 +1,42 @@
+.input_submit {
+    grid-area: submit;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: transparent;
+    border: none;
+    font-family: $font-antenna-comp-bold;
+    color: #fff;
+    font-size: 40pt;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    &:after {
+        content: "";
+        background-image: url("/images/zrno_kafe.png");
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-left: 14px;
+        
+    }
+    &:before {
+        content: "";
+        background-image: url("/images/zrno_kafe.png");
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+    &:focus {
+        outline: none;
+    }
+}
 .prijava {
-    min-height: 60vh;
     h1 {
         text-align: left;
         font-family: $font-antenna-comp-bold;
@@ -47,49 +84,13 @@
         grid-area: bi;
         margin-left: 10px;
     }
-    .input_submit {
-        grid-area: submit;
-        width: auto;
-        margin: 0 auto;
-        margin-top: 30px;
-        background-color: transparent;
-        border: none;
-        font-family: $font-antenna-comp-bold;
-        color: #fff;
-        font-size: 40pt;
-        font-style: italic;
-        display: flex;
-        align-items: center;
-        &:after {
-            content: "";
-            background-image: url("/images/zrno_kafe.png");
-            background-size: 18px 18px;
-            background-repeat: no-repeat;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            margin-left: 10px;
-            
-        }
-        &:before {
-            content: "";
-            background-image: url("/images/zrno_kafe.png");
-            background-size: 18px 18px;
-            background-repeat: no-repeat;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            margin-right: 10px;
-        }
-    }
+   
 }
 .strelica__floating_box {
     position: absolute;
     bottom: -50px;
     z-index: 1;
-    img {
 
-    }
     div {
         width: auto;
         align-items: flex-start;
@@ -108,8 +109,8 @@
         }
     }
     .strelica__floating_box {
-        bottom: -180px;
-        padding-bottom: 30px;
+        bottom: -140px;
+        // padding-bottom: 30px;
         img {
             width: 300px;
         }
@@ -128,5 +129,8 @@
             line-height: 1;
             font-size: 30pt;
         }
+    }
+    .strelica__floating_box--only_mobile {
+        display: none;
     }
 }

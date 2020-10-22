@@ -4,7 +4,7 @@
 .bottom_section {
     flex: 1;
     position: absolute;
-    bottom: -220px;
+    bottom: -240px;
     color: #000;
     
     .footer__datumi {
@@ -15,6 +15,10 @@
  
     .footer__network {
         font-family: $font-roboto-regular;
+        a {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 @include lg {
@@ -22,54 +26,51 @@
         // min-width: 200px;
         display: flex;
         width: 200px;
-        height: 70vh;
+        height: 100vh;
         flex-direction: column;
         justify-content: space-between;
+        position: fixed;
+        right: 0;
         .kesice_kafe {
             // height: 250px;
-            width: 60%;
+            width: 70%;
             transform: translateY(-50px);
         }
         .solja_kafe {
-            max-width: 250px;
+            width: 250px;
+            max-width: 100%;
             z-index: 1;
+        }
+        .footer__network {
+            align-items: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            font-family: $font-roboto-regular;
+            color: #000;
+            margin-bottom: 30px;
+
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: baseline;
+                width: 180px;
+                
+                img {
+                    width: 15px;
+                }
+                p {
+                    margin: 0;
+                    margin-left: 5px;
+                    font-size: 12pt;
+                }
+            }
         }
 
     }
 
     .bottom_section {
-        flex-direction: row;
-        padding-bottom: 20px;
-        bottom: -30px;
-
-        .footer__datumi {
-            flex: 1;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-left: 50px;
-            font-size: 26pt;
-            
-            p {
-                margin: 0;
-            }
-        }
-        .footer__network {
-            flex: 1;
-            align-items: flex-end;
-
-            div {
-                flex-direction: row;
-                justify-content: flex-start;
-                width: 180px;
-                
-                img {
-                    width: 20px;
-                }
-                p {
-                    margin: 5px 0 5px 5px;
-                    font-size: 16pt;
-                }
-            }
-        }
+        display: none;
+        
     }
 }

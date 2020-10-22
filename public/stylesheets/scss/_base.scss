@@ -99,12 +99,13 @@ a:hover {
 
 .documentWrapper {
     flex-direction: column;
+    position: relative;
 }
 
 
 
 .background_box {
-    background: radial-gradient(600px at bottom, #674537, #000 55%);
+    background: radial-gradient(800px at bottom, #674537, #000 70%);
     // height: 95vh;
     min-height: 500px;
     position: relative;
@@ -115,13 +116,13 @@ a:hover {
 
 .strelica {
     border-top: 100px solid transparent;
-    border-left: 50vw solid $color-yellow-back;
-    border-right: 50vw solid $color-yellow-back;
+    border-left: calc(50vw + 2px) solid $color-yellow-back;
+    border-right: calc(50vw + 2px) solid $color-yellow-back;
     content: "";
-    height: 0;
-    left: 0;
-    bottom: 0;
     width: 0;
+    height: 0;
+    left: -2px;
+    bottom: -2px;
     position: absolute;
 }
 
@@ -136,14 +137,22 @@ a:hover {
         background: radial-gradient(1000px at bottom, #674537, #000 70%);
         padding-top: 115px;
         padding-bottom: 150px;
+        width: calc(100vw - 400px);
 
     }
-   
+   .background_box_with_no_bottom {
+    //    height: 100vh;
+    //    padding-bottom: 120px;
+       justify-content: flex-start;
+   }
     .strelica {
         border-top: 150px solid transparent;
-        border-left: calc(50vw - 200px) solid $color-yellow-back;
-        border-right: calc(50vw - 200px) solid $color-yellow-back;
+        border-left: calc(50vw - 198px) solid $color-yellow-back;
+        border-right: calc(50vw - 198px) solid $color-yellow-back;
         
+    }
+    .strelica__mobile_only {
+        display: none;
     }
  
     

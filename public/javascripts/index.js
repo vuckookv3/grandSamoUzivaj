@@ -42,7 +42,9 @@ $(function () {
     });
 });
 
-
+$('.hamburger').on('click', function()  {
+    $("#navbarBox").toggleClass("closed");
+})
 
 // $('#prijava2').on('submit', function (e) {
 //     e.preventDefault();
