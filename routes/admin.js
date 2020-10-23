@@ -128,7 +128,7 @@ router.post('/prijave/:id/delete', async (req, res) => {
     const entry = await Entry.findById(req.params.id).exec();
     if (!entry) {
         req.flash('error', 'Prijava nije pronadjena');
-        res.redirect('/admin');
+        return res.redirect('/admin');
     }
 
     await entry.remove();
