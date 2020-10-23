@@ -87,11 +87,6 @@ a:hover {
     }
 }
 
-a.disabled {
-    pointer-events: none;
-    cursor: default;
-}
-
 .no-spin::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
@@ -147,28 +142,37 @@ a.disabled {
     font-family: $font-antenna-comp-bold;
     border-radius: 10px;
     color: #000;
-}
-.documentWrapper {
-    flex-direction: row;
-    align-items: flex-start;
+ 
+    
 }
 
-.background_box {
-    background: radial-gradient(1000px at bottom, #674537, #000 70%);
-    padding-top: 115px;
-    padding-bottom: 150px;
-    width: calc(100vw - 400px);
-}
-.background_box_with_no_bottom {
+@include lg {
+    .documentWrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .background_box {
+        background: radial-gradient(1000px at bottom, #674537, #000 70%);
+        padding-top: 115px;
+        padding-bottom: 150px;
+        width: calc(100vw - 400px);
+
+    }
+   .background_box_with_no_bottom {
     //    height: 100vh;
     //    padding-bottom: 120px;
-    justify-content: flex-start;
-}
-.strelica {
-    border-top: 150px solid transparent;
-    border-left: calc(50vw - 198px) solid $color-yellow-back;
-    border-right: calc(50vw - 198px) solid $color-yellow-back;
-}
-.strelica__mobile_only {
-    display: none;
+       justify-content: flex-start;
+   }
+    .strelica {
+        border-top: 150px solid transparent;
+        border-left: calc(50vw - 198px) solid $color-yellow-back;
+        border-right: calc(50vw - 198px) solid $color-yellow-back;
+        
+    }
+    .strelica__mobile_only {
+        display: none;
+    }
+ 
+    
 }
