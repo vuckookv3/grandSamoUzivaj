@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const path = require('path');
 const fs = require('fs');
 const mime = require('mime-types');
 const { isEmail, isMongoId } = require('validator');
@@ -54,16 +55,21 @@ router.get('/prijave', async (req, res) => {
 router.get('/prijave/:id', async (req, res) => {
     if (!isMongoId(req.params.id)) return res.redirect('/');
 
-    const entry = await Entry.findById(req.params.id).exec();
-    if (!entry) return res.redirect('/');
+    const prijava = await Entry.findById(req.params.id).exec();
+    if (!prijava) return res.redirect('/');
 
-    if (req.session.admin) {
-        return res.render('prijava', { entry });
+    let type = '';
+    if (prijava.video) {
+        type = path.extname(prijava.video);
+        type = mime.lookup(type);
     }
 
-    if (entry.status === 'UNAUTHORIZED' || entry.status === 'DENIED') return res.redirect('/');
+    if (req.session.admin) {
+        return res.render('prijava', { prijava, type });
+    }
+    if (prijava.status === 'UNAUTHORIZED' || prijava.status === 'DENIED') return res.redirect('/');
 
-    res.render('prijava', { entry });
+    res.render('prijava', { prijava, type });
 });
 
 // router.get('/prijave/:id', (req, res) => {

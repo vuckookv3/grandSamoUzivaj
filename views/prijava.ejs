@@ -3,13 +3,16 @@
 <main>
     <div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
         <div class="profil">
-            <h1>Ana Marković</h1>
+            <h1><%= prijava.name %></h1>
             <div class="profil__foto_holder">
                 <div class="img_holder">
-                    <img src="/images/test-slika.png" alt="Gallery image">
+                    <% if(prijava.picture) { %>
+                    <img src="/uploads/<%= prijava.picture %>">
+                    <% } else { %>
+                    <img src="/images/picture_thumb.png">
+                    <% } %>
                 </div>
-                <div class="text_box">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minima quisquam corrupti quas amet officia ratione eligendi </div>
+                <div class="text_box"><%= prijava.pictureDescription %></div>
 
                 <div class="floating_traka">
                     <p>FOTO</p>
@@ -17,12 +20,13 @@
             </div>
             <div class="profil__video_holder">
                 <div class="video_holder">
-                    <video>
-
+                    <% if(prijava.video) { %>
+                    <video controls>
+                        <source src="/uploads/<%= prijava.video %>" type="<%= type %>">
                     </video>
+                    <% } %>
                 </div>
-                <div class="text_box">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Minima quisquam corrupti quas amet officia ratione eligendi </div>
+                <div class="text_box"><%= prijava.videoDescription %></div>
 
                 <div class="floating_traka">
                     <p>VIDEO</p>

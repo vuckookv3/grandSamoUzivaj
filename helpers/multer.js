@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
 
     const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mov|mpeg|avi/;
-
+    console.error({ fileFilter: fileTypes.test(mime.extension(file.mimetype)), mime: mime.extension(file.mimetype), mimetype: file.mimetype })
     if (fileTypes.test(mime.extension(file.mimetype))) {
         return cb(null, true)
     } else {
@@ -38,6 +38,7 @@ const upload = (fieldName) => (req, res, next) => {
             req.flash('error', message);
             return res.redirect('/profil');
         } else if (err) {
+            console.error('ERROR\n', err);
             req.flash('error', 'Nepodrzan format file-a');
             return res.redirect('/profil');
         }
