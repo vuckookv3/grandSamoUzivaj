@@ -23,13 +23,10 @@
                 <% }) %>
             </div>
         </div>
-        <!-- <div>
-            <a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&lt;</a>
-            <a class="<%= prijave.length < 20 ? 'disabled' : '' %>" href="/prijave?page=<%= (page + 1) %>">&gt;</a>
-        </div> -->
         <div class="pagination_arrows">
-            <div>&#10096;</div>
-            <div>&#10097;</div>
+            <div><a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&#10096;</a></div>
+            <div><a class="<%= prijave.length < 20 ? 'disabled' : '' %>"
+                    href="/prijave?page=<%= (page + 1) %>">&#10097;</a></div>
         </div>
         <div class="strelica strelica__mobile_only">
 
