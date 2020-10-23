@@ -87,7 +87,6 @@ router.post('/api/prijave/:id/status/winner', async (req, res) => {
 
 router.put('/api/prijave/:id/status', async (req, res) => {
     const status = req.body.status;
-    console.log(status)
     if (!status) return res.status(400).json({});
 
     if (!['UNAUTHORIZED', 'DENIED', 'AUTHORIZED', 'WINNER'].includes(status)) return res.status(400).json({});
