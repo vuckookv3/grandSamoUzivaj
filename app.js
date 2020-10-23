@@ -18,7 +18,24 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.set('trust proxy', true);
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      'default-src': ["'self'"],
+      'base-uri': ["'self'"],
+      'block-all-mixed-content': [],
+      'font-src': ["'self'", "https:", "data:"],
+      'frame-ancestors': ["'self'"],
+      'img-src': ["'self'", "data:", `${process.env.S3_BUCKET}`],
+      'media-src': ["'self'", `${process.env.S3_BUCKET}`],
+      'object-src': ["'none'"],
+      'script-src': ["'self'"],
+      'script-src-attr': ["'none'"],
+      'style-src': ["'self'", "https:", "'unsafe-inline'"],
+      'upgrade-insecure-requests': []
+    }
+  }
+}));
 app.use(express.json({ limit: '202mb' }));
 app.use(express.urlencoded({ extended: true, limit: '202mb' }));
 app.use(cookieParser());

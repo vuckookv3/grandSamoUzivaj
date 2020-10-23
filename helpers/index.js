@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer');
 const session = require('express-session');
+const crypto = require('crypto');
+const mime = require('mime-types');
 const RedisStore = require('connect-redis')(session);
 const Redis = require('ioredis');
 const redis = new Redis({
@@ -12,6 +14,7 @@ const slowDown = require('express-slow-down');
 const { validationResult } = require('express-validator');
 const upload = require('./multer');
 const mailer = require('./mailer');
+const { s3Upload, s3Delete } = require('./aws');
 const h = {};
 
 const sessionMiddleware = session({
@@ -56,8 +59,17 @@ h.isStarted = (req, res, next) => {
 
 h.mailer = mailer;
 h.upload = upload;
+h.s3Upload = s3Upload;
+h.s3Delete = s3Delete;
+
+h.filename = (file) => {
+    let extension = mime.extension(file.mimetype);
+    if (extension === 'qt') extension = 'mov';
+    if (!extension) throw new Error('Unsupported extension');
+    return `${crypto.pseudoRandomBytes(32).toString('hex')}.${extension}`;
+}
 
 h.imageExtensions = /jpeg|jpg|png/;
-h.videoExtensions = /mp4|webm|mkv|mov|avi/;
+h.videoExtensions = /mp4|webm|mkv|mov|avi|qt/;
 
 module.exports = h;
