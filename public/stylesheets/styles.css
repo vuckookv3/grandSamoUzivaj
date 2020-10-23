@@ -120,11 +120,6 @@ a:hover {
   }
 }
 
-a.disabled {
-  pointer-events: none;
-  cursor: default;
-}
-
 .no-spin::-webkit-inner-spin-button,
 .no-spin::-webkit-outer-spin-button {
   -webkit-appearance: none !important;
@@ -173,32 +168,33 @@ a.disabled {
   color: #000;
 }
 
-.documentWrapper {
-  flex-direction: row;
-  align-items: flex-start;
-}
+@media (min-width: 992px) {
+  .documentWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-.background_box {
-  background: radial-gradient(1000px at bottom, #674537, #000 70%);
-  padding-top: 115px;
-  padding-bottom: 150px;
-  width: calc(100vw - 400px);
-}
+  .background_box {
+    background: radial-gradient(1000px at bottom, #674537, #000 70%);
+    padding-top: 115px;
+    padding-bottom: 150px;
+    width: calc(100vw - 400px);
+  }
 
-.background_box_with_no_bottom {
-  justify-content: flex-start;
-}
+  .background_box_with_no_bottom {
+    justify-content: flex-start;
+  }
 
-.strelica {
-  border-top: 150px solid transparent;
-  border-left: calc(50vw - 198px) solid #ffcc00;
-  border-right: calc(50vw - 198px) solid #ffcc00;
-}
+  .strelica {
+    border-top: 150px solid transparent;
+    border-left: calc(50vw - 198px) solid #ffcc00;
+    border-right: calc(50vw - 198px) solid #ffcc00;
+  }
 
-.strelica__mobile_only {
-  display: none;
+  .strelica__mobile_only {
+    display: none;
+  }
 }
-
 .uskoro {
   background-color: #ffcc00;
   font-family: "AntennaComp-Bold";
@@ -507,6 +503,7 @@ a.disabled {
   color: #000;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 .navbar_box .navbar_mobile_background {
   display: flex;
@@ -514,6 +511,7 @@ a.disabled {
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100vh;
   width: 100%;
   z-index: -1;
   background-color: #00000078;
@@ -582,6 +580,7 @@ a.disabled {
   .navbar_box {
     top: 0;
     bottom: unset;
+    height: auto;
   }
   .navbar_box .navbar_mobile_background {
     display: none;
@@ -607,6 +606,7 @@ a.disabled {
     border: none;
     border-radius: 0;
     margin-left: 10px;
+    height: auto;
     color: #ffcc00;
   }
   .navbar_box ul li {
@@ -1315,6 +1315,7 @@ a.disabled {
 @media (min-width: 992px) {
   .background_box_with_no_bottom--profil {
     max-height: 100vh;
+    height: 100vh;
   }
 
   .profil h1 {
