@@ -7,7 +7,7 @@ const Redis = require('ioredis');
 const redis = new Redis({
     host: '127.0.0.1',
     port: 6379,
-    db: 2,
+    db: 3,
 });
 const RateLimitRedis = require('rate-limit-redis');
 const slowDown = require('express-slow-down');
