@@ -43,8 +43,12 @@ router.get('/profil', async (req, res) => {
     res.render('profil');
 });
 
-router.get('/prijave', (req, res) => {
-    res.render('prijave');
+router.get('/prijave', async (req, res) => {
+    let page = req.query.page ? Number(req.query.page) : 1;
+    if (isNaN(page) || page <= 0) page = 1;
+    const skip = (page - 1) * 20;
+    const prijave = await Entry.find({ status: { $in: ['AUTHORIZED', 'WINNER'] } }).sort('-_id').skip(skip).limit(20).exec();
+    res.render('prijave', { prijave, page });
 });
 
 router.get('/prijave/:id', async (req, res) => {
@@ -69,8 +73,9 @@ router.get('/pravila', (req, res) => {
     res.render('pravila');
 });
 
-router.get('/dobitnici', (req, res) => {
-    res.render('dobitnici');
+router.get('/dobitnici', async (req, res) => {
+    const prijave = await Entry.find({ status: 'WINNER' }).exec();
+    res.render('dobitnici', { prijave });
 });
 
 router.get('/mehanizam', (req, res) => {

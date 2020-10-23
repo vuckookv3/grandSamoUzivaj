@@ -28,7 +28,7 @@
 }
 @font-face {
   font-family: "DejaVu-Sans";
-  src: url("/fonts/DejaVuSans.otf") format("truetype");
+  src: url("/fonts/DejaVuSans.ttf") format("truetype");
 }
 html {
   font-size: 12px;
@@ -118,6 +118,11 @@ a:hover {
   .desktop {
     display: flex;
   }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
 }
 
 .no-spin::-webkit-inner-spin-button,
