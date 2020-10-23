@@ -18,11 +18,9 @@ const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
 
-    const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mov|mpeg|avi|qt/;
-    console.error({ fileFilter: fileTypes.test(mime.extension(file.mimetype)), mime: mime.extension(file.mimetype), mimetype: file.mimetype })
-    console.log(file)
+    const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mpeg|avi/;
     if (fileTypes.test(mime.extension(file.mimetype))) {
-        return cb(null, true)
+        return cb(null, true);
     } else {
         return cb(new Error('Unsupported file extension.'), false);
     }

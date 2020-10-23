@@ -165,7 +165,6 @@ router.post('/prijava/2', upload(), async (req, res) => {
         }
         try {
             const file = await s3Upload(filename(req.files.picture[0]), req.files.picture[0]);
-            console.log(file);
             entry.picture = file.Key;
             entry.pictureDescription = req.body.pictureDescription;
         } catch (err) {
@@ -180,7 +179,6 @@ router.post('/prijava/2', upload(), async (req, res) => {
         }
         try {
             const file = await s3Upload(filename(req.files.video[0]), req.files.video[0]);
-            console.log(file);
             entry.video = file.Key;
             entry.videoDescription = req.body.videoDescription;
         } catch (err) {

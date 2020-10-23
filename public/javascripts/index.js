@@ -7,16 +7,6 @@ $(function () {
         });
     }, 3000);
 
-    $('#pictureInput').on('change', function () {
-        console.log(this);
-        console.log(this.files[0]);
-    });
-
-    $('#videoInput').on('change', function () {
-        console.log(this);
-        console.log(this.files[0].size / 1024 / 1024);
-    });
-
     $('#prijava2').on('submit', function (e) {
         e.preventDefault();
         var picture = $('#pictureInput')[0].files[0];
