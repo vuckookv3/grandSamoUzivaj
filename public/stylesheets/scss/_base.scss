@@ -107,6 +107,10 @@ a.disabled {
     position: relative;
 }
 
+.lock-scroll {
+    overflow: hidden;
+}
+
 .background_box {
     background: radial-gradient(800px at bottom, #674537, #000 70%);
     // height: 95vh;
@@ -128,30 +132,43 @@ a.disabled {
     bottom: -2px;
     position: absolute;
 }
+// .alert_custom_background {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     width: 100%;
+//     background-color: rgba(0, 0, 0, 0.277);
+// }
+.alert_custom_design {
+    background-color: $color-yellow-back;
+    border: 2px solid #000;
+    font-family: $font-antenna-comp-bold;
+    border-radius: 10px;
+    color: #000;
+}
+.documentWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+}
 
-@include lg {
-    .documentWrapper {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .background_box {
-        background: radial-gradient(1000px at bottom, #674537, #000 70%);
-        padding-top: 115px;
-        padding-bottom: 150px;
-        width: calc(100vw - 400px);
-    }
-    .background_box_with_no_bottom {
-        //    height: 100vh;
-        //    padding-bottom: 120px;
-        justify-content: flex-start;
-    }
-    .strelica {
-        border-top: 150px solid transparent;
-        border-left: calc(50vw - 198px) solid $color-yellow-back;
-        border-right: calc(50vw - 198px) solid $color-yellow-back;
-    }
-    .strelica__mobile_only {
-        display: none;
-    }
+.background_box {
+    background: radial-gradient(1000px at bottom, #674537, #000 70%);
+    padding-top: 115px;
+    padding-bottom: 150px;
+    width: calc(100vw - 400px);
+}
+.background_box_with_no_bottom {
+    //    height: 100vh;
+    //    padding-bottom: 120px;
+    justify-content: flex-start;
+}
+.strelica {
+    border-top: 150px solid transparent;
+    border-left: calc(50vw - 198px) solid $color-yellow-back;
+    border-right: calc(50vw - 198px) solid $color-yellow-back;
+}
+.strelica__mobile_only {
+    display: none;
 }

@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
 <main>
-    <div class="background_box background_box_with_no_bottom">
+    <div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
         <div class="profil">
             <h1>Prijava</h1>
             <form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
@@ -30,14 +30,15 @@
                     <textarea maxlength="500" name="videoDescription"
                         placeholder="Ako želiš možeš i rečima da pojasniš svoj video"></textarea>
                 </div>
-                <!-- <div class="checkbox__pravila_privatnosti"> -->
-                <input type="checkbox" /> Prihvatam pravila privatnosti
-                <!-- </div> -->
-                <button class="input_submit" type="submit">PRIJAVI SE</button>
-            </form>
-            <div class="strelica strelica__mobile_only">
-
+                <label class="checkbox__pravila_privatnosti">
+                    <input type="checkbox" /> Prihvatam pravila privatnosti
+                    <span></span>
+                </label>
+                <button class="input_submit input_submit--profil" type="submit">PRIJAVI SE</button>
             </div>
+        </form>
+        <div class="strelica strelica__mobile_only">
+            
         </div>
     </div>
 </main>

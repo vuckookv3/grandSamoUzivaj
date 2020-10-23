@@ -11,6 +11,12 @@
         font-size: 14pt;
         flex-direction: row;
         font-family: $font-antenna-comp-bold;
+        
+        p {
+            &:last-child {
+                padding-left: 3px;
+            }
+        }
     }
  
     .footer__network {
