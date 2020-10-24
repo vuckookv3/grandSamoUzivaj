@@ -3,13 +3,16 @@
 <main>
     <div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
         <div class="profil">
-            <h1>Tijana Stojkovic</h1>
+            <h1><%= prijava.name %></h1>
             <div class="profil__holder profil__foto_holder">
                 <div class="img_holder">
-                
-                    <img src="/images/test-slika.png">
+                    <% if(prijava.picture) { %>
+                    <img src="/uploads/<%= prijava.picture %>">
+                    <% } else { %>
+                    <img src="/images/picture_thumb.png">
+                    <% } %>
                 </div>
-                <div class="text_box">Ovo je jedan sasvim obican opis</div>
+                <div class="text_box"><%= prijava.pictureDescription %></div>
 
                 <div class="floating_traka">
                     <p>FOTO</p>
@@ -17,11 +20,13 @@
             </div>
             <div class="profil__holder profil__video_holder">
                 <div class="video_holder">
+                    <% if(prijava.video) { %>
                     <video controls>
-                        <source src="" type="">
+                        <source src="/uploads/<%= prijava.video %>" type="<%= type %>">
                     </video>
+                    <% } %>
                 </div>
-                <div class="text_box">Ovo je opis jednog videa</div>
+                <div class="text_box"><%= prijava.videoDescription %></div>
 
                 <div class="floating_traka">
                     <p>VIDEO</p>

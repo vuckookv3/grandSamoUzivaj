@@ -52,29 +52,29 @@ router.get('/prijave', async (req, res) => {
     res.render('prijave', { prijave, page });
 });
 
-// router.get('/prijave/:id', async (req, res) => {
-//     if (!isMongoId(req.params.id)) return res.redirect('/');
+router.get('/prijave/:id', async (req, res) => {
+    if (!isMongoId(req.params.id)) return res.redirect('/');
 
-//     const prijava = await Entry.findById(req.params.id).exec();
-//     if (!prijava) return res.redirect('/');
+    const prijava = await Entry.findById(req.params.id).exec();
+    if (!prijava) return res.redirect('/');
 
-//     let type = '';
-//     if (prijava.video) {
-//         type = path.extname(prijava.video);
-//         type = mime.lookup(type);
-//     }
+    let type = '';
+    if (prijava.video) {
+        type = path.extname(prijava.video);
+        type = mime.lookup(type);
+    }
 
-//     if (req.session.admin) {
-//         return res.render('prijava', { prijava, type });
-//     }
-//     if (prijava.status === 'UNAUTHORIZED' || prijava.status === 'DENIED') return res.redirect('/');
+    if (req.session.admin) {
+        return res.render('prijava', { prijava, type });
+    }
+    if (prijava.status === 'UNAUTHORIZED' || prijava.status === 'DENIED') return res.redirect('/');
 
-//     res.render('prijava', { prijava, type });
-// });
-
-router.get('/prijave/:id', (req, res) => {
-    res.render('prijava');
+    res.render('prijava', { prijava, type });
 });
+
+// router.get('/prijave/:id', (req, res) => {
+//     res.render('prijava');
+// });
 router.get('/pravila', (req, res) => {
     res.render('pravila');
 });
