@@ -1,8 +1,10 @@
 .pravila {
     min-height: 60vh;
     padding: 0 20px;
+    justify-content: flex-start;
+
     h1 {
-        font-family: $font-dejavu-sans;
+        font-family: $font-roboto-black;
         color: #fff;
         margin-bottom: 20px;
         font-weight: 600;
@@ -25,8 +27,11 @@
     }
 }
 @include lg {
+    
     .pravila {
+        justify-content: flex-start;
         padding: 0 20px;
+        font-size: 14pt;
         h1 {
             font-size: 20pt;
         }

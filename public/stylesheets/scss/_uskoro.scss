@@ -143,10 +143,12 @@
         }
     }
     .footer__network {
-        font-family: $font-roboto-regular;
         a {
             display: flex;
             flex-direction: column;
+            p {
+                font-family: $font-roboto-medium;
+                }
         }
     }
 }

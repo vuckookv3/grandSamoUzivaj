@@ -1,8 +1,11 @@
 .kontakt {
+    justify-content: flex-start;
+
     h1 {
-        font-family: $font-dejavu-sans;
+        font-family: $font-roboto-black;
         font-weight: 600;
         margin-bottom: 20px;
+
     }
     color: #fff;
     img {
@@ -12,6 +15,9 @@
         margin: 10px 0;
         font-size: 14pt;
         font-family: $font-roboto-medium;
+        span{
+            font-family: $font-roboto-regular;
+        }
     }
     .follow_us {
         font-family: $font-roboto-medium;
@@ -30,8 +36,10 @@
 }
 @include lg {
     .kontakt {
+    justify-content: flex-start;
+
         h1 {
-            font-size: 20pt;
+            font-size: 32pt;
         }
         img {
             width: 55px;

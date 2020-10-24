@@ -1,25 +1,26 @@
 .profil {
     h1 {
-        font-family: $font-dejavu-sans;
+        font-family: $font-roboto-black;
         font-weight: 600;
         margin-bottom: 20px;
+    justify-content: flex-start;
+
     }
-    .profil__foto_holder {
+    .profil__holder {
         width: 80%;
         max-width: 350px;
         margin-top: 40px;
         position: relative;
+    }
+    .profil__foto_holder {
+       
         .img_holder {
             border: 1px solid $color-yellow-back;
             position: relative;
-            overflow: hidden;
-            height: 0;
-            padding-top: 100%;
+            
             img {
                 object-fit: cover;
                 display: block;
-                position: absolute;
-                top: 0;
                 width: 100%;
                 height: 100%;
                 max-width: unset;
@@ -27,16 +28,13 @@
             }
         }
         .profil__video_holder {
-            width: 80%;
-            max-width: 350px;
             margin-top: 80px;
-            position: relative;
             .video_holder {
                 border: 1px solid $color-yellow-back;
                 position: relative;
                 overflow: hidden;
-                height: 0;
-                padding-top: 100%;
+                height: auto;
+                padding-top: 0;
                 video {
                     
                 }
@@ -61,6 +59,7 @@
     }
     .text_box {
         width: 100%;
+        height: 200px;
         background-color: #000;
         border: 2px solid $color-yellow-back;
         text-align: center;
@@ -69,6 +68,7 @@
         line-height: 1;
         margin-top: 10px;
         padding: 10px;
+        overflow-y: scroll;
         // min-height: 150px;
     }
     .share_div {
@@ -85,48 +85,50 @@
 }
 @include lg {
     .profil {
+    justify-content: flex-start;
+
         h1 {
-            font-size: 20pt;
+            font-size: 32pt;
+        }
+        .profil__holder {
+            width: 80%;
+            max-width: unset;
+            display: grid;
+            transform: translateX(20px);
+
         }
         .profil__foto_holder {
             margin-top: 0;
-            width: 70%;
-            max-width: 600px;
-            display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-areas: "slika tekst tekst";
-            transform: translateX(20px);
             .img_holder {
                 // padding-top: 48%;
                 // margin-left: 45px;
                 grid-area: slika;
             }
-            .text_box {
-                height: 100%;
-                grid-area: tekst;
-                margin-top: 0;
-                margin-left: 10px;
-            }
+  
         }
         .profil__video_holder {
             margin-top: 20px;
-            width: 70%;
-            max-width: 600px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-areas: "slika tekst tekst";
-            transform: translateX(20px);
-            .img_holder {
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-areas: "video video video video tekst tekst tekst";
+            .video_holder {
+                padding-top: 0;
+                height: 200px;
+                // width: 50%;
                 // padding-top: 48%;
                 // margin-left: 45px;
-                grid-area: slika;
+                grid-area: video;
             }
-            .text_box {
-                height: 100%;
-                grid-area: tekst;
-                margin-top: 0;
-                margin-left: 10px;
-            }
+           
+        }
+        .text_box {
+            height: 100%;
+            grid-area: tekst;
+            margin-top: 0;
+            margin-left: 10px;
+            align-items: flex-start;
+
         }
         .share_div {
             width: 70%;

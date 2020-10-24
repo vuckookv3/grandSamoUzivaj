@@ -1,9 +1,10 @@
 .galerija {
     color: #fff;
-    min-height: 60vh;
+    min-height: 75vh;
+    justify-content: flex-start;
     // padding: 0 20px;
     h1 {
-        font-family: $font-dejavu-sans;
+        font-family: $font-roboto-black;
         font-weight: 600;
         margin-bottom: 20px;
     }
@@ -44,6 +45,7 @@
                     margin-bottom: 5px;
                     text-align: center;
                     line-height: 1;
+                    word-wrap: break-word;
                 }
                 .text_on_hover {
                     display: none;
@@ -90,8 +92,15 @@
 .pagination_arrows {
     flex-direction: row;
     color: $color-yellow-back;
-    font-size: 18pt;
+    font-size: 16pt;
     cursor: pointer;
+    a {
+        width: auto;
+        span {
+            font-size: 14pt;
+            font-family: $font-roboto-regular;
+        }
+    }
 }
 @include md {
     .galerija {
@@ -109,11 +118,14 @@
 }
 @include lg {
     .galerija {
+    justify-content: flex-start;
+    max-width: 90%;
+
         h1 {
-            font-size: 20pt;
+            font-size: 32pt;
         }
         .grid_holder {
-            max-width: 800px;
+            // max-width: 800px;
             grid-template-columns: repeat(4, 1fr);
             padding: 0 15px;
             // column-gap: 15px;

@@ -26,10 +26,6 @@
   font-family: "AntennaComp-MediumItalic";
   src: url("/fonts/AntennaComp-MediumItalic.otf") format("truetype");
 }
-@font-face {
-  font-family: "DejaVu-Sans";
-  src: url("/fonts/DejaVuSans.ttf") format("truetype");
-}
 html {
   font-size: 12px;
   height: 100%;
@@ -179,6 +175,7 @@ a:hover {
     padding-top: 115px;
     padding-bottom: 150px;
     width: calc(100vw - 400px);
+    justify-content: flex-start;
   }
 
   .background_box_with_no_bottom {
@@ -334,12 +331,12 @@ a:hover {
 .uskoro__footer .footer__datumi p {
   margin: 10px 2px;
 }
-.uskoro__footer .footer__network {
-  font-family: "Roboto-Regular";
-}
 .uskoro__footer .footer__network a {
   display: flex;
   flex-direction: column;
+}
+.uskoro__footer .footer__network a p {
+  font-family: "Roboto-Medium";
 }
 
 @media (min-width: 992px) {
@@ -653,7 +650,7 @@ a:hover {
   }
 
   .insta_grand_traka {
-    width: 150px;
+    width: 120px;
     top: -60px;
     left: unset;
   }
@@ -676,12 +673,12 @@ a:hover {
 .bottom_section .footer__datumi p:last-child {
   padding-left: 3px;
 }
-.bottom_section .footer__network {
-  font-family: "Roboto-Regular";
-}
 .bottom_section .footer__network a {
   display: flex;
   flex-direction: column;
+}
+.bottom_section .footer__network a p {
+  font-family: "Roboto-Medium";
 }
 
 @media (min-width: 992px) {
@@ -707,7 +704,6 @@ a:hover {
     align-items: flex-end;
     display: flex;
     justify-content: flex-end;
-    font-family: "Roboto-Regular";
     color: #000;
     margin-bottom: 30px;
   }
@@ -725,6 +721,7 @@ a:hover {
     margin: 0;
     margin-left: 5px;
     font-size: 12pt;
+    font-family: "Roboto-Medium";
   }
 
   .bottom_section {
@@ -733,10 +730,11 @@ a:hover {
 }
 .content_title {
   color: #fff;
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   margin-bottom: 20px;
   font-weight: 600;
   text-align: center;
+  justify-content: flex-start;
 }
 
 .mehanizam__box {
@@ -856,7 +854,7 @@ a:hover {
 
 @media (min-width: 992px) {
   .content_title {
-    font-size: 20pt;
+    font-size: 32pt;
   }
 
   .mehanizam__box {
@@ -870,7 +868,7 @@ a:hover {
   .mehanizam__desktop {
     display: block;
     width: 100%;
-    max-width: 660px;
+    max-height: 60vh;
   }
 }
 .input_submit {
@@ -974,6 +972,10 @@ a:hover {
 }
 
 @media (min-width: 992px) {
+  .prijava {
+    justify-content: flex-start;
+    min-height: 50vh;
+  }
   .prijava h1 {
     font-size: 42pt;
   }
@@ -1005,10 +1007,11 @@ a:hover {
   }
 }
 .kontakt {
+  justify-content: flex-start;
   color: #fff;
 }
 .kontakt h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -1019,6 +1022,9 @@ a:hover {
   margin: 10px 0;
   font-size: 14pt;
   font-family: "Roboto-Medium";
+}
+.kontakt p span {
+  font-family: "Roboto-Regular";
 }
 .kontakt .follow_us {
   font-family: "Roboto-Medium";
@@ -1036,8 +1042,11 @@ a:hover {
 }
 
 @media (min-width: 992px) {
+  .kontakt {
+    justify-content: flex-start;
+  }
   .kontakt h1 {
-    font-size: 20pt;
+    font-size: 32pt;
   }
   .kontakt img {
     width: 55px;
@@ -1053,9 +1062,10 @@ a:hover {
 .pravila {
   min-height: 60vh;
   padding: 0 20px;
+  justify-content: flex-start;
 }
 .pravila h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   color: #fff;
   margin-bottom: 20px;
   font-weight: 600;
@@ -1079,7 +1089,9 @@ a:hover {
 
 @media (min-width: 992px) {
   .pravila {
+    justify-content: flex-start;
     padding: 0 20px;
+    font-size: 14pt;
   }
   .pravila h1 {
     font-size: 20pt;
@@ -1087,10 +1099,11 @@ a:hover {
 }
 .galerija {
   color: #fff;
-  min-height: 60vh;
+  min-height: 75vh;
+  justify-content: flex-start;
 }
 .galerija h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -1132,6 +1145,7 @@ a:hover {
   margin-bottom: 5px;
   text-align: center;
   line-height: 1;
+  word-wrap: break-word;
 }
 .galerija .grid_holder .grid_box .text_holder .text_on_hover {
   display: none;
@@ -1172,8 +1186,15 @@ a:hover {
 .pagination_arrows {
   flex-direction: row;
   color: #ffcc00;
-  font-size: 18pt;
+  font-size: 16pt;
   cursor: pointer;
+}
+.pagination_arrows a {
+  width: auto;
+}
+.pagination_arrows a span {
+  font-size: 14pt;
+  font-family: "Roboto-Regular";
 }
 
 @media (min-width: 768px) {
@@ -1189,11 +1210,14 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
+  .galerija {
+    justify-content: flex-start;
+    max-width: 90%;
+  }
   .galerija h1 {
-    font-size: 20pt;
+    font-size: 32pt;
   }
   .galerija .grid_holder {
-    max-width: 800px;
     grid-template-columns: repeat(4, 1fr);
     padding: 0 15px;
   }
@@ -1204,8 +1228,11 @@ a:hover {
     margin-bottom: 0;
   }
 }
+.profil {
+  justify-content: flex-start;
+}
 .profil h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   font-weight: 600;
   margin-bottom: 20px;
   color: #fff;
@@ -1318,12 +1345,14 @@ a:hover {
     height: 100vh;
   }
 
+  .profil {
+    justify-content: flex-start;
+  }
   .profil h1 {
-    font-size: 20pt;
+    font-size: 32pt;
   }
   .profil form {
     width: 80%;
-    max-width: 650px;
     padding-top: 0;
   }
   .profil div {
@@ -1331,8 +1360,8 @@ a:hover {
     justify-content: flex-start;
   }
   .profil div .upload__box label {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     border: 2px solid #ffcc00;
     background-color: #000;
     display: flex;
@@ -1345,11 +1374,11 @@ a:hover {
   .profil div .upload__box p {
     height: 30px;
     font-size: 18pt;
-    width: 150px;
+    width: 220px;
     top: -15px;
   }
   .profil div textarea {
-    height: 150px;
+    height: 220px;
     transform: translateY(-2px);
     width: 100%;
     margin-left: 15px;
@@ -1361,10 +1390,10 @@ a:hover {
     margin-bottom: 0;
   }
   .profil div .upload__box--video p {
-    width: 250px;
+    width: 300px;
   }
   .profil div .upload__box--video label {
-    width: 250px;
+    width: 300px;
   }
   .profil .input_submit--profil {
     margin-top: 0;
@@ -1372,16 +1401,14 @@ a:hover {
   .profil .upload_holder {
     margin-top: 0;
   }
-  .profil .checkbox__pravila_privatnosti {
-    margin-top: 0;
-  }
 }
 .profil h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   font-weight: 600;
   margin-bottom: 20px;
+  justify-content: flex-start;
 }
-.profil .profil__foto_holder {
+.profil .profil__holder {
   width: 80%;
   max-width: 350px;
   margin-top: 40px;
@@ -1390,31 +1417,23 @@ a:hover {
 .profil .profil__foto_holder .img_holder {
   border: 1px solid #ffcc00;
   position: relative;
-  overflow: hidden;
-  height: 0;
-  padding-top: 100%;
 }
 .profil .profil__foto_holder .img_holder img {
   object-fit: cover;
   display: block;
-  position: absolute;
-  top: 0;
   width: 100%;
   height: 100%;
   max-width: unset;
 }
 .profil .profil__video_holder {
-  width: 80%;
-  max-width: 350px;
   margin-top: 80px;
-  position: relative;
 }
 .profil .profil__video_holder .video_holder {
   border: 1px solid #ffcc00;
   position: relative;
   overflow: hidden;
-  height: 0;
-  padding-top: 100%;
+  height: auto;
+  padding-top: 0;
 }
 .profil .floating_traka {
   position: absolute;
@@ -1435,6 +1454,7 @@ a:hover {
 }
 .profil .text_box {
   width: 100%;
+  height: 200px;
   background-color: #000;
   border: 2px solid #ffcc00;
   text-align: center;
@@ -1443,6 +1463,7 @@ a:hover {
   line-height: 1;
   margin-top: 10px;
   padding: 10px;
+  overflow-y: scroll;
 }
 .profil .share_div {
   margin-top: 10px;
@@ -1457,44 +1478,42 @@ a:hover {
 }
 
 @media (min-width: 992px) {
+  .profil {
+    justify-content: flex-start;
+  }
   .profil h1 {
-    font-size: 20pt;
+    font-size: 32pt;
+  }
+  .profil .profil__holder {
+    width: 80%;
+    max-width: unset;
+    display: grid;
+    transform: translateX(20px);
   }
   .profil .profil__foto_holder {
     margin-top: 0;
-    width: 70%;
-    max-width: 600px;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "slika tekst tekst";
-    transform: translateX(20px);
   }
   .profil .profil__foto_holder .img_holder {
     grid-area: slika;
   }
-  .profil .profil__foto_holder .text_box {
-    height: 100%;
-    grid-area: tekst;
-    margin-top: 0;
-    margin-left: 10px;
-  }
   .profil .profil__video_holder {
     margin-top: 20px;
-    width: 70%;
-    max-width: 600px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "slika tekst tekst";
-    transform: translateX(20px);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: "video video video video tekst tekst tekst";
   }
-  .profil .profil__video_holder .img_holder {
-    grid-area: slika;
+  .profil .profil__video_holder .video_holder {
+    padding-top: 0;
+    height: 200px;
+    grid-area: video;
   }
-  .profil .profil__video_holder .text_box {
+  .profil .text_box {
     height: 100%;
     grid-area: tekst;
     margin-top: 0;
     margin-left: 10px;
+    align-items: flex-start;
   }
   .profil .share_div {
     width: 70%;
@@ -1515,8 +1534,11 @@ a:hover {
     transform: rotate(-90deg);
   }
 }
+.nagrade {
+  justify-content: flex-start;
+}
 .nagrade h1 {
-  font-family: "DejaVu-Sans";
+  font-family: "Roboto-Black";
   color: #fff;
   margin-bottom: 20px;
   font-weight: 600;
@@ -1529,6 +1551,7 @@ a:hover {
   font-weight: 600;
   text-align: center;
   max-width: 60%;
+  font-size: 14pt;
 }
 .nagrade .nagrade__mob {
   margin-bottom: 40px;
@@ -1539,13 +1562,13 @@ a:hover {
 
 @media (min-width: 992px) {
   .nagrade {
-    max-width: 600px;
+    height: 60vh;
+    justify-content: flex-start;
+    width: 80%;
+    min-width: 590px;
   }
   .nagrade h1 {
-    font-size: 20pt;
-  }
-  .nagrade p {
-    margin-bottom: 5px;
+    font-size: 32pt;
   }
   .nagrade .nagrade__mob {
     display: none;
@@ -1555,28 +1578,23 @@ a:hover {
   }
   .nagrade .nagrade_desktop .nagrade__desk_iphone {
     transform: translate(20px, -20px);
-    width: 250px;
   }
   .nagrade .nagrade_desktop .sporedne_nagradne {
     flex-direction: row;
     position: relative;
-  }
-  .nagrade .nagrade_desktop .sporedne_nagradne img {
-    position: absolute;
+    bottom: 0;
   }
   .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_zvucnik {
-    width: 230px;
-    left: -20px;
-    top: -140px;
+    position: absolute;
+    left: 0;
+    top: -100px;
   }
   .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_slusalice {
-    height: 145px;
-    bottom: -105px;
-    transform: translateX(65px);
+    transform: translateX(25px);
   }
   .nagrade .nagrade_desktop .sporedne_nagradne .nagrade__desk_paket {
-    width: 270px;
-    right: 5px;
+    position: absolute;
+    right: 0;
     top: -108px;
   }
 }

@@ -22,8 +22,14 @@ $(function () {
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
 
+     
         if (!picture && !video) {
             alert('Morate izabrati file');
+            return;
+        }
+     
+        if(!$('#checkBoxPrijava2')[0].checked) {
+            alert('Prihvatite pravila privatnosti');
             return;
         }
 

@@ -1,6 +1,8 @@
 .nagrade {
+    justify-content: flex-start;
+
     h1 {
-        font-family: $font-dejavu-sans;
+        font-family: $font-roboto-black;
         color: #fff;
         margin-bottom: 20px;
         font-weight: 600;
@@ -13,6 +15,7 @@
         font-weight: 600;
         text-align: center;
         max-width: 60%;
+        font-size: 14pt;
     }
     .nagrade__mob {
         margin-bottom: 40px;
@@ -25,12 +28,16 @@
 
 @include lg {
     .nagrade {
-        max-width: 600px;
+        // max-width: 600px;
+        height: 60vh;
+        justify-content: flex-start;
+        width: 80%;
+        min-width: 590px;
         h1 {
-            font-size: 20pt;
+            font-size: 32pt;
         }
         p {
-            margin-bottom: 5px;
+            // margin-bottom: 5px;
         }
         .nagrade__mob {
             display: none;
@@ -39,28 +46,29 @@
             display: flex;
             .nagrade__desk_iphone {
                 transform: translate(20px, -20px);
-                width: 250px;
+                // width: 250px;
             }
             .sporedne_nagradne {
                 flex-direction: row;
                 position: relative;
+                bottom: 0;
                 img {
-                    position: absolute;
+                    // position: absolute;
 
                 }
                 .nagrade__desk_zvucnik {
-                    width: 230px;
-                    left: -20px;
-                    top: -140px;
+                    position: absolute;
+                    left: 0;
+                    top: -100px;
                 }
                 .nagrade__desk_slusalice {
-                    height: 145px;
-                    bottom: -105px;
-                    transform: translateX(65px);
+                    // height: 145px;
+                    // bottom: -120px;
+                    transform: translateX(25px);
                 }
                 .nagrade__desk_paket {
-                    width: 270px;
-                    right: 5px;
+                    position: absolute;
+                    right: 0;
                     top: -108px;
                 }
             }

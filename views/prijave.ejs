@@ -24,9 +24,9 @@
             </div>
         </div>
         <div class="pagination_arrows">
-            <div><a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&#10096;</a></div>
+            <div><a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&#10096; <span>Prethodna</span></a></div>
             <div><a class="<%= prijave.length < 20 ? 'disabled' : '' %>"
-                    href="/prijave?page=<%= (page + 1) %>">&#10097;</a></div>
+                    href="/prijave?page=<%= (page + 1) %>"><span>Sledeća</span> &#10097;</a></div>
         </div>
         <div class="strelica strelica__mobile_only">
 

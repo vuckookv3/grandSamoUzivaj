@@ -1,9 +1,11 @@
 .content_title {
     color: #fff;
-    font-family: $font-dejavu-sans;
+    font-family: $font-roboto-black;
     margin-bottom: 20px;
     font-weight: 600;
     text-align: center;
+    justify-content: flex-start;
+
 }
 .mehanizam__box {
     max-width: 500px;
@@ -133,7 +135,7 @@
 }
 @include lg {
     .content_title {
-        font-size: 20pt;
+        font-size: 32pt;
     }
 
     .mehanizam__box {
@@ -145,7 +147,8 @@
     .mehanizam__desktop {
         display: block;
         width: 100%;
-        max-width: 660px;
+        max-height: 60vh;
+        // max-width: 660px;
     }
     // .mehanizam {
     //     display: grid;

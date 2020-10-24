@@ -104,6 +104,9 @@
 }
 @include lg {
     .prijava {
+    justify-content: flex-start;
+    min-height: 50vh;
+
         h1 {
             font-size: 42pt;
         }
