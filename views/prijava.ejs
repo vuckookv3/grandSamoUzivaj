@@ -7,7 +7,7 @@
             <div class="profil__holder profil__foto_holder">
                 <div class="img_holder">
                     <% if(prijava.picture) { %>
-                    <img src="/uploads/<%= prijava.picture %>">
+                    <img src="<%= process.env.S3_BUCKET %>/<%= prijava.picture %>">
                     <% } else { %>
                     <img src="/images/picture_thumb.png">
                     <% } %>
@@ -20,14 +20,9 @@
             </div>
             <div class="profil__holder profil__video_holder">
                 <div class="video_holder">
-                    <% if(prijava.video) { %>
-                    <video controls>
-                        <source src="/uploads/<%= prijava.video %>" type="<%= type %>">
-                    </video>
-                    <% } %>
                 </div>
                 <div class="text_box"><%= prijava.videoDescription %></div>
-
+                
                 <div class="floating_traka">
                     <p>VIDEO</p>
                 </div>
@@ -38,10 +33,15 @@
             </div>
         </div>
         <div class="strelica strelica__mobile_only">
-
+            
         </div>
     </div>
-
+    
+    <% if(prijava.video) { %>
+    <video width="700" height="700" controls>
+        <source src="<%= process.env.S3_BUCKET %>/<%= prijava.video %>" type="<%= type %>">
+    </video>
+    <% } %>
 </main>
 
 <%- include('partials/footer') %>

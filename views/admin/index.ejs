@@ -116,8 +116,8 @@
                         <td><%= e.submitted ? 'DA' : 'NE' %></td>
                         <td>
                             <% if(e.picture) { %>
-                            <a target="_blank" href="/uploads/<%= e.picture %>"><img height="50"
-                                    src="/uploads/<%= e.picture %>"></a>
+                            <a target="_blank" href="<%= process.env.S3_BUCKET + '/' + e.picture %>"><img height="50"
+                                    src="<%= process.env.S3_BUCKET %>/<%= e.picture %>"></a>
                             <% } else { %>
                             <p></p>
                             <% } %>
@@ -131,7 +131,7 @@
                         </td>
                         <td>
                             <% if(e.video) { %>
-                            <a target="_blank" href="/uploads/<%= e.video %>">OTVORI</a>
+                            <a target="_blank" href="<%= process.env.S3_BUCKET %>/<%= e.video %>">OTVORI</a>
                             <% } else { %>
                             <p></p>
                             <% } %>

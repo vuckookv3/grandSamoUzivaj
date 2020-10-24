@@ -8,7 +8,7 @@
                 <% prijave.map(e => { %>
                 <a href="/prijave/<%= e._id %>" class="grid_box">
                     <div class="img_holder">
-                        <% const image = e.picture ? "/uploads/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                        <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
                         <img src="<%= image %>" alt="Gallery image">
                         <div class="text_holder">
                             <p class="text_no_hover"><%= e.name %></p>

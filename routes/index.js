@@ -4,7 +4,7 @@ const fs = require('fs');
 const mime = require('mime-types');
 const { isEmail, isMongoId } = require('validator');
 const { Entry } = require('../models');
-const { isStarted, DATE_START, upload, imageExtensions, videoExtensions } = require('../helpers');
+const { isStarted, DATE_START, upload, imageExtensions, videoExtensions, filename, s3Upload } = require('../helpers');
 
 router.get('/uskoro', (req, res) => {
     // if (Date.now() > DATE_START) return res.redirect('/');
@@ -62,6 +62,7 @@ router.get('/prijave/:id', async (req, res) => {
     if (prijava.video) {
         type = path.extname(prijava.video);
         type = mime.lookup(type);
+        if (type === 'video/quicktime') type = 'video/mp4';
     }
 
     if (req.session.admin) {
@@ -141,7 +142,6 @@ router.post('/prijava/2', upload(), async (req, res) => {
     }
     if (!req.files.picture && !req.files.video) {
         req.flash('error', 'Morate poslati file');
-        console.log('OVDE')
         return res.redirect('/profil');
     }
 
@@ -157,34 +157,46 @@ router.post('/prijava/2', upload(), async (req, res) => {
         return res.redirect('/');
     }
 
-    let shouldDeleteFiles = false;
+    // let shouldDeleteFiles = false;
 
     if (req.files.picture && req.files.picture[0]) {
         if (!imageExtensions.test(mime.extension(req.files.picture[0].mimetype))) {
             shouldDeleteFiles = true;
         }
-        entry.picture = req.files.picture[0].filename;
-        entry.pictureDescription = req.body.pictureDescription;
+        try {
+            const file = await s3Upload(filename(req.files.picture[0]), req.files.picture[0]);
+            entry.picture = file.Key;
+            entry.pictureDescription = req.body.pictureDescription;
+        } catch (err) {
+            req.flash('error', 'Doslo je do greske prilikom uploada');
+            return res.redirect('/profil');
+        }
     }
 
     if (req.files.video && req.files.video[0]) {
         if (!videoExtensions.test(mime.extension(req.files.video[0].mimetype))) {
             shouldDeleteFiles = true;
         }
-        entry.video = req.files.video[0].filename;
-        entry.videoDescription = req.body.videoDescription;
+        try {
+            const file = await s3Upload(filename(req.files.video[0]), req.files.video[0]);
+            entry.video = file.Key;
+            entry.videoDescription = req.body.videoDescription;
+        } catch (err) {
+            req.flash('error', 'Doslo je do greske prilikom uploada');
+            return res.redirect('/profil');
+        }
     }
 
-    if (shouldDeleteFiles) {
-        if (req.files.picture && req.files.picture[0]) {
-            fs.unlinkSync(req.files.picture[0].path);
-        }
-        if (req.files.video && req.files.video[0]) {
-            fs.unlinkSync(req.files.video[0].path);
-        }
-        req.flash('error', 'Nepodrzan file');
-        return res.redirect('/profil');
-    }
+    // if (shouldDeleteFiles) {
+    //     if (req.files.picture && req.files.picture[0]) {
+    //         fs.unlinkSync(req.files.picture[0].path);
+    //     }
+    //     if (req.files.video && req.files.video[0]) {
+    //         fs.unlinkSync(req.files.video[0].path);
+    //     }
+    //     req.flash('error', 'Nepodrzan file');
+    //     return res.redirect('/profil');
+    // }
 
     entry.submitted = true;
 

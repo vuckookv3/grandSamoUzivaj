@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 const uniqueValidator = require('mongoose-unique-validator');
-const path = require('path');
-const pathToUploads = path.join(__dirname, '..', '/public/uploads');
-const fs = require('fs');
+const { s3Delete } = require('../helpers');
 
 const EntrySchema = new Schema({
     name: {
@@ -64,13 +62,13 @@ EntrySchema.pre('save', async function () {
 
 });
 
-EntrySchema.pre('remove', function () {
+EntrySchema.pre('remove', async function () {
     if (this.picture) {
-        fs.unlinkSync(path.join(pathToUploads, this.picture));
+        await s3Delete(this.picture);
     }
 
     if (this.video) {
-        fs.unlinkSync(path.join(pathToUploads, this.video));
+        await s3Delete(this.video);
     }
 });
 
