@@ -12,7 +12,7 @@ $(function () {
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
 
-     
+
         if (!picture && !video) {
             alert('Morate izabrati file');
             return;
@@ -42,14 +42,14 @@ $(function () {
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-        
+
     })
-    $('#navbarBackground').on('click', function() {
+    $('#navbarBackground').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-    
+
     });
 
 });
