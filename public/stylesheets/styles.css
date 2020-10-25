@@ -1221,6 +1221,7 @@ a.disabled {
   .galerija {
     justify-content: flex-start;
     max-width: 1064px;
+    width: 70%;
   }
   .galerija .grid_holder {
     grid-template-columns: repeat(4, 1fr);
@@ -1354,6 +1355,7 @@ a.disabled {
   .profil {
     justify-content: flex-start;
     max-width: 1064px;
+    width: 70%;
   }
   .profil form {
     width: 80%;
