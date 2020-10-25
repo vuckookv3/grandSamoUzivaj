@@ -12,7 +12,7 @@ $(function () {
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
 
-     
+
         if (!picture && !video) {
             alert('Morate izabrati file');
             return;
@@ -36,45 +36,40 @@ $(function () {
         this.submit();
         return true;
     });
-    });
+
 
     $('.hamburger').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-        
+    
     })
-    $('#navbarBackground').on('click', function() {
+    $('#navbarBackground').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
     
-});
-
-$('#navbarBackground').on('click', function() {
-    $("#navbarBox").toggleClass("closed");
-    $("#navbarBackground").toggleClass("closed-nav_back");
-    $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
-    document.body.classList.toggle('lock-scroll');
-
-});
-
-
-$('#pictureInput').on('change', function(){
-    if (this.files && this.files[0]) {
-        var reader = new FileReader();
-        var previewImg = $('#previewImage')
-        reader.onload = function(e) {
-          previewImg.attr('src', e.target.result);
+    });
+    
+    
+    $('#pictureInput').on('change', function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            var previewImg = $('#previewImage')
+            reader.onload = function (e) {
+                previewImg.attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+    
+            previewImg.addClass('loaded_img')
         }
-        reader.readAsDataURL(this.files[0]);
-
-        previewImg.addClass('loaded_img')
-      }
+    
+    });
 
 });
+
 
 // $('#videoInput').on('change', function(e){
 //     if (this.files && this.files[0]) {
