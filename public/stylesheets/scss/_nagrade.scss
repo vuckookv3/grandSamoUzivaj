@@ -23,6 +23,12 @@
     .nagrade_desktop {
         display: none;
     }
+    .nagrade_desktop_img {
+        display: none;
+        max-height: 90%;
+        width: 100%;
+    }
+    
 
 }
 
@@ -43,6 +49,7 @@
             display: none;
         }
         .nagrade_desktop_img {
+            display: block;
             max-height: 90%;
             width: 100%;
         }

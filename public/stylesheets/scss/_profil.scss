@@ -49,6 +49,10 @@
                 img {
                     height: 70px;
                 }
+                .loaded_img {
+                    height: unset;
+                    max-height: 100%;
+                }
             }
         }
         .upload__box--video {
@@ -84,7 +88,7 @@
     }
     .checkbox__pravila_privatnosti {
             display: block;
-            width: 230px;
+            width: 250px;
             margin: 20px auto 0 auto;
             position: relative;
             padding-left: 25px;
@@ -96,12 +100,18 @@
             font-family: $font-roboto-regular;
             color: #fff;
             font-size: 12pt;
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
+            
+            input {
+                // display: inline-block;
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                // height: 0;
+                // width: 0;
+                overflow: visible; 
+                width: inherit; 
+                height: inherit;
+
             &:checked ~ span {
                 &::after {
                     content: "X";
@@ -134,6 +144,7 @@
     }
     .profil {
     justify-content: flex-start;
+    max-width: 1064px;
 
         // h1 {
         //     font-size: 32pt;

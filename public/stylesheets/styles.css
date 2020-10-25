@@ -1056,7 +1056,7 @@ a.disabled {
     justify-content: flex-start;
   }
   .kontakt img {
-    width: 50ovpx;
+    width: 50px;
   }
   .kontakt div {
     padding-bottom: 20px;
@@ -1165,6 +1165,7 @@ a.disabled {
   padding-left: 3px;
   padding-right: 3px;
   margin-bottom: 5px;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .galerija .grid_holder .grid_box .text_holder:hover {
@@ -1176,7 +1177,6 @@ a.disabled {
 .galerija .grid_holder .grid_box .text_holder:hover .text_on_hover {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
 }
 .galerija .grid_holder .grid_box .share_on_facebook {
@@ -1190,6 +1190,7 @@ a.disabled {
   flex-direction: row;
   color: #ffcc00;
   font-size: 16pt;
+  margin-top: 30px;
   cursor: pointer;
 }
 .pagination_arrows a {
@@ -1208,8 +1209,8 @@ a.disabled {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     padding: 0 150px;
-    column-gap: 20px;
-    row-gap: 20px;
+    column-gap: 10px;
+    row-gap: 5px;
   }
 }
 @media (min-width: 992px) {
@@ -1219,14 +1220,14 @@ a.disabled {
 
   .galerija {
     justify-content: flex-start;
-    max-width: 90%;
+    max-width: 1064px;
   }
   .galerija .grid_holder {
     grid-template-columns: repeat(4, 1fr);
-    padding: 0 15px;
+    padding: 0 10px;
   }
   .galerija .grid_holder .grid_box .text_holder .text_on_hover {
-    font-size: 9.5pt;
+    font-size: 10pt;
   }
   .galerija .grid_holder .grid_box .share_on_facebook {
     margin-bottom: 0;
@@ -1275,6 +1276,10 @@ a.disabled {
 .profil div .upload__box label img {
   height: 70px;
 }
+.profil div .upload__box label .loaded_img {
+  height: unset;
+  max-height: 100%;
+}
 .profil div .upload__box--video p {
   width: 100%;
 }
@@ -1301,7 +1306,7 @@ a.disabled {
 }
 .profil .checkbox__pravila_privatnosti {
   display: block;
-  width: 230px;
+  width: 250px;
   margin: 20px auto 0 auto;
   position: relative;
   padding-left: 25px;
@@ -1318,8 +1323,9 @@ a.disabled {
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
+  overflow: visible;
+  width: inherit;
+  height: inherit;
 }
 .profil .checkbox__pravila_privatnosti input:checked ~ span::after {
   content: "X";
@@ -1347,6 +1353,7 @@ a.disabled {
 
   .profil {
     justify-content: flex-start;
+    max-width: 1064px;
   }
   .profil form {
     width: 80%;
@@ -1459,7 +1466,8 @@ a.disabled {
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 14pt;
-  word-wrap: break-word;
+  word-break: break-all;
+  text-align: left;
 }
 .profil .share_div {
   margin-top: 10px;
@@ -1503,6 +1511,10 @@ a.disabled {
     padding-top: 0;
     height: 200px;
     grid-area: video;
+  }
+  .profil .profil__video_holder .video_holder video {
+    width: 100%;
+    height: 100%;
   }
   .profil .text_box {
     height: 100%;
@@ -1549,6 +1561,11 @@ a.disabled {
 .nagrade .nagrade_desktop {
   display: none;
 }
+.nagrade .nagrade_desktop_img {
+  display: none;
+  max-height: 90%;
+  width: 100%;
+}
 
 @media (min-width: 992px) {
   .nagrade {
@@ -1560,6 +1577,7 @@ a.disabled {
     display: none;
   }
   .nagrade .nagrade_desktop_img {
+    display: block;
     max-height: 90%;
     width: 100%;
   }

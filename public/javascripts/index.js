@@ -37,24 +37,60 @@ $(function () {
         return true;
     });
 
+
     $('.hamburger').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-
+    
     })
     $('#navbarBackground').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-
+    
+    });
+    
+    
+    $('#pictureInput').on('change', function () {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            var previewImg = $('#previewImage')
+            reader.onload = function (e) {
+                previewImg.attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+    
+            previewImg.addClass('loaded_img')
+        }
+    
     });
 
 });
 
 
+// $('#videoInput').on('change', function(e){
+//     if (this.files && this.files[0]) {
+//         var reader = new FileReader();
+//         var previewVid = $('#videoPreview')
+//         var placeholderVid = $('#videoPlaceholder')
+//         var videoSource = $('#videoSource')
+
+//         reader.onload = function(e) {
+//             videoSource.attr('src', e.target.result);
+//         }
+//         reader.readAsDataURL(this.files[0]);
+
+//         //css things
+//         placeholderVid.css("display", "none");
+//         previewVid.css("height", "100%");
+//         previewVid.css("width", "100%");
+//         previewVid.css("display", "block");
+//       }
+
+// });
 
 
 // $('#prijava2').on('submit', function (e) {

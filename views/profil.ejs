@@ -9,7 +9,7 @@
                     <div class="upload__box upload__box--photo">
                         <p>UBACI FOTOGRAFIJU</p>
                         <label for="pictureInput" class="upload_picture_label">
-                            <img src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat" />
+                            <img id="previewImage" src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat" />
                         </label>
                     </div>
                     <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png"
@@ -21,8 +21,10 @@
                     <div class="upload__box upload__box--video">
                         <p>UBACI VIDEO</p>
                         <label for="videoInput" class="upload_video_label">
-                            <img src="/images/mehanizam_kamera.png" alt="Kamera" />
-
+                            <img id="videoPlaceholder" src="/images/mehanizam_kamera.png" alt="Kamera" />
+                            <video id="videoPreview" style="display: none;" controls>
+                                <source id="videoSource" src="" type="">
+                            </video>
                         </label>
                     </div>
                     <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mpeg,.mov,.mkv,.avi"
@@ -35,11 +37,11 @@
                     <span></span>
                 </label>
                 <button class="input_submit input_submit--profil" type="submit">PRIJAVI SE</button>
-            </div>
         </form>
         <div class="strelica strelica__mobile_only">
             
         </div>
+    </div>
     </div>
 </main>
 
