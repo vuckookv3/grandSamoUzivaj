@@ -69,6 +69,7 @@
                         padding-left: 3px;
                         padding-right: 3px;
                         margin-bottom: 5px;
+                        overflow: hidden;
                         text-overflow: ellipsis;
 
                     }
@@ -81,7 +82,7 @@
                     .text_on_hover {
                         display: flex;
                         align-items: center;
-                        justify-content: center;
+                        // justify-content: flex-start;
                         height: 100%;
                     }
                 }
@@ -117,8 +118,8 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
             padding: 0 150px;
-            column-gap: 20px;
-            row-gap: 20px;
+            column-gap: 10px;
+            row-gap: 5px;
         }
     }
 }
@@ -134,7 +135,7 @@
         .grid_holder {
             // max-width: 800px;
             grid-template-columns: repeat(4, 1fr);
-            padding: 0 15px;
+            padding: 0 5px;
             // column-gap: 15px;
             // row-gap: 15px;
             .grid_box {
@@ -145,7 +146,9 @@
                 // }
                 .text_holder {
                     .text_on_hover {
-                        font-size: 9.5pt;
+                        font-size: 10pt;
+                    // font-size: calc(100% * 0.72);
+
 
                     }
                 }
