@@ -36,13 +36,20 @@ $(function () {
         this.submit();
         return true;
     });
-});
+    });
 
-$('.hamburger').on('click', function () {
-    $("#navbarBox").toggleClass("closed");
-    $("#navbarBackground").toggleClass("closed-nav_back");
-    $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
-    document.body.classList.toggle('lock-scroll');
+    $('.hamburger').on('click', function () {
+        $("#navbarBox").toggleClass("closed");
+        $("#navbarBackground").toggleClass("closed-nav_back");
+        $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
+        document.body.classList.toggle('lock-scroll');
+        
+    })
+    $('#navbarBackground').on('click', function() {
+        $("#navbarBox").toggleClass("closed");
+        $("#navbarBackground").toggleClass("closed-nav_back");
+        $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
+        document.body.classList.toggle('lock-scroll');
     
 });
 
