@@ -17,11 +17,6 @@ $(function () {
             alert('Morate izabrati file');
             return;
         }
-     
-        if(!$('#checkBoxPrijava2')[0].checked) {
-            alert('Prihvatite pravila privatnosti');
-            return;
-        }
 
         var totalMb = 0;
 
