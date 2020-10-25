@@ -4,13 +4,12 @@
     <div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
         <div class="profil">
             <h1 class="h1__title"><%= prijava.name %></h1>
+            <% if(prijava.picture) { %>
             <div class="profil__holder profil__foto_holder">
                 <div class="img_holder">
-                    <% if(prijava.picture) { %>
-                    <img src="<%= process.env.S3_BUCKET + '/' + prijava.picture %>">
-                    <% } else { %>
-                    <img src="/images/picture_thumb.png">
-                    <% } %>
+                    <a target="_blank" href="<%= process.env.S3_BUCKET + '/' + prijava.picture %>">
+                        <img src="<%= process.env.S3_BUCKET + '/' + prijava.picture %>">
+                    </a>
                 </div>
                 <div class="text_box"><%= prijava.pictureDescription %></div>
 
@@ -18,13 +17,13 @@
                     <p>FOTO</p>
                 </div>
             </div>
+            <% } %>
+            <% if(prijava.video) { %>
             <div class="profil__holder profil__video_holder">
                 <div class="video_holder">
-                    <% if(prijava.video) { %>
                     <video controls>
                         <source src="<%= process.env.S3_BUCKET + '/' + prijava.video %>" type="<%= type %>">
                     </video>
-                    <% } %>
                 </div>
                 <div class="text_box"><%= prijava.videoDescription %></div>
 
@@ -32,6 +31,7 @@
                     <p>VIDEO</p>
                 </div>
             </div>
+            <% } %>
             <div class="share_div">
                 <img class="share_icon" src="/images/share_icon.png" alt="Share on Facebook" />
                 <p>share - uj da podržiš ovaj profil</p>
