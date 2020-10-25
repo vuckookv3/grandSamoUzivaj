@@ -100,6 +100,7 @@
     flex-direction: row;
     color: $color-yellow-back;
     font-size: 16pt;
+    margin-top: 30px;
     cursor: pointer;
     a {
         width: auto;
@@ -129,13 +130,13 @@
     }
     .galerija {
     justify-content: flex-start;
-    max-width: 90%;
+    max-width: 1064px;
 
      
         .grid_holder {
             // max-width: 800px;
             grid-template-columns: repeat(4, 1fr);
-            padding: 0 5px;
+            padding: 0 10px;
             // column-gap: 15px;
             // row-gap: 15px;
             .grid_box {

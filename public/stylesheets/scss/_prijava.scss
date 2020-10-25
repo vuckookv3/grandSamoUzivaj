@@ -67,8 +67,9 @@
         justify-content: flex-start;
         font-size: 14pt;
         // overflow-y: scroll;
-        word-wrap: break-word;
-        overflow: hidden;
+        word-break: break-all;
+        text-align: left;
+        // overflow: hidden;
 
         // min-height: 150px;
     }
@@ -121,6 +122,10 @@
                 // padding-top: 48%;
                 // margin-left: 45px;
                 grid-area: video;
+                video {
+                    width: 100%;
+                    height: 100%;
+                }
             }
            
         }

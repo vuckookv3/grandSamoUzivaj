@@ -17,11 +17,6 @@ $(function () {
             alert('Morate izabrati file');
             return;
         }
-     
-        if(!$('#checkBoxPrijava2')[0].checked) {
-            alert('Prihvatite pravila privatnosti');
-            return;
-        }
 
         var totalMb = 0;
 
@@ -60,41 +55,40 @@ $('#navbarBackground').on('click', function() {
 });
 
 
-
-// $('#pictureInput').on('change', function(){
-//     if (this.files && this.files[0]) {
-//         var reader = new FileReader();
-//         var previewImg = $('#previewImage')
-//         reader.onload = function(e) {
-//           previewImg.attr('src', e.target.result);
-//         }
-//         reader.readAsDataURL(this.files[0]);
-
-//         previewImg.addClass('loaded_img')
-//       }
-
-// });
-
-$('#videoInput').on('change', function(e){
+$('#pictureInput').on('change', function(){
     if (this.files && this.files[0]) {
         var reader = new FileReader();
-        var previewVid = $('#videoPreview')
-        var placeholderVid = $('#videoPlaceholder')
-        var videoSource = $('#videoSource')
-
+        var previewImg = $('#previewImage')
         reader.onload = function(e) {
-            videoSource.attr('src', e.target.result);
+          previewImg.attr('src', e.target.result);
         }
         reader.readAsDataURL(this.files[0]);
 
-        //css things
-        placeholderVid.css("display", "none");
-        previewVid.css("height", "100%");
-        previewVid.css("width", "100%");
-        previewVid.css("display", "block");
+        previewImg.addClass('loaded_img')
       }
 
 });
+
+// $('#videoInput').on('change', function(e){
+//     if (this.files && this.files[0]) {
+//         var reader = new FileReader();
+//         var previewVid = $('#videoPreview')
+//         var placeholderVid = $('#videoPlaceholder')
+//         var videoSource = $('#videoSource')
+
+//         reader.onload = function(e) {
+//             videoSource.attr('src', e.target.result);
+//         }
+//         reader.readAsDataURL(this.files[0]);
+
+//         //css things
+//         placeholderVid.css("display", "none");
+//         previewVid.css("height", "100%");
+//         previewVid.css("width", "100%");
+//         previewVid.css("display", "block");
+//       }
+
+// });
 
 
 // $('#prijava2').on('submit', function (e) {

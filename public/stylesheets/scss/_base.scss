@@ -90,6 +90,7 @@ a:hover {
 a.disabled {
     pointer-events: none;
     cursor: default;
+    color: red;
 }
 
 .no-spin::-webkit-inner-spin-button,

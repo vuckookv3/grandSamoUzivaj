@@ -39,7 +39,6 @@ const upload = (fieldName) => (req, res, next) => {
             req.flash('error', message);
             return res.redirect('/profil');
         } else if (err) {
-            console.error('ERROR\n', err);
             req.flash('error', 'Nepodrzan format file-a');
             return res.redirect('/profil');
         }

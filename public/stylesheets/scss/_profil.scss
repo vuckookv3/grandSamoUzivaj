@@ -88,7 +88,7 @@
     }
     .checkbox__pravila_privatnosti {
             display: block;
-            width: 230px;
+            width: 250px;
             margin: 20px auto 0 auto;
             position: relative;
             padding-left: 25px;
@@ -100,33 +100,34 @@
             font-family: $font-roboto-regular;
             color: #fff;
             font-size: 12pt;
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
-            &:checked ~ span {
-                &::after {
-                    content: "X";
-                    color: $color-yellow-back;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 18px;
-                }
+            input {
+                display: inline-block;
+        //     position: absolute;
+        //     opacity: 0;
+        //     cursor: pointer;
+        //     height: 0;
+        //     width: 0;
+        //     &:checked ~ span {
+        //         &::after {
+        //             content: "X";
+        //             color: $color-yellow-back;
+        //             display: flex;
+        //             align-items: center;
+        //             justify-content: center;
+        //             height: 18px;
+        //         }
 
-            }
+        //     }
         }
-        span {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 20px;
-            width: 20px;
-            background-color: #000;
-            border: 2px solid $color-yellow-back;
-        }
+        // span {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     height: 20px;
+        //     width: 20px;
+        //     background-color: #000;
+        //     border: 2px solid $color-yellow-back;
+        // }
     }
 }
 @include lg {
@@ -138,6 +139,7 @@
     }
     .profil {
     justify-content: flex-start;
+    max-width: 1064px;
 
         // h1 {
         //     font-size: 32pt;
