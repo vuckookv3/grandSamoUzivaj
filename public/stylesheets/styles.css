@@ -1320,7 +1320,29 @@ a.disabled {
   font-size: 12pt;
 }
 .profil .checkbox__pravila_privatnosti input {
-  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  overflow: visible;
+  width: inherit;
+  height: inherit;
+}
+.profil .checkbox__pravila_privatnosti input:checked ~ span::after {
+  content: "X";
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+}
+.profil .checkbox__pravila_privatnosti span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #000;
+  border: 2px solid #ffcc00;
 }
 
 @media (min-width: 992px) {
