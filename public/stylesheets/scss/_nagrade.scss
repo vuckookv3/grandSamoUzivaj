@@ -1,13 +1,13 @@
 .nagrade {
     justify-content: flex-start;
 
-    h1 {
-        font-family: $font-roboto-black;
-        color: #fff;
-        margin-bottom: 20px;
-        font-weight: 600;
-        text-align: center;
-    }
+    // h1 {
+    //     font-family: $font-roboto-black;
+    //     color: #fff;
+    //     margin-bottom: 20px;
+    //     font-weight: 600;
+    //     text-align: center;
+    // }
     p {
         font-family: $font-roboto-regular;
         color: #fff;
@@ -31,47 +31,51 @@
         // max-width: 600px;
         height: 60vh;
         justify-content: flex-start;
-        width: 80%;
+        // width: 90%;
         min-width: 590px;
-        h1 {
-            font-size: 32pt;
-        }
+        // h1 {
+        //     font-size: 32pt;
+        // }
         p {
             // margin-bottom: 5px;
         }
         .nagrade__mob {
             display: none;
         }
-        .nagrade_desktop {
-            display: flex;
-            .nagrade__desk_iphone {
-                transform: translate(20px, -20px);
-                // width: 250px;
-            }
-            .sporedne_nagradne {
-                flex-direction: row;
-                position: relative;
-                bottom: 0;
-                img {
-                    // position: absolute;
-
-                }
-                .nagrade__desk_zvucnik {
-                    position: absolute;
-                    left: 0;
-                    top: -100px;
-                }
-                .nagrade__desk_slusalice {
-                    // height: 145px;
-                    // bottom: -120px;
-                    transform: translateX(25px);
-                }
-                .nagrade__desk_paket {
-                    position: absolute;
-                    right: 0;
-                    top: -108px;
-                }
-            }
+        .nagrade_desktop_img {
+            max-height: 90%;
+            width: 100%;
         }
+        // .nagrade_desktop {
+        //     display: flex;
+        //     .nagrade__desk_iphone {
+        //         transform: translate(20px, -20px);
+        //         // width: 250px;
+        //     }
+        //     .sporedne_nagradne {
+        //         flex-direction: row;
+        //         position: relative;
+        //         bottom: 0;
+        //         img {
+        //             // position: absolute;
+
+        //         }
+        //         .nagrade__desk_zvucnik {
+        //             position: absolute;
+        //             left: 0;
+        //             top: -100px;
+        //         }
+        //         .nagrade__desk_slusalice {
+        //             // height: 145px;
+        //             // bottom: -120px;
+        //             transform: translateX(25px);
+        //         }
+        //         .nagrade__desk_paket {
+        //             position: absolute;
+        //             right: 0;
+        //             top: -108px;
+        //         }
+        //     }
+        // }
     }
 }
