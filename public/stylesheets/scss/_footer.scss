@@ -39,16 +39,27 @@
         justify-content: space-between;
         position: fixed;
         right: 0;
-        .kesice_kafe {
-            // height: 250px;
-            width: 70%;
-            transform: translateY(-50px);
+        .kesice_i_solja_desno {
+            position: relative;
+            height: 100%;
+            max-height: 350px;
+            img {
+                position: absolute;
+            }
+            .kesice_kafe {
+                // height: 250px;
+                width: 70%;
+                top: -70px;
+                // transform: translateY(-50px);
+            }
+            .solja_kafe {
+                bottom: 0;
+                width: 250px;
+                max-width: 100%;
+                z-index: 1;
+            }
         }
-        .solja_kafe {
-            width: 250px;
-            max-width: 100%;
-            z-index: 1;
-        }
+       
         .footer__network {
             align-items: flex-end;
             display: flex;

@@ -1,16 +1,22 @@
+.h1__title {
+    font-family: $font-roboto-black;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
 .galerija {
     color: #fff;
     min-height: 75vh;
     justify-content: flex-start;
     // padding: 0 20px;
-    h1 {
-        font-family: $font-roboto-black;
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
+
     .grid_holder {
         width: 80%;
         max-width: 350px;
+        a {
+            width: 100%;
+        }
         .grid_box {
             margin: 5px 0;
             align-items: flex-start;
@@ -117,13 +123,14 @@
     }
 }
 @include lg {
+    .h1__title {
+        font-size: 40pt;
+    }
     .galerija {
     justify-content: flex-start;
     max-width: 90%;
 
-        h1 {
-            font-size: 32pt;
-        }
+     
         .grid_holder {
             // max-width: 800px;
             grid-template-columns: repeat(4, 1fr);
