@@ -8,17 +8,17 @@
                 <% prijave.map(e => { %>
                 <div class="grid_box">
                     <a href="/prijave/<%= e._id %>">
-                    <div class="img_holder">
-                        <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
-                        <img src="<%= image %>" alt="Gallery image">
-                        <div class="text_holder">
-                            <p class="text_no_hover"><%= e.name %></p>
-                            <div class="text_on_hover">
-                                <p class="name"><%= e.name %></p>
-                                <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                        <div class="img_holder">
+                            <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                            <img src="<%= image %>" alt="Gallery image">
+                            <div class="text_holder">
+                                <p class="text_no_hover"><%= e.name %></p>
+                                <div class="text_on_hover">
+                                    <p class="name"><%= e.name %></p>
+                                    <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </a>
                     <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
@@ -26,7 +26,8 @@
             </div>
         </div>
         <div class="pagination_arrows">
-            <div><a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&#10096; <span>Prethodna</span></a></div>
+            <div><a class="<%= page <= 1 ? 'disabled' : '' %>" href="/prijave?page=<%= (page - 1) %>">&#10096;
+                    <span>Prethodna</span></a></div>
             <div><a class="<%= prijave.length < 20 ? 'disabled' : '' %>"
                     href="/prijave?page=<%= (page + 1) %>"><span>Sledeća</span> &#10097;</a></div>
         </div>

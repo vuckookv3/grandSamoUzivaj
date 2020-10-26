@@ -81,8 +81,8 @@ router.get('/pravila', (req, res) => {
 });
 
 router.get('/dobitnici', async (req, res) => {
-    const prijave = await Entry.find({ status: 'WINNER' }).exec();
-    res.render('dobitnici', { prijave });
+    const dobitnici = await Entry.find({ status: 'WINNER' }).sort('winnerPhase winnerPrize').exec();
+    res.render('dobitnici', { dobitnici });
 });
 
 router.get('/mehanizam', (req, res) => {

@@ -4,120 +4,104 @@
     <div class="background_box background_box_with_no_bottom">
         <div class="galerija">
             <h1 class="h1__title">Dobitnici</h1>
+            <% if(dobitnici.filter(e => e.winnerPhase === 1).length > 0) { %>
+            <h2>Faza 1</h2>
             <div class="grid_holder">
+                <% dobitnici.filter(e => e.winnerPhase === 1).map(e => { %>
                 <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/test-slika.png"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Ana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Ana Markovic</p>
-                                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas soluta magni explicabo maiores officia</p>
+                    <a href="/prijave/<%= e._id %>">
+                        <div class="img_holder">
+                            <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                            <img src="<%= image %>" alt="Gallery image">
+                            <div class="text_holder">
+                                <p class="text_no_hover"><%= e.name %></p>
+                                <div class="text_on_hover">
+                                    <p class="name"><%= e.name %></p>
+                                    <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
+                    <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
-                <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/test-slika-2.jpg"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Tijana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Tijana Markovic</p>
-                                <p class="text">Tekst
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
-                </div>
-                <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/image_placeholder.png"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Ana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Ana Markovic</p>
-                                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas soluta magni explicabo maiores officia</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
-                </div>
-                <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/image_placeholder.png"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Ana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Ana Markovic</p>
-                                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas soluta magni explicabo maiores officia</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
-                </div>
-                <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/image_placeholder.png"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Ana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Ana Markovic</p>
-                                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas soluta magni explicabo maiores officia</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
-                </div>
-                <div class="grid_box">
-                    <a href="/prijave/123">
-                    <div class="img_holder">
-                        <img src="/images/image_placeholder.png"
-                            alt="Gallery image"
-                        >
-                        <div class="text_holder">
-                            <p class="text_no_hover">Ana Markovic</p>
-                            <div class="text_on_hover">
-                                <p class="name">Ana Markovic</p>
-                                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas soluta magni explicabo maiores officia</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                    <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook">
-                </div>
-               
+                <% }) %>
             </div>
+            <% } %>
+
+            <% if(dobitnici.filter(e => e.winnerPhase === 2).length > 0) { %>
+            <h2>Faza 2</h2>
+            <div class="grid_holder">
+                <% dobitnici.filter(e => e.winnerPhase === 2).map(e => { %>
+                <div class="grid_box">
+                    <a href="/prijave/<%= e._id %>">
+                        <div class="img_holder">
+                            <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                            <img src="<%= image %>" alt="Gallery image">
+                            <div class="text_holder">
+                                <p class="text_no_hover"><%= e.name %></p>
+                                <div class="text_on_hover">
+                                    <p class="name"><%= e.name %></p>
+                                    <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
+
+            <% if(dobitnici.filter(e => e.winnerPhase === 3).length > 0) { %>
+            <h2>Faza 3</h2>
+            <div class="grid_holder">
+                <% dobitnici.filter(e => e.winnerPhase === 3).map(e => { %>
+                <div class="grid_box">
+                    <a href="/prijave/<%= e._id %>">
+                        <div class="img_holder">
+                            <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                            <img src="<%= image %>" alt="Gallery image">
+                            <div class="text_holder">
+                                <p class="text_no_hover"><%= e.name %></p>
+                                <div class="text_on_hover">
+                                    <p class="name"><%= e.name %></p>
+                                    <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
+
+            <% if(dobitnici.filter(e => e.winnerPhase === 4).length > 0) { %>
+            <h2>Faza 4</h2>
+            <div class="grid_holder">
+                <% dobitnici.filter(e => e.winnerPhase === 4).map(e => { %>
+                <div class="grid_box">
+                    <a href="/prijave/<%= e._id %>">
+                        <div class="img_holder">
+                            <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video_thumb.png" : "/images/picture_thumb.png" %>
+                            <img src="<%= image %>" alt="Gallery image">
+                            <div class="text_holder">
+                                <p class="text_no_hover"><%= e.name %></p>
+                                <div class="text_on_hover">
+                                    <p class="name"><%= e.name %></p>
+                                    <p class="text"><%= e.pictureDescription || e.videoDescription || '' %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
         </div>
         <div class="strelica strelica__mobile_only">
-            
+
         </div>
     </div>
 </main>
