@@ -12,7 +12,7 @@ const mailer = nodemailer.createTransport({
 
 const sendMail = async (to, subject, html) => {
     const info = await mailer.sendMail({
-        from: 'NoReply Grand Kafa <no-reply@samouzivaj.rs>',
+        from: 'Samo Uživaj Konkurs <no-reply@samouzivaj.rs>',
         to,
         subject,
         html,
