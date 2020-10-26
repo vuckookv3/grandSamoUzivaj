@@ -33,7 +33,7 @@
     #rightSection {
         // min-width: 200px;
         display: flex;
-        width: 200px;
+        width: 18vw;
         height: 100vh;
         flex-direction: column;
         justify-content: space-between;
@@ -41,20 +41,21 @@
         right: 0;
         .kesice_i_solja_desno {
             position: relative;
-            height: 100%;
+            height: 90%;
             max-height: 350px;
             img {
                 position: absolute;
             }
             .kesice_kafe {
                 // height: 250px;
-                width: 70%;
-                top: -70px;
+                width: 65%;
+                max-width: 150px;
+                top: -85px;
                 // transform: translateY(-50px);
             }
             .solja_kafe {
                 bottom: 0;
-                width: 250px;
+                width: 240px;
                 max-width: 100%;
                 z-index: 1;
             }
@@ -73,6 +74,7 @@
                 justify-content: flex-start;
                 align-items: baseline;
                 width: 180px;
+                padding-left: 25px;
                 
                 img {
                     width: 15px;

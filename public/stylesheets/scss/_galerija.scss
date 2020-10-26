@@ -55,7 +55,7 @@
                 }
                 .text_on_hover {
                     display: none;
-                    font-size: 12pt;
+                    font-size: 14pt;
                     text-align: center;
                     line-height: 1;
                     
@@ -121,7 +121,7 @@
             grid-template-rows: auto;
             padding: 0 150px;
             column-gap: 25px;
-            row-gap: 25px;
+            // row-gap: 25px;
         }
     }
 }
@@ -133,7 +133,7 @@
     justify-content: flex-start;
     max-width: 1064px;
     min-width: 590px;
-    width: 70%;
+    width: 90%;
 
      
         .grid_holder {
@@ -150,7 +150,7 @@
                 // }
                 .text_holder {
                     .text_on_hover {
-                        font-size: 10pt;
+                        font-size: 1.2vw;
                     // font-size: calc(100% * 0.72);
 
 

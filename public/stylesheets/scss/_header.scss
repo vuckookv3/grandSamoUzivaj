@@ -113,7 +113,7 @@
          ul {
             flex-direction: row;
             justify-content: space-evenly;
-            width: calc(100vw - 400px);
+            width: 64vw;
             margin-top: 40px;
             position: relative;
             top: 0;
@@ -126,7 +126,7 @@
             color: $color-yellow-back;
 
             li {
-                font-size: 12pt;
+                font-size: 13pt;
                 margin: 0;
                 border: none;
                 padding: 0;
@@ -137,7 +137,7 @@
         }
     }
     #leftSection {
-        width: 200px;
+        width: 18vw;
         height: 100vh;
         flex-direction: column;
         justify-content: space-between;
@@ -149,11 +149,12 @@
         }
         P {
             margin-left: 0;
+            font-size: 3.5vw;
         }
         .header__prelomni_text {
             flex-direction: column;
             .text_lg {
-                font-size: 44pt;
+                font-size: 5vw;
             }
         }
         .footer__datumi {
@@ -163,7 +164,7 @@
             margin-bottom: 30px;
             justify-content: flex-end;
             p {
-                font-size: 18pt;
+                font-size: 2.2vw;
                 margin: 0;
             }
         }

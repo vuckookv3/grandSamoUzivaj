@@ -184,8 +184,12 @@ a.disabled {
     background: radial-gradient(1000px at bottom, #674537, #000 70%);
     padding-top: 115px;
     padding-bottom: 150px;
-    width: calc(100vw - 400px);
+    width: 64vw;
     justify-content: flex-start;
+  }
+
+  .background_box--wide_gradient {
+    background: radial-gradient(120vh at bottom, #674537, #000 100%);
   }
 
   .background_box_with_no_bottom {
@@ -194,8 +198,8 @@ a.disabled {
 
   .strelica {
     border-top: 150px solid transparent;
-    border-left: calc(50vw - 198px) solid #ffcc00;
-    border-right: calc(50vw - 198px) solid #ffcc00;
+    border-left: calc(32vw + 2px) solid #ffcc00;
+    border-right: calc(32vw + 2px) solid #ffcc00;
   }
 
   .strelica__mobile_only {
@@ -604,7 +608,7 @@ a.disabled {
   .navbar_box ul {
     flex-direction: row;
     justify-content: space-evenly;
-    width: calc(100vw - 400px);
+    width: 64vw;
     margin-top: 40px;
     position: relative;
     top: 0;
@@ -617,7 +621,7 @@ a.disabled {
     color: #ffcc00;
   }
   .navbar_box ul li {
-    font-size: 12pt;
+    font-size: 13pt;
     margin: 0;
     border: none;
     padding: 0;
@@ -627,7 +631,7 @@ a.disabled {
   }
 
   #leftSection {
-    width: 200px;
+    width: 18vw;
     height: 100vh;
     flex-direction: column;
     justify-content: space-between;
@@ -640,12 +644,13 @@ a.disabled {
   }
   #leftSection P {
     margin-left: 0;
+    font-size: 3.5vw;
   }
   #leftSection .header__prelomni_text {
     flex-direction: column;
   }
   #leftSection .header__prelomni_text .text_lg {
-    font-size: 44pt;
+    font-size: 5vw;
   }
   #leftSection .footer__datumi {
     display: flex;
@@ -655,7 +660,7 @@ a.disabled {
     justify-content: flex-end;
   }
   #leftSection .footer__datumi p {
-    font-size: 18pt;
+    font-size: 2.2vw;
     margin: 0;
   }
 
@@ -694,7 +699,7 @@ a.disabled {
 @media (min-width: 992px) {
   #rightSection {
     display: flex;
-    width: 200px;
+    width: 18vw;
     height: 100vh;
     flex-direction: column;
     justify-content: space-between;
@@ -703,19 +708,20 @@ a.disabled {
   }
   #rightSection .kesice_i_solja_desno {
     position: relative;
-    height: 100%;
+    height: 90%;
     max-height: 350px;
   }
   #rightSection .kesice_i_solja_desno img {
     position: absolute;
   }
   #rightSection .kesice_i_solja_desno .kesice_kafe {
-    width: 70%;
-    top: -70px;
+    width: 65%;
+    max-width: 150px;
+    top: -85px;
   }
   #rightSection .kesice_i_solja_desno .solja_kafe {
     bottom: 0;
-    width: 250px;
+    width: 240px;
     max-width: 100%;
     z-index: 1;
   }
@@ -732,6 +738,7 @@ a.disabled {
     justify-content: flex-start;
     align-items: baseline;
     width: 180px;
+    padding-left: 25px;
   }
   #rightSection .footer__network a img {
     width: 15px;
@@ -1156,7 +1163,7 @@ a.disabled {
 }
 .galerija .grid_holder .grid_box .text_holder .text_on_hover {
   display: none;
-  font-size: 12pt;
+  font-size: 14pt;
   text-align: center;
   line-height: 1;
 }
@@ -1215,7 +1222,6 @@ a.disabled {
     grid-template-rows: auto;
     padding: 0 150px;
     column-gap: 25px;
-    row-gap: 25px;
   }
 }
 @media (min-width: 992px) {
@@ -1227,14 +1233,14 @@ a.disabled {
     justify-content: flex-start;
     max-width: 1064px;
     min-width: 590px;
-    width: 70%;
+    width: 90%;
   }
   .galerija .grid_holder {
     grid-template-columns: repeat(4, 1fr);
     padding: 0 10px;
   }
   .galerija .grid_holder .grid_box .text_holder .text_on_hover {
-    font-size: 10pt;
+    font-size: 1.2vw;
   }
   .galerija .grid_holder .grid_box .share_on_facebook {
     margin-bottom: 0;
