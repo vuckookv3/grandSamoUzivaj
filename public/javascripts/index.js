@@ -48,7 +48,6 @@ $(function () {
 
             return;
         }
-        // HERE
         $(this).css('display', 'none');
         $('#loadIndicator').css('display', 'flex');
         this.submit();
@@ -85,6 +84,12 @@ $(function () {
         }
     
     });
+    
+    $('#fhareIcon').on('click', function () {
+        url = `https://www.facebook.com/dialog/share?app_id=3328292687219046&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=` + window.location.href;
+        options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url,'sharer',options);
+    })
 
 });
 
