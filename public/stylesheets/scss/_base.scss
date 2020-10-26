@@ -149,7 +149,9 @@ a.disabled {
     border-radius: 10px;
     color: #000;
 }
-
+.custom_alert_hide {
+    display: none;
+}
 @include lg {
     .documentWrapper {
         flex-direction: row;

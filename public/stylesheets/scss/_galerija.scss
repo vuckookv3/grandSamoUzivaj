@@ -18,7 +18,7 @@
             width: 100%;
         }
         .grid_box {
-            margin: 5px 0;
+            margin: 25px 0;
             align-items: flex-start;
             width: 100%;
             // width: fit-content;
@@ -100,7 +100,7 @@
     flex-direction: row;
     color: $color-yellow-back;
     font-size: 16pt;
-    margin-top: 30px;
+    margin-top: 60px;
     cursor: pointer;
     a {
         width: auto;
@@ -113,14 +113,15 @@
 @include md {
     .galerija {
         .grid_holder {
+            margin: 0;
             width: 100%;
             max-width: unset;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
             padding: 0 150px;
-            column-gap: 10px;
-            row-gap: 5px;
+            column-gap: 25px;
+            row-gap: 25px;
         }
     }
 }
@@ -131,6 +132,7 @@
     .galerija {
     justify-content: flex-start;
     max-width: 1064px;
+    min-width: 590px;
     width: 70%;
 
      

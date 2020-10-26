@@ -170,6 +170,10 @@ a.disabled {
   color: #000;
 }
 
+.custom_alert_hide {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .documentWrapper {
     flex-direction: row;
@@ -1115,7 +1119,7 @@ a.disabled {
   width: 100%;
 }
 .galerija .grid_holder .grid_box {
-  margin: 5px 0;
+  margin: 25px 0;
   align-items: flex-start;
   width: 100%;
 }
@@ -1190,7 +1194,7 @@ a.disabled {
   flex-direction: row;
   color: #ffcc00;
   font-size: 16pt;
-  margin-top: 30px;
+  margin-top: 60px;
   cursor: pointer;
 }
 .pagination_arrows a {
@@ -1203,14 +1207,15 @@ a.disabled {
 
 @media (min-width: 768px) {
   .galerija .grid_holder {
+    margin: 0;
     width: 100%;
     max-width: unset;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     padding: 0 150px;
-    column-gap: 10px;
-    row-gap: 5px;
+    column-gap: 25px;
+    row-gap: 25px;
   }
 }
 @media (min-width: 992px) {
@@ -1221,6 +1226,7 @@ a.disabled {
   .galerija {
     justify-content: flex-start;
     max-width: 1064px;
+    min-width: 590px;
     width: 70%;
   }
   .galerija .grid_holder {
@@ -1346,6 +1352,21 @@ a.disabled {
   border: 2px solid #ffcc00;
 }
 
+.loading_box {
+  color: #fff;
+  font-family: "AntennaComp-Bold";
+  font-size: 18pt;
+  display: flex;
+  flex-direction: column !important;
+  margin-top: 100px;
+}
+.loading_box img {
+  width: 100px;
+}
+.loading_box p {
+  margin-top: 15px;
+}
+
 @media (min-width: 992px) {
   .background_box_with_no_bottom--profil {
     min-height: 100vh;
@@ -1355,10 +1376,11 @@ a.disabled {
   .profil {
     justify-content: flex-start;
     max-width: 1064px;
+    min-width: 590px;
     width: 70%;
   }
   .profil form {
-    width: 80%;
+    width: 90%;
     padding-top: 0;
   }
   .profil div {
@@ -1435,6 +1457,10 @@ a.disabled {
   overflow: hidden;
   height: auto;
   padding-top: 0;
+}
+.profil .profil__video_holder .video_holder video {
+  width: 100%;
+  height: 100%;
 }
 .profil .floating_traka {
   position: absolute;
@@ -1514,10 +1540,6 @@ a.disabled {
     height: 200px;
     grid-area: video;
   }
-  .profil .profil__video_holder .video_holder video {
-    width: 100%;
-    height: 100%;
-  }
   .profil .text_box {
     height: 100%;
     grid-area: tekst;
@@ -1527,8 +1549,8 @@ a.disabled {
     height: 200px;
   }
   .profil .share_div {
-    width: 70%;
-    max-width: 600px;
+    width: 80%;
+    max-width: unset;
     flex-direction: column;
     margin-left: 40px;
   }
@@ -1580,6 +1602,7 @@ a.disabled {
   }
   .nagrade .nagrade_desktop_img {
     display: block;
+    min-height: 55vh;
     max-height: 90%;
     width: 100%;
   }

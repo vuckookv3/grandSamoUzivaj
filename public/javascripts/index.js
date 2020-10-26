@@ -12,9 +12,17 @@ $(function () {
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
 
+        var customAlert = $('#customAlert');
 
         if (!picture && !video) {
-            alert('Morate izabrati file');
+            customAlert.toggleClass('custom_alert_hide');
+            customAlert.css('opacity', '1');
+            customAlert.html('Morate izabrati file');
+            setTimeout(function () {
+                customAlert.fadeTo(500, 0, function () {
+                    customAlert.toggleClass('custom_alert_hide');
+                });
+            }, 3000);
             return;
         }
 
@@ -29,10 +37,20 @@ $(function () {
         }
 
         if (totalMb > 200 * 1024 * 1024) {
-            alert('Veličina fajlova je veća od dozvoljenog limita (200MB). Postavite manji fajl.');
+            customAlert.toggleClass('custom_alert_hide');
+            customAlert.css('opacity', '1');
+            customAlert.html('Veličina fajlova je veća od dozvoljenog limita (200MB). Postavite manji fajl');
+            setTimeout(function () {
+                customAlert.fadeTo(500, 0, function () {
+                    customAlert.toggleClass('custom_alert_hide');
+                });
+            }, 3000);
+
             return;
         }
-
+        // HERE
+        $(this).css('display', 'none');
+        $('#loadIndicator').css('display', 'flex');
         this.submit();
         return true;
     });

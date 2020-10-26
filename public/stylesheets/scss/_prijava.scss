@@ -30,7 +30,8 @@
                 height: auto;
                 padding-top: 0;
                 video {
-                    
+                    width: 100%;
+                    height: 100%;
                 }
                 }
             }
@@ -122,10 +123,7 @@
                 // padding-top: 48%;
                 // margin-left: 45px;
                 grid-area: video;
-                video {
-                    width: 100%;
-                    height: 100%;
-                }
+            
             }
            
         }
@@ -140,8 +138,8 @@
 
         }
         .share_div {
-            width: 70%;
-            max-width: 600px;
+            width: 80%;
+            max-width: unset;
             flex-direction: column;
             margin-left: 40px;
             img {

@@ -135,6 +135,21 @@
         }
     }
 }
+.loading_box {
+    color: #fff;
+    font-family: $font-antenna-comp-bold;
+    font-size: 18pt;
+    display: flex;
+    flex-direction: column !important;
+    margin-top: 100px;
+    img {
+        width: 100px;
+    }
+    p {
+        margin-top: 15px;
+    }
+
+}
 @include lg {
     .background_box_with_no_bottom--profil {
         min-height: 100vh;
@@ -145,13 +160,14 @@
     .profil {
     justify-content: flex-start;
     max-width: 1064px;
+    min-width: 590px;
     width: 70%;
 
         // h1 {
         //     font-size: 32pt;
         // }
         form {
-            width: 80%;
+            width: 90%;
             // max-width: 650px;
             padding-top: 0;
         }
