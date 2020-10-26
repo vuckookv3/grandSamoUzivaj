@@ -22,6 +22,12 @@
 
     <meta name="description" content="Učestvujte u nagradnom konkursu i osvojite vredne nagrade!">
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Samo uživaj!">
+    <meta property="og:description" content="Učestvujte u nagradnom konkursu i osvojite vredne nagrade!">
+    <% if(locals.prijava) { %>
+    <meta property="og:image" content="<%= process.env.S3_BUCKET + '/' + locals.prijava.picture || '/images/video_thumb.png' %>">
+    <% } %>
 </head>
 
 <body>
@@ -42,10 +48,7 @@
             </div>
         </section>
         <div class="navbar_box navbar_box_open_mobile" id="navbarWrapper">
-            <img 
-                src="/images/hamburger.png"
-                alt="Meni"
-                class="hamburger">
+            <img src="/images/hamburger.png" alt="Meni" class="hamburger">
             <ul id="navbarBox" class="closed">
                 <li><a href="/profil">MOJ PROFIL</a></li>
                 <li><a href="/prijave">PRIJAVE</a></li>
