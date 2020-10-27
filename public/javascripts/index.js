@@ -18,11 +18,11 @@ $(function () {
         $('#modalUspesno').modal('show');
     }
 
+    var check = $('#checkBoxPrijava2');
     $('#prijava2').on('submit', function (e) {
         e.preventDefault();
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
-        var check = $('#checkBoxPrijava2');
 
         if (!check.is(':checked')) {
             check[0].setCustomValidity('Neophodno je da štiklirate ovo polje kako bi nastavili dalje.');
@@ -70,6 +70,10 @@ $(function () {
         $('#loadIndicator').css('display', 'flex');
         this.submit();
         return true;
+    });
+
+    check.on('change', function () {
+        this.setCustomValidity('');
     });
 
 
