@@ -113,14 +113,7 @@ $(function () {
             var videoPlaceholder = $('#videoPlaceholder');
             previewText.html(this.files[0].name);
             previewText.css("display", "flex");
-            // videoPlaceholder.css("display", "none");
-
-            // var previewImg = $('#previewImage')
-            // reader.onload = function (e) {
-            //     // previewImg.attr('src', e.target.result);
-            // }
-
-            // previewImg.addClass('loaded_img')
+   
         }
 
     });
