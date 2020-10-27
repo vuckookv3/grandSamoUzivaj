@@ -7,10 +7,22 @@ $(function () {
         });
     }, 3000);
 
+    // open code modal
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.search);
+        return (results !== null) ? results[1] || 0 : false;
+    }
+
+    if ($.urlParam('modalUspesno')) {
+        window.history.replaceState(null, null, window.location.pathname);
+        $('#modalUspesno').modal('show');
+    }
+
     $('#prijava2').on('submit', function (e) {
         e.preventDefault();
         var picture = $('#pictureInput')[0].files[0];
         var video = $('#videoInput')[0].files[0];
+        var check = $('#checkBoxPrijava2');
 
         var customAlert = $('#customAlert');
 
@@ -60,17 +72,17 @@ $(function () {
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-    
+
     })
     $('#navbarBackground').on('click', function () {
         $("#navbarBox").toggleClass("closed");
         $("#navbarBackground").toggleClass("closed-nav_back");
         $("#navbarWrapper").toggleClass("navbar_box_open_mobile");
         document.body.classList.toggle('lock-scroll');
-    
+
     });
-    
-    
+
+
     $('#pictureInput').on('change', function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
@@ -79,16 +91,16 @@ $(function () {
                 previewImg.attr('src', e.target.result);
             }
             reader.readAsDataURL(this.files[0]);
-    
+
             previewImg.addClass('loaded_img')
         }
-    
+
     });
-    
+
     $('#fhareIcon').on('click', function () {
         url = `https://www.facebook.com/dialog/share?app_id=3328292687219046&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F&redirect_uri=` + window.location.href;
         options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
-        window.open(url,'sharer',options);
+        window.open(url, 'sharer', options);
     })
 
 });

@@ -209,8 +209,8 @@ router.post('/prijava/2', upload(), async (req, res) => {
 
     delete req.session.entry;
 
-    req.flash('success', 'Vasa prijava je uspesna');
-    res.redirect('/');
+    // req.flash('success', 'Vasa prijava je uspesna');
+    res.redirect('/?modalUspesno=1');
 });
 
 module.exports = router;
