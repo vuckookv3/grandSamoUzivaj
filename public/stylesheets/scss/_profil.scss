@@ -61,6 +61,23 @@
             }
             label {
                 height: 200px;
+                flex-direction: column;
+            }
+            .upload_video_label {
+                p {
+                    position: relative;
+                    background-color: transparent;
+                    color: $color-yellow-back;
+                    top: 0;
+                    margin-bottom: 0;
+                    font-family: $font-roboto-regular;
+                    line-height: 1;
+                    text-align: center;
+                    height: auto;
+                    font-size: 16pt;
+                    word-break: break-all;
+                    padding: 0 5px;
+                }
             }
         }
         textarea {

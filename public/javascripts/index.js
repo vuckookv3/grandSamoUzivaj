@@ -106,6 +106,24 @@ $(function () {
         }
 
     });
+    $('#videoInput').on('change', function () {
+        if (this.files && this.files[0]) {
+            console.log(this.files[0].name);
+            var previewText = $('#previewText');
+            var videoPlaceholder = $('#videoPlaceholder');
+            previewText.html(this.files[0].name);
+            previewText.css("display", "flex");
+            // videoPlaceholder.css("display", "none");
+
+            // var previewImg = $('#previewImage')
+            // reader.onload = function (e) {
+            //     // previewImg.attr('src', e.target.result);
+            // }
+
+            // previewImg.addClass('loaded_img')
+        }
+
+    });
 
     $('#fhareIcon').on('click', function () {
         url = `https://www.facebook.com/dialog/share?app_id=3328292687219046&display=popup&href=` + window.location.href + `&redirect_uri=`;
