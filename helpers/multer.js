@@ -3,6 +3,8 @@ const mime = require('mime-types');
 const crypto = require('crypto');
 const pathToUploads = join(__dirname, '..', 'public/uploads');
 const multer = require('multer');
+mime.types['mov'] = 'video/mp4';
+mime.extensions['video/quicktime'] = ['mov'];
 // const storage = multer.diskStorage({
 //     destination: (req, file, cb) => {
 //         return cb(null, pathToUploads);
@@ -18,7 +20,7 @@ const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
 
-    const fileTypes = /jpeg|jpg|png|mp4|webm|mkv|mpeg|avi/;
+    const fileTypes = /jpeg|jpg|png|mp4|webm|ogg|mov/;
     if (fileTypes.test(mime.extension(file.mimetype))) {
         return cb(null, true);
     } else {
