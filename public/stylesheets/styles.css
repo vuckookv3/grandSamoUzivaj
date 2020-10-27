@@ -1324,16 +1324,9 @@ a.disabled {
   outline: none;
 }
 .profil .checkbox__pravila_privatnosti {
-  width: 250px;
-  font-family: "Roboto-Regular";
-  color: #fff;
-  font-size: 12pt;
-  margin: 20px auto 0 auto;
-  flex-direction: row;
-}
-.profil .checkbox__pravila_privatnosti label {
-  margin-bottom: 0;
   display: block;
+  width: 250px;
+  margin: 20px auto 0 auto;
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -1341,16 +1334,19 @@ a.disabled {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  font-family: "Roboto-Regular";
+  color: #fff;
+  font-size: 12pt;
 }
-.profil .checkbox__pravila_privatnosti label input {
+.profil .checkbox__pravila_privatnosti input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   overflow: visible;
-  width: inherit;
+  width: 75px;
   height: inherit;
 }
-.profil .checkbox__pravila_privatnosti label input:checked ~ span::after {
+.profil .checkbox__pravila_privatnosti input:checked ~ span::after {
   content: "X";
   color: #ffcc00;
   display: flex;
