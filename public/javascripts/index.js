@@ -24,6 +24,12 @@ $(function () {
         var video = $('#videoInput')[0].files[0];
         var check = $('#checkBoxPrijava2');
 
+        if (!check.is(':checked')) {
+            check[0].setCustomValidity('Neophodno je da štiklirate ovo polje kako bi nastavili dalje.');
+            check[0].reportValidity();
+            return;
+        }
+
         var customAlert = $('#customAlert');
 
         if (!picture && !video) {
@@ -98,7 +104,7 @@ $(function () {
     });
 
     $('#fhareIcon').on('click', function () {
-        url = `https://www.facebook.com/dialog/share?app_id=3328292687219046&display=popup&href=`+  window.location.href +`&redirect_uri=`;
+        url = `https://www.facebook.com/dialog/share?app_id=3328292687219046&display=popup&href=` + window.location.href + `&redirect_uri=`;
         options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
         window.open(url, 'sharer', options);
     })
