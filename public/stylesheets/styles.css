@@ -1304,6 +1304,21 @@ a.disabled {
 }
 .profil div .upload__box--video label {
   height: 200px;
+  flex-direction: column;
+}
+.profil div .upload__box--video .upload_video_label p {
+  position: relative;
+  background-color: transparent;
+  color: #ffcc00;
+  top: 0;
+  margin-bottom: 0;
+  font-family: "Roboto-Regular";
+  line-height: 1;
+  text-align: center;
+  height: auto;
+  font-size: 16pt;
+  word-break: break-all;
+  padding: 0 5px;
 }
 .profil div textarea {
   height: 250px;
