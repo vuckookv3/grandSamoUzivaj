@@ -70,6 +70,6 @@ h.filename = (file) => {
 }
 
 h.imageExtensions = /jpeg|jpg|png/;
-h.videoExtensions = /mp4|webm|ogg|mov/;
+h.videoExtensions = /mp4|webm|mov/;
 
 module.exports = h;

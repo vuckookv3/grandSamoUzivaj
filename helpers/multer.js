@@ -20,7 +20,7 @@ const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
 
-    const fileTypes = /jpeg|jpg|png|mp4|webm|ogg|mov/;
+    const fileTypes = /jpeg|jpg|png|mp4|webm|mov/;
     if (fileTypes.test(mime.extension(file.mimetype))) {
         return cb(null, true);
     } else {
