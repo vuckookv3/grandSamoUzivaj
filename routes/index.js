@@ -32,11 +32,13 @@ router.get('/profil', async (req, res) => {
 
     const entry = await Entry.findById(req.session.entry).exec();
     if (!entry) {
+        delete req.session.entry;
         req.flash('error', 'Prijava nije pronadjena. Pokusajte ponovo');
         return res.redirect('/');
     }
 
     if (entry.submitted) {
+        delete req.session.entry;
         req.flash('error', 'Prijava nije pronadjena. Pokusajte ponovo');
         return res.redirect('/');
     }
