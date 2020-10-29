@@ -20,10 +20,11 @@
         width: 100%;
         margin: 0;
     }
-    .text {
+    .text, ul, ol {
         font-family: $font-roboto-regular;
         color: #fff;
         text-align: justify;
+        width: 100%;
     }
 }
 @include lg {
@@ -32,6 +33,10 @@
         justify-content: flex-start;
         padding: 0 20px;
         font-size: 11pt;
+        .h1__title__pravila {
+            font-size: 28pt;
+            color: #fff;
+        }
         // h1 {
         //     font-size: 20pt;
         // }

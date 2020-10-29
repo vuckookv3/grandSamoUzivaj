@@ -26,7 +26,7 @@
     <meta property="og:title" content="Samo uživaj!">
     <meta property="og:description" content="Učestvujte u nagradnom konkursu i osvojite vredne nagrade!">
     <% if(locals.prijava) { %>
-    <meta property="og:image" content="<%= process.env.S3_BUCKET + '/' + locals.prijava.picture || '/images/video_thumb.png' %>">
+    <meta property="og:image" content="<%= process.env.S3_BUCKET + '/' + locals.prijava.picture || '/images/video-thumb.png' %>">
     <% } %>
 </head>
 

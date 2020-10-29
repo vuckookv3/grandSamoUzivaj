@@ -1098,10 +1098,11 @@ a.disabled {
   width: 100%;
   margin: 0;
 }
-.pravila .text {
+.pravila .text, .pravila ul, .pravila ol {
   font-family: "Roboto-Regular";
   color: #fff;
   text-align: justify;
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -1109,6 +1110,10 @@ a.disabled {
     justify-content: flex-start;
     padding: 0 20px;
     font-size: 11pt;
+  }
+  .pravila .h1__title__pravila {
+    font-size: 28pt;
+    color: #fff;
   }
 }
 .h1__title {
