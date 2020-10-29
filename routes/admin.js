@@ -5,6 +5,7 @@ const { redis, mailer } = require('../helpers');
 const { Entry } = require('../models');
 const path = require('path');
 const fs = require('fs');
+const ejs = require('ejs');
 
 const isAdmin = (req, res, next) => {
     if (req.session && req.session.admin) {
@@ -101,10 +102,10 @@ router.put('/api/prijave/:id/status', async (req, res) => {
     let html = null;
 
     if (entry.status === 'DENIED') {
-        html = emailDenied;
+        html = ejs.render(emailDenied);
     }
     else if (entry.status === 'AUTHORIZED') {
-        html = emailAuthorized;
+        html = ejs.render(emailAuthorized, { biCode: entry.biCode || '' });
     }
     else {
 
