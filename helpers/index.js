@@ -12,6 +12,7 @@ const redis = new Redis({
 const RateLimitRedis = require('rate-limit-redis');
 const slowDown = require('express-slow-down');
 const { validationResult } = require('express-validator');
+const uaParser = require('ua-parser-js');
 const upload = require('./multer');
 const mailer = require('./mailer');
 const { s3Upload, s3Delete } = require('./aws');
@@ -71,5 +72,13 @@ h.filename = (file) => {
 
 h.imageExtensions = /jpeg|jpg|png/;
 h.videoExtensions = /mp4|webm|mov/;
+
+h.browserDetect = () => (req, res, next) => {
+    const ua = uaParser(req.headers['user-agent']);
+    if (ua && ua.browser && ua.browser.name === 'IE') {
+        return res.send('Ovaj pretraživač je zastareo i nije podržan. Molimo vas uđite na sajt preko drugog pretraživača.');
+    }
+    next();
+}
 
 module.exports = h;

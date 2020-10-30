@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
-const { sessionMiddleware } = require('./helpers');
+const { sessionMiddleware, browserDetect } = require('./helpers');
 
 const app = express();
 
@@ -18,6 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.set('trust proxy', true);
+app.use(browserDetect());
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
