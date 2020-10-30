@@ -18,7 +18,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.set('trust proxy', true);
-app.use(browserDetect());
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
@@ -54,6 +53,7 @@ app.use((req, res, next) => {
   res.locals.info = req.flash('info');
   next();
 });
+app.use(browserDetect());
 
 // ROUTES
 app.use('/admin', require('./routes/admin'));
