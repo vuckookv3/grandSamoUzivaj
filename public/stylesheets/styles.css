@@ -515,7 +515,7 @@ a.disabled {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 200px;
+  width: 180px;
 }
 .navbar_box .navbar_mobile_background {
   display: flex;
@@ -530,15 +530,15 @@ a.disabled {
 }
 .navbar_box li {
   list-style: none;
-  font-size: 20pt;
+  font-size: 3.5vh;
   padding: 5px 10px;
-  margin: 10px 0;
+  margin: 1vh 0;
   background-image: url("/images/najava_uskoro_traka.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: -45px;
+  background-size: 100% 100%;
   display: flex;
   justify-content: center;
+  max-height: 7vh;
 }
 .navbar_box .hamburger {
   position: absolute;
@@ -567,17 +567,17 @@ a.disabled {
   align-items: flex-start;
   width: auto;
 }
-#leftSection .header__prelomni_text {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
 #leftSection p {
   margin: 0;
   margin-left: 15px;
   font-size: 34pt;
   line-height: 1;
   white-space: nowrap;
+}
+#leftSection .header__prelomni_text {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 #leftSection .footer__datumi {
   display: none;
@@ -845,7 +845,7 @@ a.disabled {
 }
 .mehanizam__box--drugi .mehanizam__text_box p:last-child {
   font-size: 10pt;
-  width: 150px;
+  width: 250px;
   text-align: center;
 }
 
@@ -1046,6 +1046,8 @@ a.disabled {
   width: 60px;
 }
 .kontakt p {
+  text-align: center;
+  word-break: break-word;
   margin: 8px 0 18px 0;
   font-size: 14pt;
   font-family: "Roboto-Medium";
@@ -1206,6 +1208,12 @@ a.disabled {
   max-width: 100px;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+.galerija .grid_holder .grid_box .osvojeno_mesto {
+  margin-top: 5px;
+  text-align: center;
+  width: 100%;
+  font-size: 14pt;
 }
 
 .pagination_arrows {
@@ -1609,7 +1617,6 @@ a.disabled {
   margin-bottom: 20px;
   font-weight: 600;
   text-align: center;
-  max-width: 60%;
   font-size: 14pt;
 }
 .nagrade .nagrade__mob {
@@ -1638,6 +1645,9 @@ a.disabled {
     min-height: 55vh;
     max-height: 90%;
     width: 100%;
+  }
+  .lock-scroll {
+    overflow: visible;
   }
 }
 

@@ -18,7 +18,7 @@
         display: flex;
         flex-direction: column;
         height: 100vh;
-        width: 200px;
+        width: 180px;
 
 
     }
@@ -35,15 +35,16 @@
     }
     li {
         list-style: none;
-        font-size: 20pt;
+        font-size: 3.5vh;
         padding: 5px 10px;
-        margin: 10px 0;
+        margin: 1vh 0;
         background-image: url('/images/najava_uskoro_traka.png');
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position-x: -45px;
+        background-size: 100% 100%;
+        // background-position-x: -45px;
         display: flex;
         justify-content: center;
+        max-height: 7vh;
 
     }
     .hamburger {
@@ -73,17 +74,20 @@
         align-items: flex-start;
         width: auto;
     }
-    .header__prelomni_text {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
     p {
         margin: 0;
         margin-left: 15px;
         font-size: 34pt;
         line-height: 1;
         white-space: nowrap;
+    }
+    .header__prelomni_text {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;    
+        .text_lg {
+            // margin-left: 5px;
+        }
     }
     .footer__datumi {
         display: none;

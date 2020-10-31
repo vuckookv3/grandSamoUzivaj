@@ -1,11 +1,21 @@
 <%- include('partials/header') %>
 
 <main>
-    <div class="background_box background_box--wide_gradient background_box_with_no_bottom">
+    <div class="background_box background_box--wide_gradient background_box_with_no_bottom">           
+        <% function mesto(broj) { 
+            switch(broj) {
+             case 1: return "Prvo";  
+             case 2: return "Drugo";  
+             case 3: return "Treće";  
+             case 4: return "Četvrto";  
+             case 5: return "Peto";  
+             case 6: return "Šesto"; 
+             default: return broj; }
+        } %>
         <div class="galerija">
             <h1 class="h1__title">Dobitnici</h1>
             <% if(dobitnici.filter(e => e.winnerPhase === 1).length > 0) { %>
-            <h2>Faza 1</h2>
+            <h2>Prvi krug konkursa</h2>
             <div class="grid_holder">
                 <% dobitnici.filter(e => e.winnerPhase === 1).map(e => { %>
                 <div class="grid_box">
@@ -22,6 +32,7 @@
                             </div>
                         </div>
                     </a>
+                    <p class="osvojeno_mesto"><%= mesto(e.winnerPrize) %> mesto</p>
                     <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
                 <% }) %>
@@ -29,7 +40,7 @@
             <% } %>
 
             <% if(dobitnici.filter(e => e.winnerPhase === 2).length > 0) { %>
-            <h2>Faza 2</h2>
+            <h2>Drugi krug konkursa</h2>
             <div class="grid_holder">
                 <% dobitnici.filter(e => e.winnerPhase === 2).map(e => { %>
                 <div class="grid_box">
@@ -46,6 +57,7 @@
                             </div>
                         </div>
                     </a>
+                    <p class="osvojeno_mesto"><%= mesto(e.winnerPrize) %> mesto</p>
                     <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
                 <% }) %>
@@ -53,7 +65,7 @@
             <% } %>
 
             <% if(dobitnici.filter(e => e.winnerPhase === 3).length > 0) { %>
-            <h2>Faza 3</h2>
+            <h2>Treći krug konkursa</h2>
             <div class="grid_holder">
                 <% dobitnici.filter(e => e.winnerPhase === 3).map(e => { %>
                 <div class="grid_box">
@@ -70,6 +82,7 @@
                             </div>
                         </div>
                     </a>
+                    <p class="osvojeno_mesto"><%= e.winnerPrize %> mesto</p>
                     <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
                 <% }) %>
@@ -77,7 +90,7 @@
             <% } %>
 
             <% if(dobitnici.filter(e => e.winnerPhase === 4).length > 0) { %>
-            <h2>Faza 4</h2>
+            <h2>Četvrti krug konkursa</h2>
             <div class="grid_holder">
                 <% dobitnici.filter(e => e.winnerPhase === 4).map(e => { %>
                 <div class="grid_box">
@@ -94,6 +107,7 @@
                             </div>
                         </div>
                     </a>
+                    <p class="osvojeno_mesto"><%= mesto(e.winnerPrize) %> mesto</p>
                     <!-- <img class="share_on_facebook" src="/images/share_icon.png" alt="Share on facebook"> -->
                 </div>
                 <% }) %>
