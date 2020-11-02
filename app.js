@@ -21,7 +21,7 @@ app.set('trust proxy', true);
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
-      'default-src': ["'self'"],
+      'default-src': ["'self'", "https://www.googletagmanager.com/", "https://www.google-analytics.com"],
       'base-uri': ["'self'"],
       'block-all-mixed-content': [],
       'font-src': ["'self'", "https:", "data:"],
@@ -29,7 +29,7 @@ app.use(helmet({
       'img-src': ["'self'", "data:", `${process.env.S3_BUCKET}`],
       'media-src': ["'self'", `${process.env.S3_BUCKET}`],
       'object-src': ["'none'"],
-      'script-src': ["'self'"],
+      'script-src': ["'self'", "https://www.googletagmanager.com/", "'sha256-TJ41JiFkGthN+ngzi4GrtMzDYG+n8M05wh6uDpJw2UE='"],
       'script-src-attr': ["'none'"],
       'style-src': ["'self'", "https:", "'unsafe-inline'"],
       'upgrade-insecure-requests': []

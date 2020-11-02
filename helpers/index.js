@@ -53,7 +53,8 @@ h.isStarted = (req, res, next) => {
 
     if (req.headers.host === 'prelive.samouzivaj.rs') return next();
     if (now < DATE_START) return res.redirect('/uskoro');
-    else if (now > DATE_END) return res.redirect('/kraj');
+    else if (req.path === '/dobitnici') return next();
+    else if (now > DATE_END) return res.redirect('/dobitnici');
 
     return next();
 }
