@@ -1621,6 +1621,7 @@ a.disabled {
 }
 .nagrade .nagrade__mob {
   margin-bottom: 40px;
+  max-width: 295px;
 }
 .nagrade .nagrade_desktop {
   display: none;
@@ -1645,9 +1646,6 @@ a.disabled {
     min-height: 55vh;
     max-height: 90%;
     width: 100%;
-  }
-  .lock-scroll {
-    overflow: visible;
   }
 }
 
