@@ -96,7 +96,6 @@
                 <div class="grid_box">
                     <a href="/prijave/<%= e._id %>">
                         <div class="img_holder">
-                            -
                             <% const image = e.picture ? process.env.S3_BUCKET + "/" + e.picture : e.video ? "/images/video-thumb.png" : "/images/picture_thumb.png" %>
                             <img src="<%= image %>" alt="Gallery image">
                             <div class="text_holder">
