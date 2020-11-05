@@ -26,10 +26,10 @@ app.use(helmet({
       'block-all-mixed-content': [],
       'font-src': ["'self'", "https:", "data:"],
       'frame-ancestors': ["'self'"],
-      'img-src': ["'self'", "data:", `${process.env.S3_BUCKET}`],
+      'img-src': ["'self'", "data:", `${process.env.S3_BUCKET}`, "https://www.facebook.com"],
       'media-src': ["'self'", `${process.env.S3_BUCKET}`],
       'object-src': ["'none'"],
-      'script-src': ["'self'", "https://www.googletagmanager.com/", "'sha256-TJ41JiFkGthN+ngzi4GrtMzDYG+n8M05wh6uDpJw2UE='"],
+      'script-src': ["'self'", "https://www.googletagmanager.com/", "'sha256-TJ41JiFkGthN+ngzi4GrtMzDYG+n8M05wh6uDpJw2UE='", "https://connect.facebook.net/", "'sha256-VquuBVF/YgtQj5mFTTg8rWvI7paqO2n9oISJXWfvq4Y='"],
       'script-src-attr': ["'none'"],
       'style-src': ["'self'", "https:", "'unsafe-inline'"],
       'upgrade-insecure-requests': []

@@ -7,7 +7,7 @@ const { Entry } = require('../models');
 const { isStarted, DATE_START, upload, imageExtensions, videoExtensions, filename, s3Upload } = require('../helpers');
 
 router.get('/uskoro', (req, res) => {
-    // if (Date.now() > DATE_START) return res.redirect('/');
+    if (Date.now() > DATE_START) return res.redirect('/');
     res.render('uskoro');
 });
 
