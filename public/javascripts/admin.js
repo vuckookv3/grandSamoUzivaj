@@ -48,6 +48,7 @@ $(function () {
     $('td select').on('change', function () {
         var value = this.value;
         var id = this.form.dataset.id;
+        console.log('e', value, id);
         // $(this).closest('td').attr('data-search', value);
 
         if (value === 'WINNER') {
@@ -63,6 +64,7 @@ $(function () {
             data: JSON.stringify({ status: value }),
             complete: function (xhr, textStatus) {
                 var res = xhr.responseJSON;
+                console.log('res', res);
             }
         });
     });
