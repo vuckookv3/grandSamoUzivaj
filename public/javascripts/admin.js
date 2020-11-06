@@ -45,7 +45,7 @@ $(function () {
     });
 
 
-    $('#prijave tbody td select').on('change', function () {
+    $('#prijave tbody').on('change', 'select', function () {
         var value = this.value;
         var id = this.form.dataset.id;
         console.log('e', value, id);
