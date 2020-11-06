@@ -69,7 +69,7 @@ $(function () {
         });
     });
 
-    $('#prijave tbody .deleteForm').on('submit', function () {
+    $('#prijave tbody').on('submit', '.deleteForm', function () {
         return confirm('Jeste li sigurni da zelite da obrisete ovu prijavu?');
     });
 });
