@@ -45,7 +45,7 @@ $(function () {
     });
 
 
-    $('td select').on('change', function () {
+    $('#prijave tbody td select').on('change', function () {
         var value = this.value;
         var id = this.form.dataset.id;
         console.log('e', value, id);
@@ -69,7 +69,7 @@ $(function () {
         });
     });
 
-    $('.deleteForm').on('submit', function () {
+    $('#prijave tbody .deleteForm').on('submit', function () {
         return confirm('Jeste li sigurni da zelite da obrisete ovu prijavu?');
     });
 });
