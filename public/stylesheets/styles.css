@@ -1276,12 +1276,19 @@ a.disabled {
   margin-top: 50px;
   position: relative;
 }
-.profil div input {
-  display: none;
+.profil .upload {
+  position: absolute;
+  z-index: 50;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .profil div .upload__box {
   margin: 20px 0;
   width: auto;
+  position: relative;
 }
 .profil div .upload__box p {
   position: absolute;
@@ -1296,7 +1303,7 @@ a.disabled {
   align-items: center;
   justify-content: center;
 }
-.profil div .upload__box label {
+.profil div .upload__box > div {
   width: 250px;
   height: 250px;
   border: 2px solid #ffcc00;
@@ -1305,17 +1312,17 @@ a.disabled {
   align-items: center;
   justify-content: center;
 }
-.profil div .upload__box label img {
+.profil div .upload__box > div img {
   height: 70px;
 }
-.profil div .upload__box label .loaded_img {
+.profil div .upload__box > div .loaded_img {
   height: unset;
   max-height: 100%;
 }
 .profil div .upload__box--video p {
   width: 100%;
 }
-.profil div .upload__box--video label {
+.profil div .upload__box--video > div {
   height: 200px;
   flex-direction: column;
 }
@@ -1427,7 +1434,7 @@ a.disabled {
     flex-direction: row;
     justify-content: flex-start;
   }
-  .profil div .upload__box label {
+  .profil div .upload__box > div {
     width: 220px;
     height: 220px;
     border: 2px solid #ffcc00;
@@ -1436,7 +1443,7 @@ a.disabled {
     align-items: center;
     justify-content: center;
   }
-  .profil div .upload__box label img {
+  .profil div .upload__box > div img {
     height: 70px;
   }
   .profil div .upload__box p {
@@ -1461,7 +1468,7 @@ a.disabled {
   .profil div .upload__box--video p {
     width: 300px;
   }
-  .profil div .upload__box--video label {
+  .profil div .upload__box--video > div {
     width: 300px;
   }
   .profil .input_submit--profil {
