@@ -5,7 +5,7 @@ $(function () {
         $('.alert').fadeTo(500, 0).slideUp(500, function () {
             $(this).remove();
         });
-    }, 3000);
+    }, 5000);
 
     // open code modal
     $.urlParam = function (name) {
@@ -113,7 +113,7 @@ $(function () {
             var videoPlaceholder = $('#videoPlaceholder');
             previewText.html(this.files[0].name);
             previewText.css("display", "flex");
-   
+
         }
 
     });

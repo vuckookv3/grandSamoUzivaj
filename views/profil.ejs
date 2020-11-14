@@ -1,54 +1,71 @@
 <%- include('partials/header') %>
 
 <main>
-    <div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
-        <div class="profil">
-            <h1 class="h1__title">Prijava</h1>
-            <form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
-                <div class="upload_holder">
-                    <div class="upload__box upload__box--photo">
-                        <p>UBACI FOTOGRAFIJU</p>
-                        <label for="pictureInput" class="upload_picture_label">
-                            <img id="previewImage" src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat" />
-                        </label>
-                    </div>
-                    <input id="pictureInput" type="file" name="picture" accept=".jpg,.jpeg,.png"
-                        placeholder="Picture" />
-                    <textarea maxlength="500" name="pictureDescription"
-                        placeholder="Ako želiš možeš i rečima da pojasniš svoju fotografiju"></textarea>
-                </div>
-                <div class="upload_holder">
-                    <div class="upload__box upload__box--video">
-                        <p>UBACI VIDEO</p>
-                        <label for="videoInput" class="upload_video_label">
-                            <img id="videoPlaceholder" src="/images/mehanizam_kamera.png" alt="Kamera" />
-                            <p id="previewText" style="display: none;"></p>
-                            <!-- <video id="videoPreview" style="display: none;" controls>
+	<div class="background_box background_box_with_no_bottom background_box_with_no_bottom--profil">
+		<div class="profil">
+			<h1 class="h1__title">Prijava</h1>
+			<form id="prijava2" action="/prijava/2" method="POST" enctype="multipart/form-data">
+				<div class="upload_holder">
+					<div class="upload__box upload__box--photo">
+						<p>UBACI FOTOGRAFIJU</p>
+						<div class="upload_picture_label">
+							<img id="previewImage" src="/images/mehanizam_fotoaparat.png" alt="Fotoaparat" />
+							<input
+								id="pictureInput"
+								class="upload"
+								type="file"
+								name="picture"
+								accept=".jpg,.jpeg,.png"
+								placeholder="Picture"
+							/>
+						</div>
+					</div>
+					<textarea
+						maxlength="500"
+						name="pictureDescription"
+						placeholder="Ako želiš možeš i rečima da pojasniš svoju fotografiju"
+					></textarea>
+				</div>
+				<div class="upload_holder">
+					<div class="upload__box upload__box--video">
+						<p>UBACI VIDEO</p>
+						<div for="videoInput" class="upload_video_label">
+							<img id="videoPlaceholder" src="/images/mehanizam_kamera.png" alt="Kamera" />
+							<p id="previewText" style="display: none"></p>
+							<!-- <video id="videoPreview" style="display: none;" controls>
                                 <source id="videoSource" src="" type="">
                             </video> -->
-                        </label>
-                    </div>
-                    <input id="videoInput" type="file" name="video" accept=".mp4,.webm,.mov"
-                        placeholder="Video" />
-                    <textarea class="textarea_video" maxlength="500" name="videoDescription"
-                        placeholder="Ako želiš možeš i rečima da pojasniš svoj video"></textarea>
-                </div>
-                <label class="checkbox__pravila_privatnosti">
-                    <input id="checkBoxPrijava2" type="checkbox" /> Prihvatam 
-                    <span></span>
-                    <a target="_blank" href="/privacy.pdf" style="text-decoration: underline;">pravila privatnosti</a>
-                </label>
-                <button class="input_submit input_submit--profil" type="submit">PRIJAVI SE</button>
-        </form>
-        <div id="loadIndicator" class="loading_box" style='display: none;'>
-            <img src="/images/spin_loader.gif" alt="Loading...">
-            <p>Molimo sačekajte...</p>
-        </div>
-        <div class="strelica strelica__mobile_only">
-            
-        </div>
-    </div>
-    </div>
+							<input
+								id="videoInput"
+								class="upload"
+								type="file"
+								name="video"
+								accept=".mp4,.webm,.mov"
+								placeholder="Video"
+							/>
+						</div>
+					</div>
+					<textarea
+						class="textarea_video"
+						maxlength="500"
+						name="videoDescription"
+						placeholder="Ako želiš možeš i rečima da pojasniš svoj video"
+					></textarea>
+				</div>
+				<label class="checkbox__pravila_privatnosti">
+					<input id="checkBoxPrijava2" type="checkbox" /> Prihvatam
+					<span></span>
+					<a target="_blank" href="/privacy.pdf" style="text-decoration: underline">pravila privatnosti</a>
+				</label>
+				<button class="input_submit input_submit--profil" type="submit">PRIJAVI SE</button>
+			</form>
+			<div id="loadIndicator" class="loading_box" style="display: none">
+				<img src="/images/spin_loader.gif" alt="Loading..." />
+				<p>Molimo sačekajte...</p>
+			</div>
+			<div class="strelica strelica__mobile_only"></div>
+		</div>
+	</div>
 </main>
 
 <%- include('partials/footer') %>

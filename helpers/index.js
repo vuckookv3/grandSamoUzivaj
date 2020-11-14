@@ -79,6 +79,10 @@ h.browserDetect = () => (req, res, next) => {
     if (ua && ua.browser && ua.browser.name === 'IE') {
         return res.send('Ovaj pretraživač je zastareo i nije podržan. Molimo vas uđite na sajt preko drugog pretraživača.');
     }
+
+    if (req.method === 'GET' && req.path === '/profil' && ua && ua.browser && ua.browser.name === 'Chrome WebView' && ua.os && ua.os.name === 'Android' && ua.ua.includes('Instagram')) {
+        req.flash('error', 'Ukoliko upload ne radi, pritisnite gore na tri tackice i dugme "Open in Chrome"');
+    }
     next();
 }
 
