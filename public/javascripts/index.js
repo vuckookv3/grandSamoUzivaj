@@ -68,6 +68,7 @@ $(function () {
         }
         $(this).css('display', 'none');
         $('#loadIndicator').css('display', 'flex');
+        gtag_report_conversion();
         this.submit();
         return true;
     });
