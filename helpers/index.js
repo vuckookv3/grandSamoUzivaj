@@ -81,7 +81,7 @@ h.browserDetect = () => (req, res, next) => {
     }
 
     if (req.method === 'GET' && req.path === '/profil' && ua && ua.browser && ua.browser.name === 'Chrome WebView' && ua.os && ua.os.name === 'Android' && ua.ua.includes('Instagram')) {
-        req.flash('error', 'Ukoliko upload ne radi, pritisnite gore na tri tackice i dugme "Open in Chrome"');
+        req.flash('error', 'Ukoliko upload ne radi, pritisnite u gornjem desnom uglu na tri tackice i otvorite stranicu u browseru.');
     }
     next();
 }

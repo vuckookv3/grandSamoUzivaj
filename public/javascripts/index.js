@@ -5,7 +5,7 @@ $(function () {
         $('.alert').fadeTo(500, 0).slideUp(500, function () {
             $(this).remove();
         });
-    }, 5000);
+    }, 7000);
 
     // open code modal
     $.urlParam = function (name) {

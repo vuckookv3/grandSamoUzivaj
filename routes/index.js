@@ -112,6 +112,14 @@ router.post('/prijava/1', async (req, res) => {
         return res.redirect('/');
     }
 
+    const oldEntry = await Entry.findOne({ email, biCode, submitted: false }).exec();
+    if (oldEntry) {
+        oldEntry.name = name;
+        await oldEntry.save();
+        req.session.entry = oldEntry._id;
+        return res.redirect('/profil');
+    }
+
     const entry = new Entry({
         name,
         email,
