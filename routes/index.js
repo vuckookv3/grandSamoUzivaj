@@ -135,7 +135,7 @@ router.post('/prijava/1', async (req, res) => {
 
     req.session.entry = entry._id;
 
-    res.redirect('/profil');
+    res.redirect('/profil?gRegistration=1');
 
 });
 
@@ -219,8 +219,12 @@ router.post('/prijava/2', upload(), async (req, res) => {
 
     delete req.session.entry;
 
+    let file_content = [];
+    !!entry.picture ? file_content.push('photo') : null;
+    !!entry.video ? file_content.push('video') : null;
+    file_content = file_content.join(',');
     // req.flash('success', 'Vasa prijava je uspesna');
-    res.redirect('/?modalUspesno=1');
+    res.redirect(`/?modalUspesno=1&file_content=${file_content}`);
 });
 
 module.exports = router;

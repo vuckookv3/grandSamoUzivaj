@@ -14,8 +14,16 @@ $(function () {
     }
 
     if ($.urlParam('modalUspesno')) {
+        var file_c = $.urlParam('file_content')
+        gtag('event', 'send_content', { file_type: file_c });
         window.history.replaceState(null, null, window.location.pathname);
         $('#modalUspesno').modal('show');
+    }
+
+    if ($.urlParam('gRegistration')) {
+        window.history.replaceState(null, null, window.location.pathname);
+        gtag('event', 'registration');
+        console.log('zz');
     }
 
     var check = $('#checkBoxPrijava2');
