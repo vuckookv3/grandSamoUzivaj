@@ -2,17 +2,23 @@
 
 <main>
     <div class="background_box">
+        <% if(new Date < new Date(process.env.DATE_END)) { %>
         <div class="prijava">
             <h1>Postavi fotografiju ili video <br> i POKAŽI ŠTA JE ZA TEBE UŽIVANJE</h1>
             <form id="prijava1" action="/prijava/1" method="POST">
                 <input class="input_text input_iip" type="text" name="name" placeholder="ime i prezime" required
                     maxlength="30" />
                 <input class="input_text input_email" type="email" name="email" placeholder="e-mail" required />
-                <input class="input_text input_bi no-spin" type="text" name="biCode"
-                    placeholder="БИ broj" minlength="2" maxlength="7" pattern="[0-9]{2,7}" required />
+                <input class="input_text input_bi no-spin" type="text" name="biCode" placeholder="БИ broj" minlength="2"
+                    maxlength="7" pattern="[0-9]{2,7}" required />
                 <button class="input_submit" type="submit">DALJE</button>
             </form>
         </div>
+        <% } else { %>
+            <div class="prijava" style="justify-content: center; align-items: center;">
+                <h1 style="text-align: center;">NAGRADNI KONKURS JE ZAVRŠEN</h1>
+            </div>
+        <% } %>
         <div class="strelica__floating_box">
             <img class="kesice" src="/images/kesice.png" alt="3u1 2u1 kafa">
             <img class="solja_kesice" src="/images/solja_kesice.png" alt="Solja kafe">

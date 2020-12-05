@@ -4,7 +4,7 @@ const fs = require('fs');
 const mime = require('mime-types');
 const { isEmail, isMongoId } = require('validator');
 const { Entry } = require('../models');
-const { isStarted, DATE_START, upload, imageExtensions, videoExtensions, filename, s3Upload } = require('../helpers');
+const { isStarted, DATE_START, upload, imageExtensions, videoExtensions, filename, s3Upload, DATE_END } = require('../helpers');
 
 router.get('/uskoro', (req, res) => {
     if (Date.now() > DATE_START) return res.redirect('/');
@@ -100,6 +100,10 @@ router.get('/kontakt', (req, res) => {
 });
 
 router.post('/prijava/1', async (req, res) => {
+    if (new Date() >= DATE_END) {
+        req.flash('error', 'Nagradni konkurs je završen');
+        res.redirect('/');
+    }
     const { name, email, biCode } = req.body;
 
     if (!name || !email || !biCode) {

@@ -48,13 +48,15 @@ const DATE_END = new Date(process.env.DATE_END);
 h.DATE_START = DATE_START;
 h.DATE_END = DATE_END;
 
+const DATE_END_WEEK = new Date(new Date(DATE_END).getTime() + 7 * 24 * 60 * 60 * 1000);
+
 h.isStarted = (req, res, next) => {
     const now = new Date();
 
     if (req.headers.host === 'prelive.samouzivaj.rs') return next();
     if (now < DATE_START) return res.redirect('/uskoro');
     else if (req.path === '/dobitnici') return next();
-    else if (now > DATE_END) return res.redirect('/dobitnici');
+    else if (now > DATE_END_WEEK) return res.redirect('/dobitnici');
 
     return next();
 }
