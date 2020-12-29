@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const admins = require('../admins.json');
+const admins = JSON.parse(process.env.admins);
 const { redis, mailer } = require('../helpers');
 const { Entry } = require('../models');
 const path = require('path');
